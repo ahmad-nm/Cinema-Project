@@ -8,68 +8,148 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <title>M1 Cinema</title>
 </head>
 <body>
-    <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <img src="./Images/" alt="Logo">
-                <p>M1 Cinema</p>
-            </div>
-            <div class="searchbar">
-                <input type="text" placeholder="Search">
-                <button>Search</button>
-            </div>
-            <div class="nav-links">
-                <a href="#">Movies</a>
-                <a href="#">TV Shows</a>
-                <a href="#">Find</a>
-                <a href="#">News</a>
-            </div>
+    <div class="container-fluid">
+        <div class="navigation_bar">
+            <nav>
+                <div class="logo">
+                    <div>
+                        <i class="bx bx-menu menu-icon"></i>
+                        <span class="logo-name">Cinemacity</span>
+                    </div>
+
+                    <div class="searchbar">
+                        <input type="text" placeholder="Search for movies">
+                    </div>
+                    <div class="navigational-links">
+                        <a href="#">Movies</a>
+                        <a href="#">Find</a>
+                        <a href="#">News</a>
+                    </div>
+                    <div>
+                        <button class="Signup-button">
+                            <i class='bx bxs-user-plus'></i>
+                            <span class="signup-text">Signup</span>
+                        </button>
+
+                        <button class="Login-button">
+                            <i class='bx bxs-user-circle'></i>
+                            <span class="login-text">Login</span>
+                        </button>
+                    </div>
+                    
+                    <!--<button class="notification-button">
+                        <i class='bx bxs-bell'></i>
+
+                        <div class="notification-overlay">
+                            5
+                        </div>-->
+                    </button>
+                </div>
+                <div class="sidebar">
+                    <div class="logo logo2">
+                        <i class="bx bx-menu menu-icon"></i>
+                        <span class="logo-name">Cinemacity</span>
+                    </div>
+        
+                    <div class="sidebar-content">
+                        <ul class="lists">
+                            <li class="list">
+                                <a href="#" class="nav-link">
+                                    <i class='bx bxs-user-circle icon'></i>
+                                    <span class="link">Profile</span>
+                                </a>
+                            </li>
+                            
+                            <li class="list">
+                                <a href="#" class="nav-link">
+                                    <i class='bx bxs-home icon'></i>
+                                    <span class="link">Home</span>
+                                </a>
+                            </li>
+        
+                            <li class="list">
+                                <a href="#" class="nav-link">
+                                    <i class='bx bxs-heart icon' ></i>
+                                    <span class="link">Favorites</span>
+                                </a>
+                            </li>
+        
+                            <li class="list">
+                                <a href="#" class="nav-link">
+                                    <i class='bx bxs-cog icon' ></i>
+                                    <span class="link">Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+        
+                        <div class="bottom-cotent">
+                            <li class="list">
+                                <a class="nav-link" id="logout">
+                                    <i class="bx bx-log-out icon"></i>
+                                    <span class="link">Logout</span>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        
+            <section class="overlay"></section>
         </div>
         <div class="main">
-            <div class="dashboard">
-                <div class="Profile">
-                    <img src="./Images/Icons/Profile.png" alt="Profile" class="icon">
-                    <p>Profile</p>
+                <div class="tickets">
+                    <div class="ticket-link">
+                        <p><a href="#">Tickets</a></p>
+                    </div>
+                    <hr style="margin: 0;">
+                    <div class="ticket-content">
+                        <div class="ticket-special-offer">
+                            <img src="./Images/Other/ticket.png" alt="Ticket">
+                            <div class="ticket-special-offer-content">
+                                <p>Movie Ticket</p>
+                                <p><s>10$</s> &nbsp; 7$</p>
+                            </div>
+                        </div>
+                        <div class="order">
+                            <p>Book yours <br> NOW!!</p>
+                            <button>Book</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="Home">
-                    <img src="./Images/Icons/home.png" alt="Home" class="icon">
-                    <p>Home</p>
+                <div class="popcorn">
+                    <div class="menu-link">
+                        <p><a href="#">Menu</a></p>
+                    </div>
+                    <hr style="margin: 0;">
+                    <div class="popcorn-content">
+                        <div class="menu-special-offer">
+                            <img src="./Images/Other/popcorn.png" alt="Popcorn">
+                            <div class="menu-special-offer-content">
+                                <p>Caramel Popcorn</p>
+                                <p><s>5$</s> &nbsp; 3$</p>
+                            </div>
+                        </div>
+                        <div class="order">
+                            <p>Don't Miss <br> OUT!!</p>
+                            <button>Order</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="Favorites">
-                    <img src="./Images/Icons/Favorite.png" alt="Favorites" class="icon">
-                    <p>Favorites</p>
-                </div>
-                <div class="Settings">
-                    <img src="./Images/Icons/settings.png" alt="Settings" class="icon">
-                    <p>Settings</p>
-                </div>
-                <div class="Login">
-                    <img src="./Images/Icons/login.png" alt="Login" class="icon">
-                    <p>Login</p>
-                </div>
-                <div class="Logout">
-                    <img src="./Images/Icons/logout.png" alt="Logout" class="icon">
-                    <p>Logout</p>
-                </div>  
-                <div class="Signup">
-                    <img src="./Images/Icons/add-user.png" alt="Signup" class="icon">
-                    <p>Signup</p>
-                </div>
-            </div>
-            <div class="mainpage">
                 <div class="newreleases">
-                    <button id="prevButton" class="nav-button"><img src="./Images/Icons/less-than.png" class="icon"></button>
-                    <button id="nextButton" class="nav-button"><img src="./Images/Icons/greater-than.png" class="icon"></button>
+                    <button id="prevButton" class="nav-button"><img src="./Images/Icons/less-than.png" class="nbutton"></button>
+                    <button id="nextButton" class="nav-button"><img src="./Images/Icons/greater-than.png" class="pbutton"></button>    
                     <div class="movie_notes" id="movie_notes">
                         <div class="movie_details">
-                            <p><span>Venom : </span><span>The Last Dance</span></p>
+                            <p class="movie_title">Venom : The Last Dance</p>
                             <div class="duration">
                                 <img src="./Images/Icons/repeat.png" alt="Duration" class="icon">
-                                <p>1h50m . </p>
-                                <p>Action, Thriller, Sci-Fi</p>
+                                <p id="duration-tag">1h50m . </p>
+                                <p id="genre-tag">Action, Thriller, Sci-Fi</p>
                             </div>
                             <div class="description">
                                 <p class="short-description">Description : Eddie Brock and Venom must make a devas...<a href="#" class="see-more">See More</a> </p>
@@ -84,10 +164,22 @@
                 <div class="seats">
 
                 </div>
-                <div class="tickets">
+                <div class="movie1">
+                    
+                </div>
+                <div class="movie2">
 
                 </div>
-                <div class="popcorn">
+                <div class="movie3">
+
+                </div>
+                <div class="movie4">
+
+                </div>
+                <div class="movie5">
+
+                </div>
+                <div class="movie6">
 
                 </div>
                 <div class="popular">
@@ -115,12 +207,16 @@
 
                 </div>
             </div>
-        </div>
+        
         <div class="about">
             
         </div>
     </div>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./Project.js"></script>
 </body>
 </html>

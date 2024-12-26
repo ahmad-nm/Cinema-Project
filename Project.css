@@ -15,18 +15,148 @@ a{
     padding-top: 0;
     padding: 0;
 }
-.navbar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
+.navigation_bar{
+    height: 70px;
+    width: 100%;
 }
-.logo{
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 10px;
-    width: 20%;
+    background: #fff;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+nav .logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 24px;
+}
+nav .logo2 {
+    justify-content: start !important;
+    align-items: center;
+}
+.logo .menu-icon {
+    color: #333;
+    font-size: 24px;
+    margin-right: 14px;
+    cursor: pointer;
+}
+.logo .logo-name {
+    color: #333;
+    font-size: 22px;
+    font-weight: 500;
+}
+nav .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 260px;
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    display: overlay;
+}
+nav.open {
+    background-color: transparent;
+}
+nav.open .sidebar {
+    left: 0;
+}
+.sidebar .sidebar-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 16px;
+}
+.sidebar-content .list {
+    list-style: none;
+}
+.list .nav-link {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding: 14px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.lists .nav-link:hover {
+    background-color: #002366;
+}
+.nav-link .icon {
+    margin-right: 14px;
+    font-size: 20px;
+    color: #707070;
+}
+.nav-link .link {
+    font-size: 16px;
+    color: #707070;
+    font-weight: 400;
+}
+.lists .nav-link:hover .icon,
+.lists .nav-link:hover .link {
+    color: #fff;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 1000vh;
+    width: 200%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100000;
+}
+nav.open~.overlay {
+    opacity: 1;
+    left: 260px;
+    pointer-events: auto;
+}
+#logout {
+    cursor: pointer;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #E5F3FE;
+}
+::-webkit-scrollbar-thumb {
+    background: #002366;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #004080;
+}
+.Login-button{
+    border: none;
+    background-color: #002466;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 20px;
+    height: 40px;
+    cursor: pointer;
+}
+.Signup-button{
+    border: none;
+    background-color: hsl(219, 100%, 60%);
+    color: white;
+    border-radius: 20px;
+    padding: 5px 20px;
+    height: 40px;
+    cursor: pointer;
 }
 .searchbar{
     display: flex;
@@ -38,32 +168,41 @@ a{
 }
 .searchbar input{
     border: none;
-    background-color: grey;
+    background-color: transparent;
     border-radius: 20px;
-    height: 20px;
     width: 300px;
-    color: white;
-    padding: 5px;
-    padding-left: 10px;
+    outline: none;
+    padding: 5px 40px;
+    border: 1px solid #ccc; 
+    background-image: url('./Images/Icons/search.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 5% 50%;
 }
-.nav-links{
+.navigational-links a{
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    padding-right: 27px;
+}
+.navigational-links a:hover{
+    text-decoration: underline;
+}
+.navigational-links a:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+.navigational-links{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 20px;
-    width: 40%;
+    gap: 30px;
 }
 .main{
     display: grid;
-    grid-template-columns: 15% 45% 40%;
-    grid-template-rows: repeat(22, 100px);
+    grid-template-columns: repeat(4, 20%) 17%;
+    grid-template-rows: repeat(44, 50px);
     padding-right: 10px;
-}
-.dashboard{
-    grid-column: 1 / 2;
-    grid-row: 1 / 22;
-    padding-left: 10px;
+    gap: 15px;
+    margin: 10px;
 }
 .icon{
     width: 20px;
@@ -111,17 +250,12 @@ a{
     align-items: center;
     gap: 10px;
 }
-.mainpage{
-    display: grid;
-    grid-column: 2 / 4;
-    grid-row: 1 / 50;
-    grid-template-columns: 28% 27% 45%;
-    grid-template-rows: repeat(auto , 100px);
+ul {
+    padding-left: 0 !important;
 }
 .newreleases{
-    grid-column: 1 / 3;
-    grid-row: 1 / 4;
-    border: 1px solid black;
+    grid-column: 1 / 5;
+    grid-row: 1 / 9;
     border-radius: 20px;
     background-image: url('./Images/Moviesbg/venombg.jpg'); 
     background-repeat: no-repeat;
@@ -129,20 +263,170 @@ a{
     background-position: center;
     position: relative;
     overflow: hidden;
-}
-.seats{
-    grid-column: 3 / 4;
-    grid-row: 1 / 6;
+    transition: all 1s ease-in-out;
 }
 .tickets{
-    grid-column: 1 / 2;
-    grid-row: 4 / 6;
+    grid-column: 5 / 6;
+    grid-row: 1 / 5;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.ticket-link{
+    text-align: center;
+}
+.ticket-link a{
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.ticket-link p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.ticket-content{
+    display: flex;
+    flex-direction: column;
+}
+.tickets img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+.ticket-special-offer{
+    display: flex;
+    flex-direction: row;
+}
+.ticket-special-offer-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.order{
+    display: flex;
+    flex-direction: row;
+}
+.order p{
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+.order button{
+    border: none;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    height: 50px;
 }
 .popcorn{
-    grid-column: 2 / 3;
-    grid-row: 4 / 6;
+    grid-column: 5 / 6;
+    grid-row: 5 / 9;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-right: 10px;
 }
-.popular{
+.menu-link{
+    text-align: center;
+}
+.menu-link a{
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.menu-link p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.popcorn-content{
+    display: flex;
+    flex-direction: column;
+}
+.popcorn img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+.menu-special-offer{
+    display: flex;
+    flex-direction: row;
+}
+.menu-special-offer-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.order{
+    display: flex;
+    flex-direction: row;
+}
+.order p{
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+.order button{
+    border: none;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    height: 50px;
+}
+.movie1, .movie2, .movie3, .movie4, .movie5, .movie6{
+    border: 1px solid black;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+}
+.movie1{
+    grid-column: 1 / 2;
+    grid-row: 9 / 14;
+    background-image: url('./Images/Moviesbg/avatar3.jpeg');
+}
+.movie2{
+    grid-column: 2 / 3;
+    grid-row: 9 / 14;
+    background-image: url('./Images/Moviesbg/snowwhite.jpg');
+    background-size: 250px 335px;
+}
+.movie3{
+    grid-column: 3 / 4;
+    grid-row: 9 / 14;
+    background-image: url('./Images/Moviesbg/doomsday.jpg');
+}
+.movie4{
+    grid-column: 1 / 2;
+    grid-row: 14 / 19;
+    background-image: url('./Images/Moviesbg/missionimpossible.jpg');
+    background-size: 245px 335px;
+}
+.movie5{
+    grid-column: 2 / 3;
+    grid-row: 14 / 19;
+    background-image: url('./Images/Moviesbg/mortalcombat.jpg');
+}
+.movie6{
+    grid-column: 3 / 4;
+    grid-row: 14 / 19;
+    background-image: url('./Images/Moviesbg/frozen3.jpg');
+}
+.seats{
+    grid-column: 4 / 6;
+    grid-row: 9 / 19;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+/*.popular{
     grid-column: 1 / 4;
     grid-row: 6 / 8;
 }
@@ -173,7 +457,7 @@ a{
 .animation{
     grid-column: 1 / 4;
     grid-row: 20 / 22;
-}
+}*/
 .about{
     height: 200px;
 }
@@ -198,16 +482,18 @@ a{
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: hsla(0, 0%, 25%, 0.3); 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.9));
+    background-blend-mode: multiply;
     color: white;
-    border-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
-    z-index: 1; 
-    opacity: 0; 
-    transition: opacity 0.7s ease; 
-    padding: 10px; 
+    justify-content: flex-start;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    padding: 10px;
 }
 .newreleases:hover .movie_notes {
     visibility: visible;
@@ -230,7 +516,7 @@ a{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(83, 83, 83, 0.5);
+    background-color: transparent;
     border: none;
     padding: 5px;
     cursor: pointer;
@@ -238,8 +524,42 @@ a{
     border-radius: 10px;
 }
 #prevButton {
-    left: 5px;
+    left: 0px;
 }
 #nextButton {
-    right: 10px;
+    right: 0px;
 }
+.movie_title{
+    font-size: 24px;
+}
+.nbutton{
+    height: 40px;
+    width: 40px;
+}
+.pbutton{
+    height: 40px;
+    width: 40px;
+}
+
+
+/*.notification-button {
+    position: relative;
+    background-color: #3d3d3d;
+    color: rgb(168, 203, 41);
+    padding: 8px 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.notification-overlay {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    padding: 4px 8px;
+    border-radius: 50%;
+    border: none;
+    color:  #3d3d3d;
+    background-color: rgb(168, 203, 41);
+    font-size: 12px;
+}*/
