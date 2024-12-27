@@ -174,3 +174,29 @@ function changebuttoncolor(){
     });
 }
 changebuttoncolor();
+
+// ...existing code...
+
+async function searchMovie(searchTerm) {
+    const url = `https://moviedatabase8.p.rapidapi.com/Search/${encodeURIComponent(searchTerm)}`;
+    const options = {
+        method: 'GET',
+        headers: {
+            'x-rapidapi-key': 'e7eea90668msha9823711a7f4cd1p110026jsn7d72f7708040',
+            'x-rapidapi-host': 'moviedatabase8.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        console.log('Search Results:', result);
+        return result;
+    } catch (error) {
+        console.error('Error searching movie:', error);
+        return null;
+    }
+}
+
+// Example usage:
+searchMovie('Inception'); // Search for "Inception"

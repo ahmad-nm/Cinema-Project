@@ -4,6 +4,21 @@
 body{
     margin: 0;
 }
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./Images/my_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+}
 a{
     text-decoration: none;
     color: black;
@@ -15,12 +30,14 @@ a{
     padding-top: 0;
     padding: 0;
 }
+.container-fluid{
+    padding: 0 !important;
+}
 .navigation_bar{
     height: 70px;
     width: 100%;
 }
 nav {
-    position: fixed;
     top: 0;
     left: 0;
     height: 70px;
@@ -64,9 +81,6 @@ nav .sidebar {
     box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
     display: overlay;
-}
-nav.open {
-    background-color: transparent;
 }
 nav.open .sidebar {
     left: 0;
@@ -142,7 +156,7 @@ nav.open~.overlay {
 }
 .Login-button{
     border: none;
-    background-color: #002466;
+    background-color: #2B5263;
     color: white;
     border-radius: 20px;
     padding: 5px 20px;
@@ -151,7 +165,7 @@ nav.open~.overlay {
 }
 .Signup-button{
     border: none;
-    background-color: hsl(219, 100%, 60%);
+    background-color: #7196A6;
     color: white;
     border-radius: 20px;
     padding: 5px 20px;
@@ -167,13 +181,13 @@ nav.open~.overlay {
     width: 40%;
 }
 .searchbar input{
-    border: none;
+    border: inset white 1px;
     background-color: transparent;
     border-radius: 20px;
     width: 300px;
     outline: none;
     padding: 5px 40px;
-    border: 1px solid #ccc; 
+    /*border: 1px solid #ccc; */
     background-image: url('./Images/Icons/search.png');
     background-repeat: no-repeat;
     background-size: 20px 20px;
@@ -199,7 +213,7 @@ nav.open~.overlay {
 .main{
     display: grid;
     grid-template-columns: repeat(4, 20%) 17%;
-    grid-template-rows: repeat(54, 50px);
+    grid-template-rows: repeat(48, 50px);
     padding-right: 10px;
     gap: 15px;
     margin: 10px;
@@ -207,48 +221,6 @@ nav.open~.overlay {
 .icon{
     width: 20px;
     height: 20px;
-}
-.Profile{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-.Home{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-.Favorites{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-.Settings{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-.Login{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-.Logout{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-.Signup{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
 }
 ul {
     padding-left: 0 !important;
@@ -271,6 +243,8 @@ ul {
     border: 1px solid black;
     border-radius: 20px;
     margin-right: 10px;
+    z-index: 100;
+    position: relative;
 }
 .ticket-link{
     text-align: center;
@@ -327,6 +301,8 @@ ul {
     border: 1px solid black;
     border-radius: 20px;
     margin-right: 10px;
+    z-index: 100;
+    position: relative;
 }
 .menu-link{
     text-align: center;
@@ -390,33 +366,37 @@ ul {
     grid-column: 1 / 2;
     grid-row: 9 / 14;
     background-image: url('./Images/Moviesbg/avatar3.jpeg');
+    background-size: 100% 100%;
 }
 .movie2{
     grid-column: 2 / 3;
     grid-row: 9 / 14;
     background-image: url('./Images/Moviesbg/snowwhite.jpg');
-    background-size: 250px 335px;
+    background-size: 100% 100%;
 }
 .movie3{
     grid-column: 3 / 4;
     grid-row: 9 / 14;
     background-image: url('./Images/Moviesbg/doomsday.jpg');
+    background-size: 100% 100%;
 }
 .movie4{
     grid-column: 1 / 2;
     grid-row: 14 / 19;
     background-image: url('./Images/Moviesbg/missionimpossible.jpg');
-    background-size: 245px 335px;
+    background-size: 100% 100%;
 }
 .movie5{
     grid-column: 2 / 3;
     grid-row: 14 / 19;
     background-image: url('./Images/Moviesbg/mortalcombat.jpg');
+    background-size: 100% 100%;
 }
 .movie6{
     grid-column: 3 / 4;
     grid-row: 14 / 19;
     background-image: url('./Images/Moviesbg/frozen3.jpg');
+    background-size: 100% 100%;
 }
 .seats{
     grid-column: 4 / 6;
@@ -572,17 +552,30 @@ ul {
     transition: all 1s ease-in-out;
     display: flex;
     flex-direction: column;
+    width: 99%;
 }
 .action , .thriller, .horror, .comedy, .dramaromance, .sci-fi, .animation{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 10px;
 }
 .movies-div{
     border: 1px solid black;
     height: 256px;
     width: 200px;
     border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.movies-div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
 }
 .movie-genre{
     color: rgb(0, 0, 0);
@@ -598,28 +591,25 @@ ul {
     grid-column: 1 / 6;
     grid-row: 24 / 29;
 }
-.horror-div{
+.comedy-div{
     grid-column: 1 / 6;
     grid-row: 29 / 34;
 }
-.comedy-div{
+.dramaromance-div{
     grid-column: 1 / 6;
     grid-row: 34 / 39;
 }
-.dramaromance-div{
+.sci-fi-div{
     grid-column: 1 / 6;
     grid-row: 39 / 44;
 }
-.sci-fi-div{
+.animation-div{
     grid-column: 1 / 6;
     grid-row: 44 / 49;
 }
-.animation-div{
-    grid-column: 1 / 6;
-    grid-row: 49 / 54;
-}
 .about{
     height: 200px;
+    background-color: #231f20;
 }
 .movie_notes p{
     margin: 2px;
