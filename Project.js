@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const seeMoreLinks = document.querySelectorAll('.see-more');
     const movieNotes = document.querySelector('.movie_notes');
     const nextButton = document.getElementById('nextButton');
@@ -80,10 +80,10 @@ document.addEventListener('DOMContentLoaded', function() {
         movieNotes.querySelector('.movie_details .description .short-description').innerHTML = `${movie.shortDescription} <a href="#" class="see-more">See More</a>`;
         movieNotes.querySelector('.movie_details .description .full-description').innerHTML = `${movie.fullDescription} <a href="#" class="see-more">See Less</a>`;
         movieNotes.querySelector('.pg').textContent = movie.PG;
-    
+
         const seeMoreLinks = movieNotes.querySelectorAll('.see-more');
         seeMoreLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
+            link.addEventListener('click', function (event) {
                 event.preventDefault();
                 const near = this.closest('.movie_notes');
                 const fullDescription = near.querySelector('.full-description');
@@ -117,21 +117,21 @@ document.addEventListener('DOMContentLoaded', function() {
         updateMovieNotes(currentIndex);
     }
 
-    nextButton.addEventListener('click', function() {
+    nextButton.addEventListener('click', function () {
         next();
     });
 
-    prevButton.addEventListener('click', function() {
+    prevButton.addEventListener('click', function () {
         prev();
-    });    
+    });
 
     newReleases.style.backgroundImage = images[currentIndex];
     updateMovieNotes(currentIndex);
-    
+
 });
 const navBar = document.querySelector("nav"),
-menuBtns = document.querySelectorAll(".menu-icon"),
-overlay = document.querySelector(".overlay");
+    menuBtns = document.querySelectorAll(".menu-icon"),
+    overlay = document.querySelector(".overlay");
 
 menuBtns.forEach((menuBtn) => {
     menuBtn.addEventListener("click", () => {
@@ -158,7 +158,7 @@ function changeImage() {
 }
 changeImage();
 
-function changebuttoncolor(){
+function changebuttoncolor() {
     const buttons = document.querySelectorAll('.book-timing-button');
 
     buttons.forEach((button) => {
@@ -177,26 +177,59 @@ changebuttoncolor();
 
 // ...existing code...
 
-async function searchMovie(searchTerm) {
-    const url = `https://moviedatabase8.p.rapidapi.com/Search/${encodeURIComponent(searchTerm)}`;
+document.querySelectorAll(".movies-div").forEach((div) => {
+    div.addEventListener("click", function () {
+        window.location.href = "/movie.html?name=" + div.querySelector("img").alt;
+    });
+});
+
+function fetchSearch(searchTerm) {
     const options = {
-        method: 'GET',
+        method: "GET",
         headers: {
-            'x-rapidapi-key': 'e7eea90668msha9823711a7f4cd1p110026jsn7d72f7708040',
-            'x-rapidapi-host': 'moviedatabase8.p.rapidapi.com'
-        }
+            accept: "application/json",
+            Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYWQ2MGIzZTg5MDIwYTNhODVkYTQxYjNjNTQ3N2QzZCIsIm5iZiI6MTczNTMzNTM0NC43MjEsInN1YiI6IjY3NmYxZGIwMWVmYzI0MzRjZjEyYzExOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PVHfXcbGEfHikdEuL1fiUJ6bjBE7l-ZdMPjrQUGAy7o",
+        },
     };
 
-    try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        console.log('Search Results:', result);
-        return result;
-    } catch (error) {
-        console.error('Error searching movie:', error);
-        return null;
-    }
+    fetch(
+        "https://api.themoviedb.org/3/search/movie?query=" + encodeURIComponent(searchTerm) + "&include_adult=false&language=en-US&page=1",
+        options
+    ).then((res) => {
+        return res.json();
+    }).then((res) => {
+        if (res.results.length === 0) {
+            document.querySelector(".ali-overlay").innerHTML = "<h2>No results found</h2>";
+            document.querySelector(".ali-overlay").style.display = "grid";
+            return;
+        }
+
+        document.querySelector(".ali-overlay").innerHTML = "";
+
+        res.results.forEach((movie) => {
+            document.querySelector(".ali-overlay").innerHTML += `
+                <div class="movie-card">
+                    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+                    <div class="movie-info">
+                        <h3>${movie.title}</h3>
+                        <p>${movie.overview}</p>
+                    </div>
+                </div>
+            `;
+        });
+
+        document.querySelector(".ali-overlay").style.display = "grid";
+        document.querySelector(".ali-overlay").style.gridTemplateColumns = "repeat(auto, 1fr)";
+        document.querySelector(".ali-overlay").style.gridTemplateRows = "repeat(20 , 200px)";
+
+    }).catch((err) => console.error(err));
 }
 
-// Example usage:
-searchMovie('Inception'); // Search for "Inception"
+document.getElementById("movie-search").addEventListener("input", function () {
+    fetchSearch(this.value);
+});
+
+document.getElementById("movie-search").addEventListener("blur", function () {
+    document.querySelector(".ali-overlay").style.display = "none";
+});

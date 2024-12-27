@@ -11,12 +11,6 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('./Images/my_bg.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    filter: blur(10px);
     z-index: -1;
 }
 a{
@@ -211,12 +205,44 @@ nav.open~.overlay {
     gap: 30px;
 }
 .main{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(4, 20%) 17%;
     grid-template-rows: repeat(48, 50px);
     padding-right: 10px;
     gap: 15px;
     margin: 10px;
+}
+.ali-overlay {
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 10000000000;
+}
+.movie-card{
+    display: flex;
+    flex-direction: row;
+    grid-row: auto;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+.movie-card img{
+    height: 200px;
+    width: 150px;
+}
+.movie-info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .icon{
     width: 20px;
