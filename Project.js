@@ -68,15 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
             fullDescription: 'Description: Deadpool is offered a place in the Marvel Cinematic Universe by the Time Variance Authority, but instead recruits a variant of Wolverine to save his universe from extinction.',
             PG: 'PG-13'
         },
-        {
-            url: 'url("./Images/Moviesbg/expendables.jpg")',
-            title: 'The Expendables 4',
-            duration: '1h55m',
-            genres: 'Action, War, Thriller',
-            shortDescription: 'Description: Armed with every weapon they can get their hands',
-            fullDescription: 'Description: Armed with every weapon they can get their hands on, the Expendables are the world\'s last line of defense and the team that gets called when all other options are off the table.',
-            PG: 'PG-13'
-        }
     ];
     let currentIndex = 0;
 
@@ -142,12 +133,44 @@ const navBar = document.querySelector("nav"),
 menuBtns = document.querySelectorAll(".menu-icon"),
 overlay = document.querySelector(".overlay");
 
-        menuBtns.forEach((menuBtn) => {
-            menuBtn.addEventListener("click", () => {
-                navBar.classList.toggle("open");
-            });
-        });
+menuBtns.forEach((menuBtn) => {
+    menuBtn.addEventListener("click", () => {
+        navBar.classList.toggle("open");
+    });
+});
 
-        overlay.addEventListener("click", () => {
-            navBar.classList.remove("open");
+overlay.addEventListener("click", () => {
+    navBar.classList.remove("open");
+});
+
+function changeImage() {
+    let seats = document.querySelectorAll('.seat');
+
+    seats.forEach((seat) => {
+        seat.addEventListener('click', () => {
+            if (seat.src.includes('seat.png')) {
+                seat.src = './Images/Icons/selected.png';
+            } else if (seat.src.includes('selected.png')) {
+                seat.src = './Images/Icons/seat.png';
+            }
         });
+    });
+}
+changeImage();
+
+function changebuttoncolor(){
+    const buttons = document.querySelectorAll('.book-timing-button');
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            buttons.forEach((btn) => {
+                btn.style.backgroundColor = '';
+                btn.style.color = '';
+            });
+
+            button.style.backgroundColor = '#002466';
+            button.style.color = 'rgb(255, 255, 255)';
+        });
+    });
+}
+changebuttoncolor();

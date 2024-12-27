@@ -199,7 +199,7 @@ nav.open~.overlay {
 .main{
     display: grid;
     grid-template-columns: repeat(4, 20%) 17%;
-    grid-template-rows: repeat(44, 50px);
+    grid-template-rows: repeat(54, 50px);
     padding-right: 10px;
     gap: 15px;
     margin: 10px;
@@ -378,7 +378,6 @@ ul {
     height: 50px;
 }
 .movie1, .movie2, .movie3, .movie4, .movie5, .movie6{
-    border: 1px solid black;
     border-radius: 20px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -425,39 +424,200 @@ ul {
     border: 1px solid black;
     border-radius: 20px;
     margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
 }
-/*.popular{
-    grid-column: 1 / 4;
-    grid-row: 6 / 8;
+.seats-content{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
-.action{
-    grid-column: 1 / 4;
-    grid-row: 8 / 10;
+.seat-link{
+    text-align: center;
 }
-.thriller{
-    grid-column: 1 / 4;
-    grid-row: 10 / 12;
+.seat-link a{
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
 }
-.horror{
-    grid-column: 1 / 4;
-    grid-row: 12 / 14;
+.seat-link p{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-.comedy{
-    grid-column: 1 / 4;
-    grid-row: 14 / 16;
+.screen-image{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
-.dramaromance{
-    grid-column: 1 / 4;
-    grid-row: 16 / 18;
+.seat-groups{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
 }
-.sci-fi{
-    grid-column: 1 / 4;
-    grid-row: 18 / 20;
+.seat-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
 }
-.animation{
-    grid-column: 1 / 4;
-    grid-row: 20 / 22;
-}*/
+.seat-row1{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+.seat{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+.legend{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.legend-title{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+.legend-seat{
+    width: 20px;
+    height: 20px;
+}
+.legend p{
+    margin: 0;
+}
+.book-timing-head{
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+}
+.book-timing-head p{
+    margin-bottom: 10px;
+}
+.book-timing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.book-timing-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+.book-timing button{
+    border: none;
+    background-color: #cccccc;
+    color: white;
+    border-radius: 20px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.book-timing-content{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    border-top: 1px solid #ccc;
+}
+.book-timing-content-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+.book-timing-content-time{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.book-timing-content p{
+    margin: 0;
+}
+.book-timing-content-details-button{
+    display: flex;
+    align-items: center;
+}
+.book-timing-content-details-button button{
+    border: none;
+    background-color: #cccccc;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.book-timing-content-details-image{
+    display: flex;
+    justify-content: center;
+}
+.book-timing-content-details-image img{
+    width: 100px;
+    height: 115px;
+    object-fit: cover;
+}
+.action-div, .thriller-div, .horror-div, .comedy-div, .dramaromance-div, .sci-fi-div, .animation-div{
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+.action , .thriller, .horror, .comedy, .dramaromance, .sci-fi, .animation{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.movies-div{
+    border: 1px solid black;
+    height: 256px;
+    width: 200px;
+    border-radius: 20px;
+}
+.movie-genre{
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: 700;
+    padding-left: 20px;
+}
+.action-div{
+    grid-column: 1 / 6;
+    grid-row: 19 / 24;
+}
+.thriller-div{
+    grid-column: 1 / 6;
+    grid-row: 24 / 29;
+}
+.horror-div{
+    grid-column: 1 / 6;
+    grid-row: 29 / 34;
+}
+.comedy-div{
+    grid-column: 1 / 6;
+    grid-row: 34 / 39;
+}
+.dramaromance-div{
+    grid-column: 1 / 6;
+    grid-row: 39 / 44;
+}
+.sci-fi-div{
+    grid-column: 1 / 6;
+    grid-row: 44 / 49;
+}
+.animation-div{
+    grid-column: 1 / 6;
+    grid-row: 49 / 54;
+}
 .about{
     height: 200px;
 }
