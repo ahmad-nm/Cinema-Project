@@ -233,3 +233,10 @@ document.getElementById("movie-search").addEventListener("input", function () {
 document.getElementById("movie-search").addEventListener("blur", function () {
     document.querySelector(".ali-overlay").style.display = "none";
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+        document.querySelector(".preloader").style.opacity = "0";
+        document.querySelector(".preloader").style.pointerEvents = "none";
+    }, 2000);
+});
