@@ -3,41 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Movie/movie.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <title>Movie</title>
   </head>
-  <body>
+  <body id="body">
+    <nav>
+      <div class="logo">
+        <div>
+            <i class="bx bx-menu menu-icon"></i>
+            <span class="logo-name">Cinemacity</span>
+        </div>
 
-    
+        <div class="searchbar">
+          <input type="text" placeholder="Search for movies" id="movie-search">
+        </div>
+        <div class="navigational-links">
+          <a href="#">Home</a>
+          <a href="#">Movies</a>
+          <a href="#">Find</a>
+          <a href="#">News</a>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="logo logo2">
+            <i class="bx bx-menu menu-icon"></i>
+            <span class="logo-name">Cinemacity</span>
+        </div>
 
-    <script>
-      function fetchName() {
-        let queryString = window.location.search;
+        <div class="sidebar-content">
+            <ul class="lists">
+                <li class="list">
+                    <a href="#" class="nav-link">
+                        <i class='bx bxs-user-circle icon'></i>
+                        <span class="link">Profile</span>
+                    </a>
+                </li>
+                
+                <li class="list">
+                    <a href="#" class="nav-link">
+                        <i class='bx bxs-home icon'></i>
+                        <span class="link">Home</span>
+                    </a>
+                </li>
 
-        let urlParams = new URLSearchParams(queryString);
+                <li class="list">
+                    <a href="#" class="nav-link">
+                        <i class='bx bxs-heart icon' ></i>
+                        <span class="link">Favorites</span>
+                    </a>
+                </li>
 
-        let name = urlParams.get("name");
+                <li class="list">
+                    <a href="#" class="nav-link">
+                        <i class='bx bxs-cog icon' ></i>
+                        <span class="link">Settings</span>
+                    </a>
+                </li>
+            </ul>
 
-        return name;
-      }
+            <div class="bottom-cotent">
+                <li class="list">
+                    <a class="nav-link" id="logout">
+                        <i class="bx bx-log-out icon"></i>
+                        <span class="link">Logout</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+      </div>
+    </nav>
+    <div class="movie-container">
+      <div class="movie-poster">
+        <img id="poster" src="" alt="poster" />
+      </div>
+      <div class="movie-content">
+        <h1 id="h1movie"></h1>
+        <div class="duration-language-rating">
+          <p>1h50m &nbsp; | &nbsp;</p>
+          <p id="language"></p>
+          <div class="movie-rating">
+            <img src="./Images/Icons/star.png" alt="star" class="icon"/>
+            <p id="rating"></p>
+          </div>
+        </div>
+        <p id="release-date"></p>
+        <p id="genre"></p>
+        <div class="movie-buttons">
+          <button onclick="changefavorite()" class="btn" id="add-favorite"><img src="./Images/Icons/heart.png" id="favorite-icon" alt="favorite" class="button-icon"></button>
+          <button onclick="trailer()" class="btn" id="watch-trailer"><img src="./Images/Icons/film.png" id="trailer-icon" alt="watch-trailer" class="button-icon"></button>
+          <button onclick="changechecked()" class="btn" id="mark-watched"><img src="./Images/Icons/checked.png" id="watched-icon" alt="mark-watched" class="button-icon"></button> 
+        </div>
+        <div class="movie-overview">
+          <p id="overview"></p>
+          <p id="adult"></p>
+        </div>
+      </div>
+    </div>
 
-      const options = {
-        method: "GET",
-        headers: {
-          accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYWQ2MGIzZTg5MDIwYTNhODVkYTQxYjNjNTQ3N2QzZCIsIm5iZiI6MTczNTMzNTM0NC43MjEsInN1YiI6IjY3NmYxZGIwMWVmYzI0MzRjZjEyYzExOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PVHfXcbGEfHikdEuL1fiUJ6bjBE7l-ZdMPjrQUGAy7o",
-        },
-      };
-
-      fetch(
-        "https://api.themoviedb.org/3/search/movie?query=" + encodeURIComponent(fetchName()) + "&include_adult=false&language=en-US&page=1",
-        options
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          console.log(res.results[0]);
-        })
-        .catch((err) => console.error(err));
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./Movie/movie.js"></script>
   </body>
 </html>

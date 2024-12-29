@@ -75,6 +75,7 @@ nav .sidebar {
     box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
     display: overlay;
+    z-index: 10000;
 }
 nav.open .sidebar {
     left: 0;
@@ -226,10 +227,13 @@ nav.open~.overlay {
     gap: 15px;
     margin: 10px;
 }
-.ali-overlay {
-    width: 100%;
+.search-result-overlay {
+    width: 98vw;
+    min-height: 100vh;
+    margin: 0;
     display: none;
     position: absolute;
+    flex-direction: column;
     top: 0;
     left: 0;
     right: 0;
@@ -240,17 +244,18 @@ nav.open~.overlay {
 .movie-card{
     display: flex;
     flex-direction: row;
-    grid-row: auto;
     gap: 10px;
+    margin-bottom: 2px;
     padding: 10px;
-    border-radius: 20px;
     background-color: white;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
 }
 .movie-card img{
     height: 200px;
     width: 150px;
+    border-radius: 20px;
 }
 .movie-info{
     display: flex;
@@ -422,7 +427,7 @@ ul {
 .movie4{
     grid-column: 1 / 2;
     grid-row: 14 / 19;
-    background-image: url('./Images/Moviesbg/missionimpossible.jpg');
+    background-image: url('./Images/Moviesbg/mission-impossible8.jpg');
     background-size: 100% 100%;
 }
 .movie5{
@@ -646,10 +651,6 @@ ul {
     grid-column: 1 / 6;
     grid-row: 44 / 49;
 }
-.about{
-    height: 200px;
-    background-color: #231f20;
-}
 .movie_notes p{
     margin: 2px;
 }
@@ -729,8 +730,88 @@ ul {
     height: 40px;
     width: 40px;
 }
-
-
+.about{
+    height: 480px;
+    background-color: hsl(0, 0%, 10%);
+}
+.about p{
+    color: white;
+}
+.about a{
+    color: white;
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+.about-us{
+    display: flex;
+    flex-direction: column;
+}
+.about-titles{
+    font-weight: 700;
+    font-size: 18px;
+}
+.instagram-gradient i {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 22px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+.social-media-links i:hover {
+    transform: scale(1.2);
+}
+.social-media-links i {
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-right: 2px;
+}
+.facebook-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+}
+.social-media-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.about-row1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 40px;
+}
+.about-hr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-row2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+.about-terms{
+    display: flex;
+    flex-direction: column;
+}
+.about-terms a{
+    margin-bottom: 1rem;
+}
 /*.notification-button {
     position: relative;
     background-color: #3d3d3d;

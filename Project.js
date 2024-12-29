@@ -179,7 +179,7 @@ changebuttoncolor();
 
 document.querySelectorAll(".movies-div").forEach((div) => {
     div.addEventListener("click", function () {
-        window.location.href = "/movie.html?name=" + div.querySelector("img").alt;
+        window.location.href = "./movie.html?name=" + div.querySelector("img").alt;
     });
 });
 
@@ -200,15 +200,15 @@ function fetchSearch(searchTerm) {
         return res.json();
     }).then((res) => {
         if (res.results.length === 0) {
-            document.querySelector(".ali-overlay").innerHTML = "<h2>No results found</h2>";
-            document.querySelector(".ali-overlay").style.display = "grid";
+            document.querySelector(".search-result-overlay").innerHTML = "<h2>No results found</h2>";
+            document.querySelector(".search-result-overlay").style.display = "grid";
             return;
         }
 
-        document.querySelector(".ali-overlay").innerHTML = "";
+        document.querySelector(".search-result-overlay").innerHTML = "";
 
         res.results.forEach((movie) => {
-            document.querySelector(".ali-overlay").innerHTML += `
+            document.querySelector(".search-result-overlay").innerHTML += `
                 <div class="movie-card">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-info">
@@ -219,9 +219,7 @@ function fetchSearch(searchTerm) {
             `;
         });
 
-        document.querySelector(".ali-overlay").style.display = "grid";
-        document.querySelector(".ali-overlay").style.gridTemplateColumns = "repeat(auto, 1fr)";
-        document.querySelector(".ali-overlay").style.gridTemplateRows = "repeat(20 , 200px)";
+        document.querySelector(".search-result-overlay").style.display = "flex";
 
     }).catch((err) => console.error(err));
 }
@@ -231,7 +229,7 @@ document.getElementById("movie-search").addEventListener("input", function () {
 });
 
 document.getElementById("movie-search").addEventListener("blur", function () {
-    document.querySelector(".ali-overlay").style.display = "none";
+    document.querySelector(".search-result-overlay").style.display = "none";
 });
 
 document.addEventListener("DOMContentLoaded", function() {
