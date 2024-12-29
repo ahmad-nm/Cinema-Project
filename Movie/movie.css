@@ -19,6 +19,11 @@ body{
     height: 20px;
     width: 20px;
 }
+.logo-icon{
+    height: 40px;
+    width: 40px;
+    border-radius: 40%;
+}
 .navigation_bar{
     height: 70px;
     width: 100%;
@@ -52,112 +57,9 @@ nav .logo2 {
     cursor: pointer;
 }
 .logo .logo-name {
-    color: #333;
+    color:  #ccc;
     font-size: 22px;
     font-weight: 500;
-}
-nav .sidebar {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100%;
-    width: 260px;
-    padding: 20px 0;
-    background-color: #fff;
-    box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
-    display: overlay;
-    z-index: 10000;
-}
-nav.open .sidebar {
-    left: 0;
-}
-.sidebar .sidebar-content {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 30px 16px;
-}
-.sidebar-content .list {
-    list-style: none;
-}
-.list .nav-link {
-    display: flex;
-    align-items: center;
-    margin: 8px 0;
-    padding: 14px 12px;
-    border-radius: 8px;
-    text-decoration: none;
-}
-.lists .nav-link:hover {
-    background-color: #002366;
-}
-.nav-link .icon {
-    margin-right: 14px;
-    font-size: 20px;
-    color: #707070;
-}
-.nav-link .link {
-    font-size: 16px;
-    color: #707070;
-    font-weight: 400;
-}
-.lists .nav-link:hover .icon,
-.lists .nav-link:hover .link {
-    color: #fff;
-}
-.overlay {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 1000vh;
-    width: 200%;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.4s ease;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 100000;
-}
-nav.open~.overlay {
-    opacity: 1;
-    left: 260px;
-    pointer-events: auto;
-}
-#logout {
-    cursor: pointer;
-}
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #E5F3FE;
-}
-::-webkit-scrollbar-thumb {
-    background: #002366;
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #004080;
-}
-.Login-button{
-    border: none;
-    background-color: #2B5263;
-    color: white;
-    border-radius: 20px;
-    padding: 5px 20px;
-    height: 40px;
-    cursor: pointer;
-}
-.Signup-button{
-    border: none;
-    background-color: #7196A6;
-    color: white;
-    border-radius: 20px;
-    padding: 5px 20px;
-    height: 40px;
-    cursor: pointer;
 }
 .searchbar{
     display: flex;
@@ -167,37 +69,48 @@ nav.open~.overlay {
     gap: 10px;
     width: 40%;
 }
-.preloader {
-    position: fixed;
-    top: 0;
+.search-result-overlay {
+    position: absolute;
+    top: 70px; /* Height of navbar */
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    padding: 20px;
+    display: none;
+}
+.movie-card {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999999999999999999;
-    transition: all 1s ease;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+.movie-card img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
 }
 .searchbar input{
-    border: inset white 1px;
+    border: 1px outset white;
     background-color: transparent;
     border-radius: 20px;
     width: 300px;
     outline: none;
     padding: 5px 40px;
-    /*border: 1px solid #ccc; */
-    background-image: url('./Images/Icons/search.png');
+    color: #ffffff;
+    background-image: url('.././Images/Icons/search.png');
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: 5% 50%;
 }
 .navigational-links a{
-    color: black;
+    color: #ffffff;
     font-size: 20px;
     text-decoration: none;
     padding-right: 27px;
+    font-weight: 700;
 }
 .navigational-links a:hover{
     text-decoration: underline;
@@ -210,6 +123,30 @@ nav.open~.overlay {
     flex-direction: row;
     gap: 30px;
 }
+
+.searchbar input::placeholder {
+    color: #ffffff;
+    opacity: 0.7;
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+}
+
+/* Vendor prefixes for cross-browser support */
+.searchbar input::-webkit-input-placeholder {
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+.searchbar input:-ms-input-placeholder {
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+.searchbar input::-ms-input-placeholder {
+    color: #ffffff;
+    opacity: 0.7;
+}
+
 .movie-container{
     display: flex;
     flex-direction: row;
