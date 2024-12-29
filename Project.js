@@ -130,8 +130,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 const navBar = document.querySelector("nav"),
-    menuBtns = document.querySelectorAll(".menu-icon"),
-    overlay = document.querySelector(".overlay");
+menuBtns = document.querySelectorAll(".menu-icon"),
+overlay = document.querySelector(".overlay");
 
 menuBtns.forEach((menuBtn) => {
     menuBtn.addEventListener("click", () => {
