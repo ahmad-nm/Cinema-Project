@@ -24,10 +24,10 @@
                 </div>
 
                 <div class="navigational-links">
-                    <button onclick="openPopcorn()" id="menu-popcorn">Popcorn</button>
-                    <button onclick="openColdDrinks()" id="menu-cold-drinks">Cold Drinks</button>
-                    <button onclick="openHotDrinks()" id="menu-hot-drinks">Hot Drinks</button>
-                    <button onclick="openSnacks()" id="menu-snacks">Snacks</button>
+                    <button id="menu-popcorn">Popcorn</button>
+                    <button id="menu-cold-drinks">Cold Drinks</button>
+                    <button id="menu-hot-drinks">Hot Drinks</button>
+                    <button id="menu-snacks">Snacks</button>
                 </div>
             </div>
             <div class="sidebar">
@@ -83,43 +83,630 @@
     </div>
 
     <div class="menu-container">
-        <div class="Menu-title">
-            <h1 id="menu-title">Popcorn</h1>
-        </div>
-        <table>
-            <tr>
+        <div id="Popcorn-Menu">
+            <table>
                 <thead>
-                    <th>Item</th>
-                    <th>Size</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Order</th>
+                    <th class="head-item">Item</th>
+                    <th class="head-size">Size</th>
+                    <th class="head-price">Price</th>
+                    <th class="head-quantity">Quantity</th>
                 </thead>
                 <tbody>
-                    <td>
-                        <tr>
-                            <td><p id="item-name">Salted</p></td>
-                            <td>
-                                <button class="btn" id="small-btn"><i class="fa-solid fa-s" style="color: #FFD43B;"></i></button>
-                                <button class="btn" id="medium-btn"><i class="fa-solid fa-m" style="color: #63E6BE;"></i></button>
-                                <button class="btn" id="large-btn"><i class="fa-solid fa-l" style="color: #d71d1d;"></i></button>
-                            </td>
-                            <td><p id="item-price">5$</p></td>
-                            <td class="quantity-td">
-                                <div class="quantity">
-                                    <button class="quantity-button-left" id="substract-quantity-btn">-</button>
-                                    <p id="quantity-value">1</p>
-                                    <button class="quantity-button-right" id="add-quantity-btn">+</button>
-                                </div>
-                            </td>
-                            <td>
-                                <button onclick="order('small')" class="orderbtn">Order</button>
-                            </td>
-                        </tr>
-                    </td>
-                </tbody>
-            </tr>
-        </table>
+                    <tr>
+                        <td><p id="item-name-1">Salted</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-1"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-1"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-1"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-1">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-1">-</button>
+                                <p id="quantity-value-1">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-1">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-2">Caramel</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-2"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-2"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-2"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-2">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-2">-</button>
+                                <p id="quantity-value-2">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-2">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-3">Cheese</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-3"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-3"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-3"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-3">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-3">-</button>
+                                <p id="quantity-value-3">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-3">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-4">Cheetos</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-4"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-4"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-4"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-4"></p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-4">-</button>
+                                <p id="quantity-value-4">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-4">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-5">Hot-Cheetos</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-5"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-5"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-5"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-5">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-5">-</button>
+                                <p id="quantity-value-5">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-5">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-6">Zaatar</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-6"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-6"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-6"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-6">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-6">-</button>
+                                <p id="quantity-value-6">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-6">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-7">Salted-Zaatar</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-7"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-7"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-7"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-7">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-7">-</button>
+                                <p id="quantity-value-7">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-7">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-8">Chilly</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-8"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-8"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-8"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-8">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-8">-</button>
+                                <p id="quantity-value-8">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-8">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-9">Butter</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-9"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-9"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-9"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-9">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-9">-</button>
+                                <p id="quantity-value-9">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-9">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>   
+            </table>
+        </div>
+        <div id="Cold-drinks-menu">
+            <table>
+                <thead>
+                    <th class="head-item">Item</th>
+                    <th class="head-size">Size</th>
+                    <th class="head-price">Price</th>
+                    <th class="head-quantity">Quantity</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><p id="item-name-10">Orange Juice</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-10"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-10"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-10"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-10">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-10">-</button>
+                                <p id="quantity-value-10">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-10">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-11">Mango Juice</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-11"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-11"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-11"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-2">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-11">-</button>
+                                <p id="quantity-value-11">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-11">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-12">Cheese</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-12"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-12"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-3"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-12">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-12">-</button>
+                                <p id="quantity-value-12">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-12">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-13">Cheetos</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-13"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-13"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-13"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-13"></p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-13">-</button>
+                                <p id="quantity-value-13">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-13">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-14">Hot-Cheetos</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-14"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-14"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-14"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-14">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-14">-</button>
+                                <p id="quantity-value-14">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-14">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-15">Zaatar</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-15"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-15"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-15"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-15">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-15">-</button>
+                                <p id="quantity-value-15">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-15">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-16">Salted-Zaatar</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-16"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-16"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-16"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-16">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-16">-</button>
+                                <p id="quantity-value-16">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-16">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-17">Chilly</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-17"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-17"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-17"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-17">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-17">-</button>
+                                <p id="quantity-value-17">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-17">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-18">Butter</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-18"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-18"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-18"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-18">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-18">-</button>
+                                <p id="quantity-value-18">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-18">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>   
+            </table>
+        </div>
+        <div id="Hot-drinks-menu">
+            <table>
+                <thead>
+                    <th class="head-item">Item</th>
+                    <th class="head-size">Size</th>
+                    <th class="head-price">Price</th>
+                    <th class="head-quantity">Quantity</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><p id="item-name-19">Salted</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-19"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-19"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-19"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-19">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-19">-</button>
+                                <p id="quantity-value-19">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-19">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-20">Caramel</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-20"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-20"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-20"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-20">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-20">-</button>
+                                <p id="quantity-value-20">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-20">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-21">Cheese</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-21"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-21"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-21"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-21">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-21">-</button>
+                                <p id="quantity-value-21">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-21">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-22">Cheetos</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-22"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-22"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-22"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-22"></p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-22">-</button>
+                                <p id="quantity-value-22">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-22">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-23">Hot-Cheetos</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-23"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-23"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-23"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-23">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-23">-</button>
+                                <p id="quantity-value-23">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-23">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-24">Zaatar</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-24"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-24"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-24"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-24">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-24">-</button>
+                                <p id="quantity-value-24">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-24">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-25">Salted-Zaatar</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-25"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-7"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-25"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-25">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-25">-</button>
+                                <p id="quantity-value-25">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-25">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-26">Chilly</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-26"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-26"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-26"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-26">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-26">-</button>
+                                <p id="quantity-value-26">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-26">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-27">Butter</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-27"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-27"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-27"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-9">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-27">-</button>
+                                <p id="quantity-value-27">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-27">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>   
+            </table>
+        </div>
+        <div id="Snacks-menu">
+            <table>
+                <thead>
+                    <th class="head-item">Item</th>
+                    <th class="head-size">Size</th>
+                    <th class="head-price">Price</th>
+                    <th class="head-quantity">Quantity</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><p id="item-name-28">Salted</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-28"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-28"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-28"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-28">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-28">-</button>
+                                <p id="quantity-value-28">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-28">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-29">Caramel</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-29"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-29"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-29"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-29">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-29">-</button>
+                                <p id="quantity-value-29">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-29">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-30">Cheese</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-30"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-30"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-30"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-30">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-30">-</button>
+                                <p id="quantity-value-30">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-30">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-31">Cheetos</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-31"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-31"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-31"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-31"></p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-31">-</button>
+                                <p id="quantity-value-31">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-31">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-32">Hot-Cheetos</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-32"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-32"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-32"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-32">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-32">-</button>
+                                <p id="quantity-value-32">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-32">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-33">Zaatar</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-33"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-33"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-33"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-33">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-33">-</button>
+                                <p id="quantity-value-33">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-33">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-34">Salted-Zaatar</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-34"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-34"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-34"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-34">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-34">-</button>
+                                <p id="quantity-value-34">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-34">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-35">Chilly</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-35"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-35"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-35"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-35">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-35">-</button>
+                                <p id="quantity-value-35">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-35">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-36">Butter</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-36"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-36"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-36"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-36">5$</p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-36">-</button>
+                                <p id="quantity-value-36">1</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-36">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>   
+            </table>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

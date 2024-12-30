@@ -12,74 +12,140 @@ overlay.addEventListener("click", () => {
     navBar.classList.remove("open");
 });
 
-document.getElementById("small-btn").addEventListener("click", () => {
-    let size = document.getElementById("item-price");
-    size.innerHTML = "$5.00";
-});
-document.getElementById("medium-btn").addEventListener("click", () => {
-    let size = document.getElementById("item-price");
-    size.innerHTML = "$7.50";
-});
-document.getElementById("large-btn").addEventListener("click", () => {
-    let size = document.getElementById("item-price");
-    size.innerHTML = "$10.0";
-});
-
-let initialPrice = 0;
-const sizes = {
-    'small': 5.00,
-    'medium': 7.50,
-    'large': 10.0
+const flavorPrices = {
+    1: { name: 'Salted', small: 5.00, medium: 7.50, large: 10.00 },
+    2: { name: 'Caramel', small: 6.00, medium: 8.50, large: 11.00 },
+    3: { name: 'Cheese', small: 6.50, medium: 9.00, large: 11.50 },
+    4: { name: 'Cheetos', small: 5.50, medium: 8.00, large: 10.50 },
+    5: { name: 'Salt-Free', small: 5.00, medium: 7.50, large: 10.00 },
+    6: { name: 'Zaatar', small: 7.00, medium: 9.50, large: 12.00 },
+    7: { name: 'Salted-Zaatar', small: 5.50, medium: 8.00, large: 10.50 },
+    8: { name: 'Chilly', small: 8.00, medium: 10.50, large: 13.00 },
+    9: { name: 'Butter', small: 5.00, medium: 7.50, large: 10.00 },
+    10:{ name: 'Orange-Juice', small: 3.00, medium: 4.50, large: 6.00 },
 };
 
-function updateSize(size) {
-    initialPrice = sizes[size];
-    document.getElementById("selected-size").innerHTML = size.charAt(0).toUpperCase() + size.slice(1);
-    price();
+let itemPrices = {};
+
+function updateSize(size, itemId) {
+    itemPrices[itemId] = flavorPrices[itemId][size];
+
+    price(itemId);
 }
 
-function initializePrice() {
-    initialPrice = sizes['small'];
-    let priceElement = document.getElementById("item-price");
-    price();
-}
-
-function price() {
-    let quantity = parseInt(document.getElementById("quantity-value").innerHTML);
-    let priceElement = document.getElementById("item-price");
-    let totalPrice = (quantity * initialPrice).toFixed(1);
+function price(itemId) {
+    let quantity = parseInt(document.getElementById(`quantity-value-${itemId}`).innerHTML);
+    let priceElement = document.getElementById(`item-price-${itemId}`);
+    let totalPrice = (quantity * itemPrices[itemId]).toFixed(2);
     priceElement.innerHTML = '$' + totalPrice;
 }
 
-function updateSize(size) {
-    initialPrice = sizes[size];
+function initializeItem(itemId) {
+    // Initialize price for this item
+    itemPrices[itemId] = flavorPrices[itemId].small;
     
-    document.getElementById("selected-size").innerHTML = size.charAt(0).toUpperCase() + size.slice(1);
-    
-    document.querySelectorAll('.size-btn').forEach(btn => {
-        btn.classList.remove('active');
+    // Add size button listeners
+    document.getElementById(`small-btn-${itemId}`).addEventListener("click", () => updateSize('small', itemId));
+    document.getElementById(`medium-btn-${itemId}`).addEventListener("click", () => updateSize('medium', itemId));
+    document.getElementById(`large-btn-${itemId}`).addEventListener("click", () => updateSize('large', itemId));
+
+    // Add quantity button listeners
+    document.getElementById(`substract-quantity-btn-${itemId}`).addEventListener("click", () => {
+        let quantity = parseInt(document.getElementById(`quantity-value-${itemId}`).innerHTML);
+        if (quantity > 1) {
+            document.getElementById(`quantity-value-${itemId}`).innerHTML = quantity - 1;
+            price(itemId);
+        }
     });
-    document.getElementById(`${size}-btn`).classList.add('active');
-    
-    price();
+
+    document.getElementById(`add-quantity-btn-${itemId}`).addEventListener("click", () => {
+        let quantity = parseInt(document.getElementById(`quantity-value-${itemId}`).innerHTML);
+        document.getElementById(`quantity-value-${itemId}`).innerHTML = quantity + 1;
+        price(itemId);
+    });
+
+    // Set initial price
+    price(itemId);
 }
 
-document.getElementById("small-btn").addEventListener("click", () => updateSize('small'));
-document.getElementById("medium-btn").addEventListener("click", () => updateSize('medium'));
-document.getElementById("large-btn").addEventListener("click", () => updateSize('large'));
+// Initialize all items when document loads
+document.addEventListener('DOMContentLoaded', () => {
+    initializeItem(1);
+    initializeItem(2);
+    initializeItem(3);
+    initializeItem(4);
+    initializeItem(5);
+    initializeItem(6);
+    initializeItem(7);
+    initializeItem(8);
+    initializeItem(9);
+    initializeItem(10);
+});
 
-document.getElementById("substract-quantity-btn").addEventListener("click", () => {
-    let quantity = parseInt(document.getElementById("quantity-value").innerHTML);
-    if (quantity > 1) {
-        document.getElementById("quantity-value").innerHTML = quantity - 1;
-        price();
+const PopcornMenuBtn = document.getElementById('menu-popcorn');
+const ColdDrinksMenuBtn = document.getElementById('menu-cold-drinks');
+const HotDrinksMenuBtn = document.getElementById('menu-hot-drinks');
+const SnacksMenuBtn = document.getElementById('menu-snacks');
+
+PopcornMenuBtn.addEventListener('click', () => {
+    const PopcornMenu = document.getElementById('Popcorn-Menu');
+
+    console.log('Popcorn Button:', PopcornMenuBtn);
+    console.log('Popcorn Menu:', PopcornMenu);
+
+    if (PopcornMenu.style.display === 'flex') {
+        PopcornMenu.style.display = 'none';
+        PopcornMenuBtn.style.backgroundColor = 'hsl(0, 95%, 31%)';
+        return;
+    }
+    else {
+        PopcornMenu.style.display = 'flex';
+        PopcornMenu.classList.add('active')
+        PopcornMenuBtn.style.backgroundColor = 'hsl(0, 95%, 21%)';
     }
 });
 
-document.getElementById("add-quantity-btn").addEventListener("click", () => {
-    let quantity = parseInt(document.getElementById("quantity-value").innerHTML);
-    document.getElementById("quantity-value").innerHTML = quantity + 1;
-    price();
+ColdDrinksMenuBtn.addEventListener('click', () => {
+    const ColdDrinksMenu = document.getElementById('Cold-drinks-menu');
+
+    if (ColdDrinksMenu.style.display === 'flex') {
+        ColdDrinksMenu.style.display = 'none';
+        ColdDrinksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 31%)';
+        return;
+    }
+    else {
+        ColdDrinksMenu.style.display = 'flex';
+        ColdDrinksMenu.classList.add('active')
+        ColdDrinksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 21%)';
+    }
 });
 
-document.addEventListener("DOMContentLoaded", initializePrice);
+HotDrinksMenuBtn.addEventListener('click', () => {
+    const HotDrinksMenu = document.getElementById('Hot-drinks-menu');
+
+    if (HotDrinksMenu.style.display === 'flex') {
+        HotDrinksMenu.style.display = 'none';
+        HotDrinksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 31%)';
+        return;
+    }
+    else {
+        HotDrinksMenu.style.display = 'flex';
+        HotDrinksMenu.classList.add('active')
+        HotDrinksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 21%)';
+    }
+});
+
+SnacksMenuBtn.addEventListener('click', () => {
+    const SnacksMenu = document.getElementById('Snacks-menu');
+
+    if (SnacksMenu.style.display === 'flex') {
+        SnacksMenu.style.display = 'none';
+        SnacksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 31%)';
+        return;
+    }
+    else {
+        SnacksMenu.style.display = 'flex';
+        SnacksMenu.classList.add('active')
+        SnacksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 21%)';
+    }
+});

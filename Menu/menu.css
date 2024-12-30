@@ -1,5 +1,28 @@
+html {
+    overflow-y: scroll;
+    height: 100%;
+}
 body{
     font-family: monospace,"Outfit", sans-serif;
+    background-image: url(../Images/Other/menubg.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    margin: 0;
+    padding-bottom: 50px;
+    min-height: 101%;
+    overflow-y: scroll;
+}
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 .navigation_bar{
     height: 70px;
@@ -12,7 +35,7 @@ nav {
     width: 100%;
     display: flex;
     align-items: center;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
@@ -39,7 +62,7 @@ nav .logo2 {
     border-radius: 40%;
 }
 .logo .logo-name {
-    color: #333;
+    color: #d4d4d4;
     font-size: 22px;
     font-weight: 500;
 }
@@ -115,18 +138,23 @@ nav.open~.overlay {
     cursor: pointer;
 }
 ::-webkit-scrollbar {
+    -webkit-appearance: none;
     width: 10px;
     height: 10px;
 }
+
 ::-webkit-scrollbar-track {
-    background: #E5F3FE;
-}
-::-webkit-scrollbar-thumb {
-    background: #002366;
+    background: transparent;
     border-radius: 10px;
 }
+
+::-webkit-scrollbar-thumb {
+    background: hsl(0, 95%, 31%);
+    border-radius: 10px;
+}
+
 ::-webkit-scrollbar-thumb:hover {
-    background: #004080;
+    background: hsl(0, 95%, 25%);
 }
 .navigational-links{
     display: flex;
@@ -134,38 +162,63 @@ nav.open~.overlay {
     gap: 20px;
 }
 .navigational-links button{
-    background-color: #002366;
+    background-color: hsl(0, 95%, 31%);
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
 }
-.menu-container{
-    display: flex;
+#Popcorn-Menu , #Cold-drinks-menu, #Hot-drinks-menu, #Snacks-menu{
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
     margin-top: 50px;
+    opacity: 1;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#Popcorn-Menu.active, 
+#Cold-drinks-menu.active, 
+#Hot-drinks-menu.active, 
+#Snacks-menu.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideIn 0.7s ease-out forwards,
+               fadeIn 0.6s ease-in-out;
 }
 table{
-    width: 80%;
-    border-collapse: collapse;
+    width: 65%;
+    border-collapse: separate;
+    border-spacing: 0;
     border-radius: 20px;
-    border: 1px solid black;
+    background-color: rgb(245, 201, 143);
+    overflow: hidden;
+    box-shadow: 5px 5px 5px black;
 }
 thead{
-    background-color: #002366;
+    background-color: rgb(152, 4, 4);
     color: white;
     text-align: center;
     border-radius: 20px;
 }
+.head-item{
+    width: 20%;
+}
+tr{
+    height: 50px;
+}
 td{
     text-align: center;
+    border-bottom: 1px solid #ccc;
 }
 td p{
     margin: 0;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
 }
 .orderbtn{
     background-color: #387dfc;
@@ -192,12 +245,13 @@ td p{
     gap: 10px;
     align-items: center;
     justify-content: center;
-    border: 1px solid #000000;
+    background-color: white;
     border-radius: 20px;
     width: fit-content;
     height: 30px;
     overflow: hidden;
-    margin-top: 3px;
+    margin-top: 6px;
+    margin-bottom: 3px;
 }
 .quantity p{
     margin: 0;
@@ -205,7 +259,7 @@ td p{
     font-size: 18px;
 }
 .quantity-button-left{
-    background-color: #387dfc;
+    background-color: hsl(0, 0%, 30%);
     color: white;
     border: none;
     padding-left: 10px;
@@ -215,7 +269,7 @@ td p{
     height: 30px;
 }
 .quantity-button-right{
-    background-color: #387dfc;
+    background-color: hsl(0, 0%, 30%);
     color: white;
     border: none;
     padding-right: 10px;
@@ -231,4 +285,20 @@ td p{
 #item-price{
     font-weight: 500;
     font-size: 18px;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
