@@ -195,40 +195,41 @@ function fetchSearch(searchTerm) {
     fetch(
         "https://api.themoviedb.org/3/search/movie?query=" + encodeURIComponent(searchTerm) + "&include_adult=false&language=en-US&page=1",
         options
-    ).then((res) => {
-        return res.json();
-    }).then((res) => {
-        if (res.results.length === 0) {
-            document.querySelector(".search-result-overlay").innerHTML = "<h2>No results found</h2>";
-            document.querySelector(".search-result-overlay").style.display = "grid";
-            return;
-        }
-
-        document.querySelector(".search-result-overlay").innerHTML = "";
-
+    ).then((res) => res.json())
+      .then((res) => {
+        const searchOverlay = document.querySelector(".search-result-overlay");
+        searchOverlay.innerHTML = "";
+    
+        let resultsHTML = '';
         res.results.forEach((movie) => {
-            document.querySelector(".search-result-overlay").innerHTML += `
+            resultsHTML += `
                 <div class="movie-card">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-info">
                         <h3>${movie.title}</h3>
                         <p>${movie.overview}</p>
+                        <a href="../Movie/movie.html?name=${movie.title}" style=" font-size: 24px">Read more</a>
                     </div>
                 </div>
             `;
         });
-
-        document.querySelector(".search-result-overlay").style.display = "flex";
-
-    }).catch((err) => console.error(err));
+    
+        searchOverlay.insertAdjacentHTML('beforeend', resultsHTML);
+    
+        let closeButton = document.createElement("button");
+        closeButton.innerHTML = "<i class='bx bx-x'></i>";
+        closeButton.classList.add("close-button");
+        closeButton.addEventListener("click", () => {
+            searchOverlay.style.display = "none";
+        });
+    
+        searchOverlay.insertAdjacentElement('afterbegin', closeButton);
+        searchOverlay.style.display = "flex";
+    });
 }
 
 document.getElementById("movie-search").addEventListener("input", function () {
     fetchSearch(this.value);
-});
-
-document.getElementById("movie-search").addEventListener("blur", function () {
-    document.querySelector(".search-result-overlay").style.display = "none";
 });
 
 document.addEventListener("DOMContentLoaded", function() {

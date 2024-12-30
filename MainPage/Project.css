@@ -248,26 +248,26 @@ nav.open~.overlay {
     background: white;
     z-index: 10000000000;
 }
-.movie-card{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin-bottom: 2px;
-    padding: 10px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
+.search-result-overlay button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 100000000000;
 }
-.movie-card img{
-    height: 200px;
-    width: 150px;
-    border-radius: 20px;
-}
-.movie-info{
+.movie-card {
     display: flex;
-    flex-direction: column;
     gap: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+.movie-card img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
 }
 .icon{
     width: 20px;

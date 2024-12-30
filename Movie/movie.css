@@ -102,8 +102,8 @@ nav .logo2 {
     border-bottom: 1px solid #eee;
 }
 .movie-card img {
-    width: 100px;
-    height: 150px;
+    width: 200px;
+    height: 250px;
     object-fit: cover;
 }
 .searchbar input{
