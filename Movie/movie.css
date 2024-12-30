@@ -70,16 +70,30 @@ nav .logo2 {
     width: 40%;
 }
 .search-result-overlay {
-    position: absolute;
-    top: 70px; /* Height of navbar */
-    left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    z-index: 1000;
-    max-height: calc(100vh - 70px);
-    overflow-y: auto;
-    padding: 20px;
+    min-height: 100vh;
+    margin: 0;
     display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    color: #000;
+    z-index: 10000000000;
+    overflow-y: auto;
+}
+.search-result-overlay button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 100000000000;
 }
 .movie-card {
     display: flex;
@@ -147,19 +161,24 @@ nav .logo2 {
     opacity: 0.7;
 }
 
+.movie-content {
+    margin-top: 30px;
+}
+
 .movie-container{
+    position: relative;
     display: flex;
     flex-direction: row;
     gap: 30px;
     color: white;
     padding-left: 50px;
-    margin-top: 30px;
     padding-right: 100px;
 }
 .movie-poster img{
     height: 450px;
     width: 300px;
     border-radius: 20px;
+    margin-top: 30px;
 }
 .duration-language-rating{
     display: flex;

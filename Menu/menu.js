@@ -23,6 +23,35 @@ const flavorPrices = {
     8: { name: 'Chilly', small: 8.00, medium: 10.50, large: 13.00 },
     9: { name: 'Butter', small: 5.00, medium: 7.50, large: 10.00 },
     10:{ name: 'Orange-Juice', small: 3.00, medium: 4.50, large: 6.00 },
+    11:{ name: 'Mango-Juice', small: 3.00, medium: 4.50, large: 6.00 },
+    12:{ name: 'Lemonade', small: 2.00, medium: 3.50, large: 5.00 },
+    13:{ name: 'Cocktail', small: 4.00, medium: 5.00, large: 7.00 },
+    14:{ name: 'Strawberry Smoothie', small: 4.00, medium: 5.00, large: 7.00 },
+    15:{ name: 'Mango Smoothie', small: 4.00, medium: 5.00, large: 7.00 },
+    16:{ name: 'Oreo Milkshake', small: 4.50, medium: 6.00, large: 8.00 },
+    17:{ name: 'Strawberry Milkshake', small: 4.50, medium: 6.00, large: 8.00 },
+    18:{ name: 'Blueberry Milkshake', small: 4.50, medium: 6.00, large: 8.00 },
+    19:{ name: 'Espresso', small: 2.00, medium: 3.00, large: 4.00 },
+    20:{ name: 'Americano', small: 2.50, medium: 3.50, large: 4.50 },
+    21:{ name: 'Latte', small: 3.00, medium: 4.00, large: 5.00 },
+    22:{ name: 'Cappuccino', small: 3.00, medium: 4.00, large: 5.00 },
+    23:{ name: 'Mocha', small: 3.50, medium: 4.50, large: 5.50 },
+    24:{ name: 'Hot Chocolate', small: 3.50, medium: 4.50, large: 5.50 },
+    25:{ name: 'Tea', small: 2.00, medium: 3.00, large: 4.00 },
+    26:{ name: 'Green Tea', small: 2.00, medium: 3.00, large: 4.00 },
+    27:{ name: 'Sahlab', small: 3.00, medium: 4.00, large: 5.00 },
+    28:{ name: 'Nachos', small: 5.00, medium: 7.00, large: 9.00 },
+    29:{ name: 'Nachos-Cheese', small: 6.00, medium: 8.00, large: 10.00 },
+    30:{ name: 'Nachos-Mexican', small: 6.00, medium: 8.00, large: 10.00 },
+    31:{ name: 'Fries', small: 4.00, medium: 6.00, large: 8.00 },
+    32:{ name: 'Chicken Nuggets', small: 6.00, medium: 8.00, large: 10.00 },
+    33:{ name: 'Chicken Wings', small: 6.00, medium: 8.00, large: 10.00 },
+    34:{ name: 'Chicken Strips', small: 6.00, medium: 8.00, large: 10.00 },
+    35:{ name: 'Chicken Popcorn', small: 6.00, medium: 8.00, large: 10.00 },
+    36:{ name: 'Tacos', small: 5.00, medium: 7.00, large: 9.00 },
+    37:{ name: 'Water', small: 0.50, medium: 1.00, large: 1.50 },
+    38:{ name: 'CocaCola', small: 50.0, medium: 75.0, large: 100 },
+
 };
 
 let itemPrices = {};
@@ -41,20 +70,40 @@ function price(itemId) {
 }
 
 function initializeItem(itemId) {
-    // Initialize price for this item
     itemPrices[itemId] = flavorPrices[itemId].small;
-    
-    // Add size button listeners
-    document.getElementById(`small-btn-${itemId}`).addEventListener("click", () => updateSize('small', itemId));
-    document.getElementById(`medium-btn-${itemId}`).addEventListener("click", () => updateSize('medium', itemId));
-    document.getElementById(`large-btn-${itemId}`).addEventListener("click", () => updateSize('large', itemId));
 
-    // Add quantity button listeners
+    console.log(`Initializing item ${itemId}`);
+    console.log(`Flavor prices for item ${itemId}:`, flavorPrices[itemId]);
+    
+    const smallBtn = document.getElementById(`small-btn-${itemId}`);
+    const mediumBtn = document.getElementById(`medium-btn-${itemId}`);
+    const largeBtn = document.getElementById(`large-btn-${itemId}`);
+
+    if (smallBtn) {
+        smallBtn.addEventListener("click", () => updateSize('small', itemId));
+    } else {
+        console.error(`Small button not found for item ${itemId}`);
+    }
+
+    if (mediumBtn) {
+        mediumBtn.addEventListener("click", () => updateSize('medium', itemId));
+    } else {
+        console.error(`Medium button not found for item ${itemId}`);
+    }
+
+    if (largeBtn) {
+        largeBtn.addEventListener("click", () => updateSize('large', itemId));
+    } else {
+        console.error(`Large button not found for item ${itemId}`);
+    }
+
+
     document.getElementById(`substract-quantity-btn-${itemId}`).addEventListener("click", () => {
         let quantity = parseInt(document.getElementById(`quantity-value-${itemId}`).innerHTML);
-        if (quantity > 1) {
+        if (quantity > 0) {
             document.getElementById(`quantity-value-${itemId}`).innerHTML = quantity - 1;
             price(itemId);
+            TotalPrice();
         }
     });
 
@@ -62,9 +111,9 @@ function initializeItem(itemId) {
         let quantity = parseInt(document.getElementById(`quantity-value-${itemId}`).innerHTML);
         document.getElementById(`quantity-value-${itemId}`).innerHTML = quantity + 1;
         price(itemId);
+        TotalPrice();
     });
 
-    // Set initial price
     price(itemId);
 }
 
@@ -80,6 +129,34 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeItem(8);
     initializeItem(9);
     initializeItem(10);
+    initializeItem(11);
+    initializeItem(12);
+    initializeItem(13);
+    initializeItem(14);
+    initializeItem(15);
+    initializeItem(16);
+    initializeItem(17);
+    initializeItem(18);
+    initializeItem(19);
+    initializeItem(20);
+    initializeItem(21);
+    initializeItem(22);
+    initializeItem(23);
+    initializeItem(24);
+    initializeItem(25);
+    initializeItem(26);
+    initializeItem(27);
+    initializeItem(28);
+    initializeItem(29);
+    initializeItem(30);
+    initializeItem(31);
+    initializeItem(32);
+    initializeItem(33);
+    initializeItem(34);
+    initializeItem(35);
+    initializeItem(36);
+    initializeItem(37);
+    initializeItem(38);
 });
 
 const PopcornMenuBtn = document.getElementById('menu-popcorn');
@@ -149,3 +226,12 @@ SnacksMenuBtn.addEventListener('click', () => {
         SnacksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 21%)';
     }
 });
+
+function TotalPrice() {
+    let total = 0;
+    for (let i = 1; i <= 36; i++) {
+        total += parseFloat(document.getElementById(`item-price-${i}`).innerHTML.slice(1));
+    }
+
+    document.getElementById('total-price-value').innerHTML = '$' + total.toFixed(2);
+}

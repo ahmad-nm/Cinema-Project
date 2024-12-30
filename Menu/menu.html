@@ -18,9 +18,9 @@
         <nav>
             <div class="logo">
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <i class="bx bx-menu menu-icon"></i>
+                    <i class="bx bx-menu menu-icon" style="color: #ccc;"></i>
                     <img src=".././Images/Icons/logo.webp" alt="logo" class="logo-icon"/>
-                    <span class="logo-name">Cinemacity</span>
+                    <span class="nav-logo-name">Cinemacity</span>
                 </div>
 
                 <div class="navigational-links">
@@ -83,6 +83,13 @@
     </div>
 
     <div class="menu-container">
+        <div class="Total-Price">
+            <div class="total-price">
+                <p>Total Price: </p>
+                <p id="total-price-value">0</p>
+            </div>
+            <button id="order" class="orderbtn">Order</button>
+        </div>
         <div id="Popcorn-Menu">
             <table>
                 <thead>
@@ -99,11 +106,11 @@
                             <button class="btn" id="medium-btn-1"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-1"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-1">5$</p></td>
+                        <td><p id="item-price-1"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-1">-</button>
-                                <p id="quantity-value-1">1</p>
+                                <p id="quantity-value-1">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-1">+</button>
                             </div>
                         </td>
@@ -115,11 +122,11 @@
                             <button class="btn" id="medium-btn-2"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-2"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-2">5$</p></td>
+                        <td><p id="item-price-2"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-2">-</button>
-                                <p id="quantity-value-2">1</p>
+                                <p id="quantity-value-2">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-2">+</button>
                             </div>
                         </td>
@@ -131,11 +138,11 @@
                             <button class="btn" id="medium-btn-3"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-3"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-3">5$</p></td>
+                        <td><p id="item-price-3"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-3">-</button>
-                                <p id="quantity-value-3">1</p>
+                                <p id="quantity-value-3">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-3">+</button>
                             </div>
                         </td>
@@ -151,7 +158,7 @@
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-4">-</button>
-                                <p id="quantity-value-4">1</p>
+                                <p id="quantity-value-4">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-4">+</button>
                             </div>
                         </td>
@@ -163,11 +170,11 @@
                             <button class="btn" id="medium-btn-5"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-5"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-5">5$</p></td>
+                        <td><p id="item-price-5"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-5">-</button>
-                                <p id="quantity-value-5">1</p>
+                                <p id="quantity-value-5">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-5">+</button>
                             </div>
                         </td>
@@ -179,11 +186,11 @@
                             <button class="btn" id="medium-btn-6"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-6"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-6">5$</p></td>
+                        <td><p id="item-price-6"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-6">-</button>
-                                <p id="quantity-value-6">1</p>
+                                <p id="quantity-value-6">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-6">+</button>
                             </div>
                         </td>
@@ -195,11 +202,11 @@
                             <button class="btn" id="medium-btn-7"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-7"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-7">5$</p></td>
+                        <td><p id="item-price-7"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-7">-</button>
-                                <p id="quantity-value-7">1</p>
+                                <p id="quantity-value-7">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-7">+</button>
                             </div>
                         </td>
@@ -211,11 +218,11 @@
                             <button class="btn" id="medium-btn-8"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-8"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-8">5$</p></td>
+                        <td><p id="item-price-8"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-8">-</button>
-                                <p id="quantity-value-8">1</p>
+                                <p id="quantity-value-8">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-8">+</button>
                             </div>
                         </td>
@@ -227,11 +234,11 @@
                             <button class="btn" id="medium-btn-9"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-9"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-9">5$</p></td>
+                        <td><p id="item-price-9"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-9">-</button>
-                                <p id="quantity-value-9">1</p>
+                                <p id="quantity-value-9">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-9">+</button>
                             </div>
                         </td>
@@ -255,11 +262,11 @@
                             <button class="btn" id="medium-btn-10"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-10"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-10">5$</p></td>
+                        <td><p id="item-price-10"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-10">-</button>
-                                <p id="quantity-value-10">1</p>
+                                <p id="quantity-value-10">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-10">+</button>
                             </div>
                         </td>
@@ -271,33 +278,33 @@
                             <button class="btn" id="medium-btn-11"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-11"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-2">5$</p></td>
+                        <td><p id="item-price-11"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-11">-</button>
-                                <p id="quantity-value-11">1</p>
+                                <p id="quantity-value-11">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-11">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-12">Cheese</p></td>
+                        <td><p id="item-name-12">Lemonade</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-12"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-12"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-3"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-12">5$</p></td>
+                        <td><p id="item-price-12"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-12">-</button>
-                                <p id="quantity-value-12">1</p>
+                                <p id="quantity-value-12">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-12">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-13">Cheetos</p></td>
+                        <td><p id="item-name-13">Cocktail</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-13"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-13"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
@@ -307,88 +314,120 @@
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-13">-</button>
-                                <p id="quantity-value-13">1</p>
+                                <p id="quantity-value-13">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-13">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-14">Hot-Cheetos</p></td>
+                        <td><p id="item-name-14">Strawberry Smoothie</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-14"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-14"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-14"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-14">5$</p></td>
+                        <td><p id="item-price-14"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-14">-</button>
-                                <p id="quantity-value-14">1</p>
+                                <p id="quantity-value-14">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-14">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-15">Zaatar</p></td>
+                        <td><p id="item-name-15">Mango Smoothie</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-15"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-15"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-15"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-15">5$</p></td>
+                        <td><p id="item-price-15"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-15">-</button>
-                                <p id="quantity-value-15">1</p>
+                                <p id="quantity-value-15">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-15">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-16">Salted-Zaatar</p></td>
+                        <td><p id="item-name-16">Oreo Milkshake</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-16"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-16"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-16"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-16">5$</p></td>
+                        <td><p id="item-price-16"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-16">-</button>
-                                <p id="quantity-value-16">1</p>
+                                <p id="quantity-value-16">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-16">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-17">Chilly</p></td>
+                        <td><p id="item-name-17">Strawberry Milkshake</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-17"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-17"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-17"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-17">5$</p></td>
+                        <td><p id="item-price-17"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-17">-</button>
-                                <p id="quantity-value-17">1</p>
+                                <p id="quantity-value-17">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-17">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-18">Butter</p></td>
+                        <td><p id="item-name-18">Blueberry Milkshake</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-18"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-18"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-18"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-18">5$</p></td>
+                        <td><p id="item-price-18"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-18">-</button>
-                                <p id="quantity-value-18">1</p>
+                                <p id="quantity-value-18">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-18">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-37">Water</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-37"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-37"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-37"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-37"></p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-37">-</button>
+                                <p id="quantity-value-37">0</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-37">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p id="item-name-38">CocaCola</p></td>
+                        <td class="size-btn">
+                            <button class="btn" id="small-btn-38"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
+                            <button class="btn" id="medium-btn-38"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="large-btn-38"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
+                        </td>
+                        <td><p id="item-price-38"></p></td>
+                        <td class="quantity-td">
+                            <div class="quantity">
+                                <button class="quantity-button-left" id="substract-quantity-btn-38">-</button>
+                                <p id="quantity-value-38">0</p>
+                                <button class="quantity-button-right" id="add-quantity-btn-38">+</button>
                             </div>
                         </td>
                     </tr>
@@ -405,55 +444,55 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><p id="item-name-19">Salted</p></td>
+                        <td><p id="item-name-19">Espresso</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-19"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-19"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-19"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-19">5$</p></td>
+                        <td><p id="item-price-19"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-19">-</button>
-                                <p id="quantity-value-19">1</p>
+                                <p id="quantity-value-19">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-19">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-20">Caramel</p></td>
+                        <td><p id="item-name-20">Americano</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-20"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-20"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-20"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-20">5$</p></td>
+                        <td><p id="item-price-20"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-20">-</button>
-                                <p id="quantity-value-20">1</p>
+                                <p id="quantity-value-20">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-20">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-21">Cheese</p></td>
+                        <td><p id="item-name-21">Latte</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-21"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-21"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-21"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-21">5$</p></td>
+                        <td><p id="item-price-21"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-21">-</button>
-                                <p id="quantity-value-21">1</p>
+                                <p id="quantity-value-21">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-21">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-22">Cheetos</p></td>
+                        <td><p id="item-name-22">Cappuccino</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-22"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-22"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
@@ -463,87 +502,87 @@
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-22">-</button>
-                                <p id="quantity-value-22">1</p>
+                                <p id="quantity-value-22">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-22">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-23">Hot-Cheetos</p></td>
+                        <td><p id="item-name-23">Mocha</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-23"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-23"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-23"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-23">5$</p></td>
+                        <td><p id="item-price-23"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-23">-</button>
-                                <p id="quantity-value-23">1</p>
+                                <p id="quantity-value-23">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-23">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-24">Zaatar</p></td>
+                        <td><p id="item-name-24">Hot Chocolate</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-24"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-24"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-24"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-24">5$</p></td>
+                        <td><p id="item-price-24"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-24">-</button>
-                                <p id="quantity-value-24">1</p>
+                                <p id="quantity-value-24">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-24">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-25">Salted-Zaatar</p></td>
+                        <td><p id="item-name-25">Tea</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-25"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
-                            <button class="btn" id="medium-btn-7"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
+                            <button class="btn" id="medium-btn-25"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-25"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-25">5$</p></td>
+                        <td><p id="item-price-25"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-25">-</button>
-                                <p id="quantity-value-25">1</p>
+                                <p id="quantity-value-25">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-25">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-26">Chilly</p></td>
+                        <td><p id="item-name-26">Green Tea</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-26"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-26"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-26"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-26">5$</p></td>
+                        <td><p id="item-price-26"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-26">-</button>
-                                <p id="quantity-value-26">1</p>
+                                <p id="quantity-value-26">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-26">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-27">Butter</p></td>
+                        <td><p id="item-name-27">Sahlab</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-27"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-27"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-27"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-9">5$</p></td>
+                        <td><p id="item-price-27"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-27">-</button>
-                                <p id="quantity-value-27">1</p>
+                                <p id="quantity-value-27">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-27">+</button>
                             </div>
                         </td>
@@ -561,55 +600,55 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><p id="item-name-28">Salted</p></td>
+                        <td><p id="item-name-28">Nachos</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-28"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-28"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-28"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-28">5$</p></td>
+                        <td><p id="item-price-28"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-28">-</button>
-                                <p id="quantity-value-28">1</p>
+                                <p id="quantity-value-28">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-28">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-29">Caramel</p></td>
+                        <td><p id="item-name-29">Nachos-Cheese</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-29"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-29"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-29"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-29">5$</p></td>
+                        <td><p id="item-price-29"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-29">-</button>
-                                <p id="quantity-value-29">1</p>
+                                <p id="quantity-value-29">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-29">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-30">Cheese</p></td>
+                        <td><p id="item-name-30">Nachos-Mexican</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-30"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-30"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-30"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-30">5$</p></td>
+                        <td><p id="item-price-30"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-30">-</button>
-                                <p id="quantity-value-30">1</p>
+                                <p id="quantity-value-30">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-30">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-31">Cheetos</p></td>
+                        <td><p id="item-name-31">Fries</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-31"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-31"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
@@ -619,77 +658,77 @@
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-31">-</button>
-                                <p id="quantity-value-31">1</p>
+                                <p id="quantity-value-31">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-31">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-32">Hot-Cheetos</p></td>
+                        <td><p id="item-name-32">Chicken Nuggets</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-32"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-32"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-32"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-32">5$</p></td>
+                        <td><p id="item-price-32"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-32">-</button>
-                                <p id="quantity-value-32">1</p>
+                                <p id="quantity-value-32">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-32">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-33">Zaatar</p></td>
+                        <td><p id="item-name-33">Chicken Wings</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-33"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-33"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-33"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-33">5$</p></td>
+                        <td><p id="item-price-33"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-33">-</button>
-                                <p id="quantity-value-33">1</p>
+                                <p id="quantity-value-33">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-33">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-34">Salted-Zaatar</p></td>
+                        <td><p id="item-name-34">Chicken Strips</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-34"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-34"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-34"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-34">5$</p></td>
+                        <td><p id="item-price-34"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-34">-</button>
-                                <p id="quantity-value-34">1</p>
+                                <p id="quantity-value-34">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-34">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-35">Chilly</p></td>
+                        <td><p id="item-name-35">Chicken Popcorn</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-35"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-35"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
                             <button class="btn" id="large-btn-35"><i class="fa-solid fa-l" style="color: darkred;"></i></button>
                         </td>
-                        <td><p id="item-price-35">5$</p></td>
+                        <td><p id="item-price-35"></p></td>
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-35">-</button>
-                                <p id="quantity-value-35">1</p>
+                                <p id="quantity-value-35">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-35">+</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><p id="item-name-36">Butter</p></td>
+                        <td><p id="item-name-36">Tacos</p></td>
                         <td class="size-btn">
                             <button class="btn" id="small-btn-36"><i class="fa-solid fa-s" style="color: orangered;"></i></button>
                             <button class="btn" id="medium-btn-36"><i class="fa-solid fa-m" style="color: #d71d1d;"></i></button>
@@ -699,7 +738,7 @@
                         <td class="quantity-td">
                             <div class="quantity">
                                 <button class="quantity-button-left" id="substract-quantity-btn-36">-</button>
-                                <p id="quantity-value-36">1</p>
+                                <p id="quantity-value-36">0</p>
                                 <button class="quantity-button-right" id="add-quantity-btn-36">+</button>
                             </div>
                         </td>

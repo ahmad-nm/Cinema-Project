@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./Project.css">
-    <link rel="icon" href="./Images/Logo.png">
+    <link rel="stylesheet" type="text/css" href="./MainPage/Project.css">
+    <link rel="icon" href="./Images/Icons/logo.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://kit.fontawesome.com/b161b33566.js" crossorigin="anonymous"></script>
-    <title>M1 Cinema</title>
+    <title>CinemaCity</title>
 </head>
 <body>
     <div class="preloader">
@@ -22,9 +23,9 @@
         <div class="navigation_bar">
             <nav>
                 <div class="logo">
-                    <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 5px;">
                         <i class="bx bx-menu menu-icon"></i>
-                        <img src="./Images/Icons/logo.webp" alt="logo" class="logo-icon"/>
+                        <img src="./Images/logo-2.png" alt="logo" class="logo-icon"/>
                         <span class="logo-name">Cinemacity</span>
                     </div>
 
@@ -33,8 +34,8 @@
                     </div>
                     <div class="navigational-links">
                         <a href="#">Movies</a>
-                        <a href="#">Find</a>
-                        <a href="#">News</a>
+                        <a href="#">Watch</a>
+                        <a href="./Menu/menu.html">Food</a>
                     </div>
                     <div>
                         <button class="Signup-button">
@@ -47,13 +48,6 @@
                             <span class="login-text">Login</span>
                         </button>
                     </div>
-                    
-                    <!--<button class="notification-button">
-                        <i class='bx bxs-bell'></i>
-
-                        <div class="notification-overlay">
-                            5
-                        </div>-->
                     </button>
                 </div>
                 <div class="sidebar">
@@ -149,7 +143,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="newreleases">
+                <!--<div class="newreleases">
                     <button id="prevButton" class="nav-button"><img src="./Images/Icons/less-than.png" class="nbutton"></button>
                     <button id="nextButton" class="nav-button"><img src="./Images/Icons/greater-than.png" class="pbutton"></button>    
                     <div class="movie_notes" id="movie_notes">
@@ -169,7 +163,96 @@
                             <p>PG-13</p>
                         </div>
                     </div>
+                </div>-->
+
+                <div class="New-releases">
+                    <div class="slide">
+                        <div class="item" style="background-image: url(./Images/Moviesbg/venombg.jpg);">
+                            <div class="content">
+                                <div class="Movie-Name">
+                                    Venom: The Last Dance
+                                </div>
+                                <div class="Movie-Desc">
+                                    Eddie Brock and Venom must make a devastating decision as they're pursued by a mysterious military man and alien monsters from Venom's home world.
+                                </div>
+                                <button id="See-More-Btn">See More</button>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url(./Images/Moviesbg/joker2.jpg);">
+                            <div class="content">
+                                <div class="Movie-Name">
+                                    Joker: Folie à Deux
+                                </div>
+                                <div class="Movie-Desc">
+                                    Arthur Fleck, now known as the Joker, is on the run from the law and the public. He is joined by a new partner in crime, Harley Quinn, as they wreak havoc on Gotham City.
+                                </div>
+                                <button>See More</button>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url(./Images/Moviesbg/beekeeper.jpg);">
+                            <div class="content">
+                                <div class="Movie-Name">
+                                    The BeeKeeper
+                                </div>
+                                <div class="Movie-Desc">
+                                    A kind-hearted landlady commits suicide after falling victim to a phishing scam, leading former "Beekeeper" operative Adam Clay to set out on a brutal campaign for revenge upon those responsible.
+                                </div>
+                                <button>See More</button>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url(./Images/Moviesbg/moana2.jpg);">
+                            <div class="content">
+                                <div class="Movie-Name">
+                                    Moana 2
+                                </div>
+                                <div class="Movie-Desc">
+                                    After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.
+                                </div>
+                                <button>See More</button>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url(./Images/Moviesbg/mufasa.jpg);">
+                            <div class="content">
+                                <div class="Movie-Name">
+                                    Mufasa: The Lion King
+                                </div>
+                                <div class="Movie-Desc">
+                                    Mufasa, a cub lost and alone, meets a sympathetic lion named Taka, the heir to a royal bloodline. The chance meeting sets in motion an expansive journey of a group of misfits searching for their destiny.
+                                </div>
+                                <button>See More</button>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url(./Images/Moviesbg/sonic3.jpg);">
+                            <div class="content">
+                                <div class="Movie-Name">
+                                    Sonic The HedgeHog 3
+                                </div>
+                                <div class="Movie-Desc">
+                                    Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched, Team Sonic must seek out an unlikely alliance.
+                                </div>
+                                <button>See More</button>
+                            </div>
+                        </div>
+                        <div class="item" style="background-image: url(./Images/Moviesbg/deadpool3.jpg);">
+                            <div class="content">
+                                <div class="Movie-Name">
+                                    Deadpool & Wolverine
+                                </div>
+                                <div class="Movie-Desc">
+                                    Deadpool is offered a place in the Marvel Cinematic Universe by the Time Variance Authority, but instead recruits a variant of Wolverine to save his universe from extinction.
+                                </div>
+                                <button>See More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
                 </div>
+
                 <div class="seats">
                     <div class="seats-header">
                         <div class="seat-link">
@@ -287,14 +370,14 @@
                     </div>
                     <div class="book-timing-content">
                         <div class="book-timing-content-details-image">
-                            <img src="./Images/Moviesbg/venom3.jpg" alt="Venom 3">
+                            <img src="./Images/Moviesbg/venom3.jpg" alt="Venom 3" id="seats-image">
                         </div>
                         <div class="book-timing-content-details">
-                            <p>Venom: The Last Dance</p>
-                            <p>Hall A</p>
+                            <p id="seats-movie-title">Venom: The Last Dance</p>
+                            <p id="seats-movie-hall">Hall A</p>
                             <div class="book-timing-content-time">
                                 <img src="./Images/Icons/duration.png" alt="time" class="icon">
-                                <p>10:00 AM - 12:00 PM</p>
+                                <p id="seats-times">10:00 AM - 12:00 PM</p>
                             </div>
                         </div>
                         <div class="book-timing-content-details-button">
@@ -334,7 +417,7 @@
                             <img src="./Images/Moviesbg/action/extraction.jpg" alt="Extraction">
                         </div>
                         <div class="movies-div">
-                            <img src="./Images/Moviesbg/action/batman.jpg" alt="Batman">
+                            <img src="./Images/Moviesbg/action/batman.jpg" alt="The Batman">
                         </div>
                         <div class="movies-div">
                             <img src="./Images/Moviesbg/action/furiosa.jpg" alt="Furiosa">
@@ -362,7 +445,7 @@
                             <img src="./Images/Moviesbg/horror/glass.jpg" alt="Glass">
                         </div>
                         <div class="movies-div">
-                            <img src="./Images/Moviesbg/horror/longlegs.jpg" alt="Long Legs">
+                            <img src="./Images/Moviesbg/horror/longlegs.jpg" alt="LongLegs">
                         </div>
                         <div class="movies-div">
                             <img src="./Images/Moviesbg/horror/smile.jpg" alt="Smile">
@@ -374,7 +457,7 @@
                             <img src="./Images/Moviesbg/horror/split.jpg" alt="Split">
                         </div>
                         <div class="movies-div">
-                            <img src="./Images/Moviesbg/horror/terrifier.jpg" alt="Terrifier">
+                            <img src="./Images/Moviesbg/horror/terrifier.jpg" alt="Terrifier 3">
                         </div>
                     </div>
                 </div>
@@ -384,13 +467,13 @@
                     </div>
                     <div class="dramaromance">
                         <div class="movies-div">
-                            <img src="./Images/Moviesbg/romance/babygirl.jpg" alt="Baby girl">
+                            <img src="./Images/Moviesbg/romance/fault_in_our_stars.jpg" alt="The fault in our stars">
                         </div>
                         <div class="movies-div">
-                            <img src="./Images/Moviesbg/romance/bleeding_love.jpg" alt="Bleeding Love">
+                            <img src="./Images/Moviesbg/romance/me_before_you.jpg" alt="Me Before You">
                         </div>
                         <div class="movies-div">
-                            <img src="./Images/Moviesbg/romance/glacier_national_park_romance.jpg" alt="Glacier National Park">
+                            <img src="./Images/Moviesbg/romance/glacier_national_park_romance.jpg" alt="Love in Glacier National Park">
                         </div>
                         <div class="movies-div">
                             <img src="./Images/Moviesbg/romance/hello_love_again.jpg" alt="Hello Love Again">
@@ -564,6 +647,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./Project.js"></script>
+    <script src="./MainPage/Project.js"></script>
 </body>
 </html>

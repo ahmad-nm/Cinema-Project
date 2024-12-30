@@ -1,0 +1,21 @@
+[
+    {"genre": "Action", "code": 28},
+    {"genre": "Animated", "code": 16},
+    {"genre": "Documentary", "code": 99},
+    {"genre": "Drama", "code": 18},
+    {"genre": "Family", "code": 10751},
+    {"genre": "Fantasy", "code": 14},
+    {"genre": "History", "code": 36},
+    {"genre": "Comedy", "code": 35},
+    {"genre": "War", "code": 10752},
+    {"genre": "Crime", "code": 80},
+    {"genre": "Music", "code": 10402},
+    {"genre": "Mystery", "code": 9648},
+    {"genre": "Romance", "code": 10749},
+    {"genre": "Sci-Fi", "code": 878},
+    {"genre": "Horror", "code": 27},
+    {"genre": "TV Movie", "code": 10770},
+    {"genre": "Thriller", "code": 53},
+    {"genre": "Western", "code": 37},
+    {"genre": "Adventure", "code": 12}
+]
