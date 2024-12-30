@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
     const seeMoreLinks = document.querySelectorAll('.see-more');
     const movieNotes = document.querySelector('.movie_notes');
     const nextButton = document.getElementById('nextButton');
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
     newReleases.style.backgroundImage = images[currentIndex];
     updateMovieNotes(currentIndex);
 
-});
+});*/
 const navBar = document.querySelector("nav"),
 menuBtns = document.querySelectorAll(".menu-icon"),
 overlay = document.querySelector(".overlay");
@@ -213,7 +213,16 @@ function fetchSearch(searchTerm) {
                 </div>
             `;
         });
-    
+        
+        document.querySelectorAll('.See-More-Btn').forEach((button) => {
+            button.addEventListener('click', (e) => {
+                const movieTitle = e.target.dataset.title;
+                if (movieTitle) {
+                    window.location.href = `../Movie/movie.html?name=${movieTitle}`;
+                }
+            });
+        });
+
         searchOverlay.insertAdjacentHTML('beforeend', resultsHTML);
     
         let closeButton = document.createElement("button");
@@ -226,6 +235,7 @@ function fetchSearch(searchTerm) {
         searchOverlay.insertAdjacentElement('afterbegin', closeButton);
         searchOverlay.style.display = "flex";
     });
+
 }
 
 document.getElementById("movie-search").addEventListener("input", function () {
@@ -254,11 +264,9 @@ prev.addEventListener('click', function(){
 })
 
 
-document.getElementById('See-More-Btn').addEventListener('click', function(){
-    // Get current visible movie ID from active slide
-    const activeSlide = document.querySelector('.item:nth-child(1)');
-    const movieName = document.querySelector('.Movie-Name', activeSlide).textContent;
-    
-    // Navigate to movie details page
-    window.location.href = `../Movie/movie.html?id=${movieName}`;
-});
+/*document.querySelectorAll('.content button').forEach((button) => {
+    button.addEventListener('click', () => {
+        window.location.href = '../Movie/movie.html?name=' + button.querySelector('.Movie-Name p').textContent;
+    });
+});*/
+
