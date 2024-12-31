@@ -110,13 +110,13 @@ function fetchSearch(searchTerm) {
         "https://api.themoviedb.org/3/search/movie?query=" + encodeURIComponent(searchTerm) + "&include_adult=false&language=en-US&page=1",
         options
     ).then((res) => res.json())
-      .then((res) => {
-        const searchOverlay = document.querySelector(".search-result-overlay");
-        searchOverlay.innerHTML = "";
-    
-        let resultsHTML = '';
-        res.results.forEach((movie) => {
-            resultsHTML += `
+        .then((res) => {
+            const searchOverlay = document.querySelector(".search-result-overlay");
+            searchOverlay.innerHTML = "";
+
+            let resultsHTML = '';
+            res.results.forEach((movie) => {
+                resultsHTML += `
                 <div class="movie-card">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-info">
@@ -126,20 +126,20 @@ function fetchSearch(searchTerm) {
                     </div>
                 </div>
             `;
+            });
+
+            searchOverlay.insertAdjacentHTML('beforeend', resultsHTML);
+
+            let closeButton = document.createElement("button");
+            closeButton.innerHTML = "<i class='bx bx-x'></i>";
+            closeButton.classList.add("close-button");
+            closeButton.addEventListener("click", () => {
+                searchOverlay.style.display = "none";
+            });
+
+            searchOverlay.insertAdjacentElement('afterbegin', closeButton);
+            searchOverlay.style.display = "flex";
         });
-    
-        searchOverlay.insertAdjacentHTML('beforeend', resultsHTML);
-    
-        let closeButton = document.createElement("button");
-        closeButton.innerHTML = "<i class='bx bx-x'></i>";
-        closeButton.classList.add("close-button");
-        closeButton.addEventListener("click", () => {
-            searchOverlay.style.display = "none";
-        });
-    
-        searchOverlay.insertAdjacentElement('afterbegin', closeButton);
-        searchOverlay.style.display = "flex";
-    });
 }
 
 document.getElementById("movie-search").addEventListener("input", function () {

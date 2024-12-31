@@ -156,6 +156,12 @@ nav.open~.overlay {
 ::-webkit-scrollbar-thumb:hover {
     background: #004080;
 }
+.signup-login{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 20%;
+}
 .Login-button{
     border: none;
     background-color: hsl(188, 83%, 57%);
@@ -195,18 +201,35 @@ nav.open~.overlay {
     z-index: 9999999999999999999;
     transition: all 1s ease;
 }
-.searchbar input{
-    border: inset white 1px;
+.search-input{
     background-color: transparent;
+    font-size: 18px;
     border-radius: 20px;
     width: 300px;
     outline: none;
     padding: 5px 40px;
-    /*border: 1px solid #ccc; */
     background-image: url('../Images/Icons/search.png');
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: 5% 50%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.search-input:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+.search-input:focus {
+    outline: none;
+    border-color: #002366;
+    box-shadow: 0 0 15px rgba(64, 190, 221, 0.3),
+                0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px) scale(1.02);
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 350px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigational-links a{
     color: black;
@@ -246,15 +269,17 @@ nav.open~.overlay {
     right: 0;
     bottom: 0;
     background: white;
+    color: #000;
     z-index: 10000000000;
+    overflow-y: auto;
 }
 .search-result-overlay button {
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 10px;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 40px;
     cursor: pointer;
     z-index: 100000000000;
 }
@@ -263,11 +288,34 @@ nav.open~.overlay {
     gap: 20px;
     padding: 15px;
     border-bottom: 1px solid #eee;
+    animation: slideIn 0.5s ease-out forwards;
+    opacity: 0;
 }
 .movie-card img {
     width: 200px;
     height: 250px;
     object-fit: cover;
+}
+.movie-card-no-results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.movie-info-no-results h2{
+    font-size: 30px;
+    font-weight: 700;
+}
+.movie-info-no-results p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.movie-info-no-results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 .icon{
     width: 20px;
@@ -295,7 +343,7 @@ ul {
     margin-right: 10px;
     z-index: 100;
     position: relative;
-    background-color: hsl(186, 100%, 67%);
+    /*background-color: hsl(186, 100%, 67%);*/
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
@@ -376,7 +424,7 @@ ul {
     margin-right: 10px;
     z-index: 100;
     position: relative;
-    background-color: hsl(26, 83%, 60%);
+    /*background-color: hsl(26, 83%, 60%);*/
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
@@ -571,12 +619,13 @@ ul {
     justify-content: center;
     gap: 10px;
 }
-.book-timing button{
+.book-timing-button{
     border: none;
     background-color: #cccccc;
     color: white;
     border-radius: 20px;
-    height: 30px;
+    padding: 5px 10px;
+    height: 35px;
     cursor: pointer;
     font-size: 18px;
 }
@@ -615,10 +664,12 @@ ul {
 .book-timing-content-details-image{
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 120px;
 }
 .book-timing-content-details-image img{
-    width: 100px;
-    height: 115px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 .action-div, .thriller-div, .horror-div, .comedy-div, .dramaromance-div, .sci-fi-div, .animation-div{
@@ -960,4 +1011,16 @@ ul {
 .button button:hover{
     background: #ababab;
     color: #fff;
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

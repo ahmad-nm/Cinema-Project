@@ -87,11 +87,11 @@ nav .logo2 {
 }
 .search-result-overlay button {
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 10px;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
     z-index: 100000000000;
 }
@@ -106,18 +106,35 @@ nav .logo2 {
     height: 250px;
     object-fit: cover;
 }
-.searchbar input{
-    border: 1px outset white;
+.search-input{
     background-color: transparent;
+    font-size: 18px;
     border-radius: 20px;
     width: 300px;
     outline: none;
     padding: 5px 40px;
-    color: #ffffff;
-    background-image: url('.././Images/Icons/search.png');
+    background-image: url('../Images/Icons/search.png');
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: 5% 50%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.search-input:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+.search-input:focus {
+    outline: none;
+    border-color: #002366;
+    box-shadow: 0 0 15px rgba(64, 190, 221, 0.3),
+                0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px) scale(1.02);
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 350px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigational-links a{
     color: #ffffff;
@@ -212,4 +229,38 @@ nav .logo2 {
 .button-icon{
     height: 30px;
     width: 30px;
+}
+
+
+.trailer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    padding: 20px;
+    background: #000;
+    border-radius: 8px;
+}
+
+.close-modal {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 20px;
 }

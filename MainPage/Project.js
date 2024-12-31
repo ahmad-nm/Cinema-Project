@@ -201,28 +201,32 @@ function fetchSearch(searchTerm) {
         searchOverlay.innerHTML = "";
     
         let resultsHTML = '';
-        res.results.forEach((movie) => {
-            resultsHTML += `
-                <div class="movie-card">
-                    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-                    <div class="movie-info">
-                        <h3>${movie.title}</h3>
-                        <p>${movie.overview}</p>
-                        <a href="../Movie/movie.html?name=${movie.title}" style=" font-size: 24px">Read more</a>
+
+        if (res.results.length === 0) {
+            resultsHTML = `
+                <div class="movie-card-no-results">
+                    <div class="movie-info-no-results">
+                        <h2>No Results Found</h2>
+                        <p>Try searching with different keywords</p>
                     </div>
                 </div>
             `;
-        });
-        
-        document.querySelectorAll('.See-More-Btn').forEach((button) => {
-            button.addEventListener('click', (e) => {
-                const movieTitle = e.target.dataset.title;
-                if (movieTitle) {
-                    window.location.href = `../Movie/movie.html?name=${movieTitle}`;
-                }
+        }
+        else{
+            res.results.forEach((movie) => {
+                resultsHTML += `
+                    <div class="movie-card">
+                        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+                        <div class="movie-info">
+                            <h3>${movie.title}</h3>
+                            <p>${movie.overview}</p>
+                            <a href="../Movie/movie.html?name=${movie.title}" style=" font-size: 24px">Read more</a>
+                        </div>
+                    </div>
+                `;
             });
-        });
-
+        }    
+        
         searchOverlay.insertAdjacentHTML('beforeend', resultsHTML);
     
         let closeButton = document.createElement("button");
@@ -264,9 +268,82 @@ prev.addEventListener('click', function(){
 })
 
 
-/*document.querySelectorAll('.content button').forEach((button) => {
-    button.addEventListener('click', () => {
-        window.location.href = '../Movie/movie.html?name=' + button.querySelector('.Movie-Name p').textContent;
+document.querySelectorAll('.See-More-Btn').forEach((button) => {
+    button.addEventListener('click', (e) => {
+        console.log('Button clicked');
+        const movieTitle = e.target.closest('.item').querySelector('.Movie-Name').textContent;
+        if (movieTitle) {
+            window.location.href = `../Movie/movie.html?name=${encodeURIComponent(movieTitle)}`;
+        }
+        else{
+            console.error('Movie title not found');
+        }
     });
-});*/
+});
 
+
+const StreamDetails = [
+    {
+        src: './Images/Moviesbg/venom3.jpg',
+        title: 'Venom: The Last Dance',
+        hall: 'Hall A',
+        time: '5:30 PM - 7:30 PM'
+    },
+    {
+        src: './Images/Moviesbg/joker_2.jpg',
+        title: 'Joker: Folie à Deux',
+        hall: 'Hall A',
+        time: '8:00 PM - 10:00 PM'
+    },
+    {
+        src: './Images/Moviesbg/bee_keeper.jpg',
+        title: 'The Beekeeper',
+        hall: 'Hall A',
+        time: '10:30 PM - 12:30 AM'
+    },
+    {
+        src: './Images/Moviesbg/moana_2.jpg',
+        title: 'Moana 2',
+        hall: 'Hall A',
+        time: '10:00 AM - 12:00 PM',
+    },
+    {
+        src: './Images/Moviesbg/Mufasa_1.jpg',
+        title: 'Mufasa: The Lion King',
+        hall: 'Hall A',
+        time: '12:30 PM - 2:30 PM',
+    },
+    {
+        src: './Images/Moviesbg/Sonic_3.jpg',
+        title: 'Sonic the Hedgehog 3',
+        hall: 'Hall A',
+        time: '3:00 PM - 5:00 PM',
+    },
+    {
+        src: './Images/Moviesbg/deadpool_wolverine.jpg',
+        title: 'Deadpool & Wolverine',
+        hall: 'Hall A',
+        time: '1:00 AM - 3:00 AM',
+    }
+];
+
+document.querySelectorAll('.book-timing-button').forEach((button , index) => {
+    button.addEventListener('click', () => {
+        
+        const Content = document.getElementById('book-timing-content-id'); 
+
+        document.querySelectorAll('.book-timing-button').forEach((btn) => {
+            Content.style.display = 'none';
+            btn.style.backgroundColor = '';
+            btn.style.color = '';
+        });
+
+        Content.style.display = 'flex';
+        button.style.backgroundColor = '#002466';
+        button.style.color = 'rgb(255, 255, 255)';
+        document.getElementById('seats-image').src = StreamDetails[index].src;
+        document.getElementById('seats-movie-title').textContent = StreamDetails[index].title;
+        document.getElementById('seats-movie-hall').innerHTML = StreamDetails[index].hall;
+        document.getElementById('seats-times').textContent = StreamDetails[index].time;
+    });
+});
