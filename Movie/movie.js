@@ -145,3 +145,94 @@ function fetchSearch(searchTerm) {
 document.getElementById("movie-search").addEventListener("input", function () {
     fetchSearch(this.value);
 });
+
+function fetchMovieVideos(movieId) {
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYWQ2MGIzZTg5MDIwYTNhODVkYTQxYjNjNTQ3N2QzZCIsIm5iZiI6MTczNTMzNTM0NC43MjEsInN1YiI6IjY3NmYxZGIwMWVmYzI0MzRjZjEyYzExOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PVHfXcbGEfHikdEuL1fiUJ6bjBE7l-ZdMPjrQUGAy7o'
+        }
+    };
+
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, options)
+        .then(res => res.json())
+        .then(res => {
+            
+            if (res.results && res.results.length > 0) {
+                
+                const trailer = res.results.find(video => video.type === "Trailer");
+                
+                if (trailer && trailer.key) {
+                    const videoLink = `https://www.youtube.com/watch?v=${trailer.key}`;
+                    console.log('Found trailer link:', videoLink);
+                    
+                    const trailerButton = document.getElementById("watch-trailer");
+                    if (trailerButton) {
+                        trailerButton.href = videoLink;
+                    } else {
+                        console.error('Trailer button not found');
+                    }
+                } else {
+                    console.log('No trailer found in results');
+                }
+            } else {
+                console.log('No videos found for this movie');
+            }
+        })
+        .catch(err => console.error('Error fetching movie videos:', err));
+}
+
+document.getElementById("watch-trailer").addEventListener("click", function () {
+
+    const options = {
+        method: "GET",
+        headers: {
+            accept: "application/json",
+            Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYWQ2MGIzZTg5MDIwYTNhODVkYTQxYjNjNTQ3N2QzZCIsIm5iZiI6MTczNTMzNTM0NC43MjEsInN1YiI6IjY3NmYxZGIwMWVmYzI0MzRjZjEyYzExOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PVHfXcbGEfHikdEuL1fiUJ6bjBE7l-ZdMPjrQUGAy7o",
+        },
+    };
+
+    fetch(
+        "https://api.themoviedb.org/3/search/movie?query=" +
+        encodeURIComponent(fetchName()) +
+        "&include_adult=false&language=en-US&page=1",
+        options
+    )
+        .then((res) => res.json())
+        .then((res) => {
+            fetchMovieVideos(res.results[0].id);
+            const trailerButton = document.getElementById("watch-trailer");
+            if (trailerButton) {
+                trailerButton.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const videoId = trailerButton.href.split('v=')[1];
+                    const iframeContainer = document.getElementById("trailer-container-id");
+                    const iframe = document.getElementById("trailer");
+                    
+                    if (videoId) {
+                        iframeContainer.style.display = "flex";
+                        iframe.style.display = "block";
+                        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+                        console.log('Setting iframe src:', iframe.src); 
+                    } else {
+                        console.error('Invalid video ID');
+                    }
+                });
+            }
+            
+            document.getElementById("close-trailer-btn").addEventListener("click", function () {
+                const iframeContainer = document.getElementById("trailer-container-id");
+                const iframe = document.getElementById("trailer");
+                iframeContainer.style.display = "none";
+                iframe.style.display = "none";
+                iframe.src = "";
+            });
+        })
+        .catch((err) => {
+            console.error(err)
+            document.getElementById("error-message").innerHTML = "Movie not found";
+        });
+
+});

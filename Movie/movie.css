@@ -231,36 +231,31 @@ nav .logo2 {
     width: 30px;
 }
 
-
-.trailer-modal {
+.trailer-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
-
-.modal-content {
-    position: relative;
-    padding: 20px;
-    background: #000;
-    border-radius: 8px;
-}
-
-.close-modal {
-    position: absolute;
-    right: -10px;
-    top: -10px;
-    background: white;
+.trailer-container iframe {
+    width: 80%;
+    height: 80%;
     border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
+}
+.close-trailer {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 50px;
     cursor: pointer;
-    font-size: 20px;
+    z-index: 1001;
 }

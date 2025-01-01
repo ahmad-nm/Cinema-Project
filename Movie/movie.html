@@ -35,6 +35,10 @@
       <div class="search-result-overlay">
         <button><i class="bx bx-x"></i></button>
       </div>
+      <div class="trailer-container" id="trailer-container-id" style="display: none;">
+        <iframe id="trailer" src="#" frameborder="0" allowfullscreen width="100%" height="100%" style="display: none;"></iframe>
+        <button class="close-trailer" id="close-trailer-btn"><i class="bx bx-x"></i></button>
+      </div>
       <div class="movie-poster">
         <img id="poster" src="" alt="poster" />
       </div>
@@ -52,7 +56,7 @@
         <p id="release-date"></p>
         <div class="movie-buttons">
           <button onclick="changefavorite()" class="btn" id="add-favorite"><img src="../Images/Icons/heart.png" id="favorite-icon" alt="favorite" class="button-icon"></button>
-          <button onclick="trailer()" class="btn" id="watch-trailer"><img src="../Images/Icons/film.png" id="trailer-icon" alt="watch-trailer" class="button-icon"></button>
+          <a href="#"><button class="btn" id="watch-trailer"><img src="../Images/Icons/film.png" id="trailer-icon" alt="watch-trailer" class="button-icon"></button></a>
           <button onclick="changechecked()" class="btn" id="mark-watched"><img src="../Images/Icons/checked.png" id="watched-icon" alt="mark-watched" class="button-icon"></button> 
         </div>
         <div class="movie-overview">
