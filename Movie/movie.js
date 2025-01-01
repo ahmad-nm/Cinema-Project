@@ -25,7 +25,6 @@ fetch(
 )
     .then((res) => res.json())
     .then((res) => {
-        console.log(res.results[0]);
         let movie = res.results[0];
         document.getElementById("h1movie").innerHTML = movie.title;
         document.getElementById("language").innerHTML = movie.original_language + " &nbsp | &nbsp";
@@ -74,7 +73,7 @@ fetch(
         document.getElementById("error-message").innerHTML = "Movie not found";
     });
 
-    function changefavorite() {
+    function changefavorite() { 
         let fav = document.getElementById("favorite-icon").src;
         const movieTitle = document.getElementById("h1movie").textContent;
         const posterPath = document.getElementById("poster").src;
@@ -85,12 +84,31 @@ fetch(
         }
         else {
             document.getElementById("favorite-icon").src = "../Images/Icons/red-heart.png";
-            
+
+            let current = localStorage.getItem('favoriteMovie');
+
+            if (current) {
+                try {
+                    current = JSON.parse(current);
+                    
+                    if (!Array.isArray(current)) {
+                        current = []; 
+                    }
+                } catch (e) {
+                    current = [];
+                }
+            } else {
+                current = [];  
+            }
+
             const movieData = {
                 title: movieTitle,
                 poster: posterPath
             };
-            localStorage.setItem('favoriteMovie', JSON.stringify(movieData));
+
+            current.push(movieData);
+
+            localStorage.setItem('favoriteMovie', JSON.stringify(current));
         }
     }
 
@@ -240,7 +258,6 @@ document.getElementById("watch-trailer").addEventListener("click", function () {
     )
         .then((res) => res.json())
         .then((res) => {
-            console.log(res);
             fetchMovieVideos(res.results[0].id);
             const trailerButton = document.getElementById("watch-trailer");
             if (trailerButton) {

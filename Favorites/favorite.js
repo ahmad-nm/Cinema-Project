@@ -16,42 +16,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-function getMovieDetails() {
-
-    const storedMovie = localStorage.getItem('favoriteMovie');
-
-    if (storedMovie) {
-        const movieData = JSON.parse(storedMovie);
-
-        const title = movieData.title;
-        const poster = movieData.poster;
-
-        console.log('Favorite Movie:', title);
-        console.log('Poster Path:', poster);
-
-        return movieData;
-    } else {
-        console.log('No favorite movie found');
-        return null;
-    }
-}
-
 function displayFavoriteMovie() {
-    const favoriteMovie = getMovieDetails();
+    const favoriteMovie = localStorage.getItem('favoriteMovie');
 
-    if (favoriteMovie) {
+    if (!favoriteMovie) {
+        return;
+    }
+
+    const parsedFavoriteMovie = JSON.parse(favoriteMovie);
+
+    parsedFavoriteMovie.forEach((movie) => {
         const movieContainer = document.querySelector('.favorite-movies');
+
+        const imagecont = document.createElement('div');
+        imagecont.classList.add('image-cont');
+
         const movieImage = document.createElement('img');
-        movieImage.src = favoriteMovie.poster;
-        movieImage.alt = favoriteMovie.title;
+
+        movieImage.src = movie.poster;
+        movieImage.alt = movie.title;
         movieImage.style.cursor = 'pointer';
-        movieContainer.appendChild(movieImage);
+
+        let removeButton = document.createElement('button');
+        removeButton.innerHTML = '<img src="../Images/Icons/close.png" alt="Remove">';
+        removeButton.classList.add('remove-btn');
+        removeButton.style.position = 'absolute';
+        removeButton.style.top = '-10px';
+        removeButton.style.right = '-10px';
+        
+        removeButton.addEventListener('click', () => {
+            let favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovie'));
+
+            favoriteMovies = favoriteMovies.filter((favMovie) => favMovie.title !== movie.title);
+
+            localStorage.setItem('favoriteMovie', JSON.stringify(favoriteMovies));
+
+            movieContainer.removeChild(imagecont);
+
+            updateBadgeCount();
+        });
+
+        imagecont.appendChild(movieImage);
+        imagecont.appendChild(removeButton);
+
+        movieContainer.appendChild(imagecont);
 
         movieImage.addEventListener('click', () => {
-            window.location.href = `../Movie/movie.html?name=${favoriteMovie.title.split(' ').join('%20')}`;
+            window.location.href = `../Movie/movie.html?name=${movie.title.split(' ').join('%20')}`;
         });
-    }
+    });
 }
 
 function displayWatchedMovie() {
