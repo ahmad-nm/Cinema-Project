@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../Images/logo-2.png">
+    <link rel="stylesheet" type="text/css" href="./Login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="Slider">
+            <a href="../Project.html"><button class="back-to-website">Back to website</button></a>
+        </div>
+        <div class="Login-Form">
+            <form class="Login-Form">
+                <h1>Welcome back!</h1>
+                <div class="username-input">
+                    <label for="Username">Username / Email</label>
+                    <input class="inputbox" type="text" id="Username" placeholder="Enter your username or email" required>
+                </div>
+                <div class="password-input">
+                    <label for="Password">Password</label>
+                    <input class="inputbox" type="password" id="Password" placeholder="Enter your password" required>
+                    <div class="show">
+                        <input type="checkbox" onclick="myFunction()"><p style="margin: 0; color: rgba(255, 255, 255, 0.539); font-size: 14px;">Show Password</p>
+                    </div>
+                    <p id="email-alert" style="color: rgba(255, 255, 255, 0.813); display: none;"></p>
+                    <p id="alert" style="color: rgba(255, 255, 255, 0.813); display: none;"></p>
+                </div>
+                
+                <button id="Login" class="Login-button">Login</button>
+                <hr style="margin: 0;">
+                <div class="additional-options">
+                    <p><a href="#">Forgot your password?</a></p>
+                    <p style="color: rgb(255, 255, 255);">Don't have an account? <a href="../SignUp/signup.html">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./Login.js"></script>
+</body>
+</html>

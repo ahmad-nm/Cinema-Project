@@ -158,7 +158,7 @@ function fetchMovieVideos(movieId) {
     fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, options)
         .then(res => res.json())
         .then(res => {
-            
+    
             if (res.results && res.results.length > 0) {
                 
                 const trailer = res.results.find(video => video.type === "Trailer");
@@ -202,6 +202,7 @@ document.getElementById("watch-trailer").addEventListener("click", function () {
     )
         .then((res) => res.json())
         .then((res) => {
+            console.log(res);
             fetchMovieVideos(res.results[0].id);
             const trailerButton = document.getElementById("watch-trailer");
             if (trailerButton) {

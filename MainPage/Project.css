@@ -162,7 +162,7 @@ nav.open~.overlay {
     gap: 5px;
     width: 20%;
 }
-.Login-button{
+/*.Login-button{
     border: none;
     background-color: hsl(188, 83%, 57%);
     color: white;
@@ -179,7 +179,58 @@ nav.open~.overlay {
     padding: 5px 20px;
     height: 40px;
     cursor: pointer;
+}*/
+
+.Login-button {
+    border: none;
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    color: white;
+    border-radius: 20px;
+    padding: 5px 20px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
+
+.Login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #9d3de2, #5a1ee0);
+}
+
+.Login-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Signup-button {
+    border: none;
+    background: linear-gradient(135deg, #f2994a, #f2c94c);
+    color: white;
+    border-radius: 20px;
+    padding: 5px 20px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.Signup-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #f2994a, #f7d06c);
+}
+
+.Signup-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .searchbar{
     display: flex;
     flex-direction: row;
@@ -793,9 +844,9 @@ ul {
 }
 .nav-button {
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border: none;
     padding: 5px;
     cursor: pointer;
