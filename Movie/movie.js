@@ -74,25 +74,63 @@ fetch(
         document.getElementById("error-message").innerHTML = "Movie not found";
     });
 
-function changefavorite() {
-    let fav = document.getElementById("favorite-icon").src;
-
-    if (fav.includes("red-heart")) {
-        document.getElementById("favorite-icon").src = "../Images/Icons/heart.png";
+    function changefavorite() {
+        let fav = document.getElementById("favorite-icon").src;
+        const movieTitle = document.getElementById("h1movie").textContent;
+        const posterPath = document.getElementById("poster").src;
+        
+        if (fav.includes("red-heart")) {
+            document.getElementById("favorite-icon").src = "../Images/Icons/heart.png";
+            localStorage.removeItem('favoriteMovie');
+        }
+        else {
+            document.getElementById("favorite-icon").src = "../Images/Icons/red-heart.png";
+            
+            const movieData = {
+                title: movieTitle,
+                poster: posterPath
+            };
+            localStorage.setItem('favoriteMovie', JSON.stringify(movieData));
+        }
     }
-    else {
-        document.getElementById("favorite-icon").src = "../Images/Icons/red-heart.png";
-    }
-}
 
 function changechecked() {
     let checked = document.getElementById("watched-icon").src;
+    const movieTitle = document.getElementById("h1movie").textContent;
+    const posterPath = document.getElementById("poster").src;
 
     if (checked.includes("greencheck")) {
         document.getElementById("watched-icon").src = "../Images/Icons/checked.png";
+        localStorage.removeItem('watchedMovie');
     }
     else {
         document.getElementById("watched-icon").src = "../Images/Icons/greencheck.png";
+        
+        const movieData = {
+            title: movieTitle,
+            poster: posterPath
+        };
+        localStorage.setItem('watchedMovie', JSON.stringify(movieData));
+    }
+}
+
+function changeadd() {
+    let add = document.getElementById("add-button").src;
+    const movieTitle = document.getElementById("h1movie").textContent;
+    const posterPath = document.getElementById("poster").src;
+
+    if (add.includes("bookmarkorange")) {
+        document.getElementById("add-button").src = "../Images/Icons/bookmark.png";
+        localStorage.removeItem('addMovie');
+    }
+    else{
+        document.getElementById("add-button").src = "../Images/Icons/bookmarkorange.png";
+
+        const movieData = {
+            title: movieTitle,
+            poster: posterPath
+        };
+        localStorage.setItem('addMovie', JSON.stringify(movieData));
     }
 }
 

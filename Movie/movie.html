@@ -16,7 +16,7 @@
     <nav>
       <div class="logo">
         <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="../Images/Icons/logo.webp" alt="logo" class="logo-icon"/>
+          <img src="../Images/logo-2.png" alt="logo" class="logo-icon"/>
           <span class="logo-name">Cinemacity</span>
         </div>
 
@@ -26,8 +26,8 @@
         <div class="navigational-links">
           <a href="../Project.html">Home</a>
           <a href="#">Movies</a>
-          <a href="#">ShowTimes</a>
-          <a href="#">Food</a>
+          <a href="../Favorites/favorite.html">WatchList</a>
+          <a href="../Menu/menu.html">Food</a>
         </div>
       </div>
     </nav>
@@ -57,7 +57,8 @@
         <div class="movie-buttons">
           <button onclick="changefavorite()" class="btn" id="add-favorite"><img src="../Images/Icons/heart.png" id="favorite-icon" alt="favorite" class="button-icon"></button>
           <a href="#"><button class="btn" id="watch-trailer"><img src="../Images/Icons/film.png" id="trailer-icon" alt="watch-trailer" class="button-icon"></button></a>
-          <button onclick="changechecked()" class="btn" id="mark-watched"><img src="../Images/Icons/checked.png" id="watched-icon" alt="mark-watched" class="button-icon"></button> 
+          <button onclick="changechecked()" class="btn" id="mark-watched"><img src="../Images/Icons/checked.png" id="watched-icon" alt="mark-watched" class="button-icon"></button>
+          <button onclick="changeadd()" class="btn" id="add-to-list"><img src="../Images/Icons/bookmark.png" alt="bookmark" id="add-button" class="button-icon"></button>
         </div>
         <div class="movie-overview">
           <p id="overview"></p>

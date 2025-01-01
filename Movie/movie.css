@@ -20,8 +20,8 @@ body{
     width: 20px;
 }
 .logo-icon{
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
     border-radius: 40%;
 }
 .navigation_bar{
@@ -162,7 +162,6 @@ nav .logo2 {
     font-size: 16px;
 }
 
-/* Vendor prefixes for cross-browser support */
 .searchbar input::-webkit-input-placeholder {
     color: #ffffff;
     opacity: 0.7;
@@ -221,7 +220,7 @@ nav .logo2 {
 }
 .movie-buttons button{
     border: none;
-    background-color: #2B5263;
+    background: linear-gradient(135deg, hsl(272, 76%, 33%), hsl(260, 100%, 24%));
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;

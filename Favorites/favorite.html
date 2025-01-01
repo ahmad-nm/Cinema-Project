@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <title>Favorites</title>
+    <link rel="icon" href="../Images/logo-2.png">
+    <link rel="stylesheet" href="./favorite.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../Images/logo-2.png" alt="CinemaCity logo">
+                <span>Cinemacity</span>
+            </div>
+            <nav class="menu">
+                <a href="../Project.html" class="menu-item">Home</a>
+                <a href="#" class="menu-item">Discover</a>
+                <a href="#" class="menu-item">Showtimes</a>
+                <a href="#" class="menu-item active">WatchList <span class="badge" id="badge-count">12</span></a>
+            </nav>
+        </aside>
+
+        <main>
+            <header>
+                <h1>WatchList</h1>
+                <button id="edit-shelf">Edit List</button>
+                <input type="text" placeholder="Search" class="search-bar">
+            </header>
+            <section class="shelves">
+                <div class="shelf">
+                    <h2>Want to See</h2>
+                    <div class="add-movies">
+                        
+                    </div>
+                </div>
+                <div class="shelf">
+                    <h2>Favorites</h2>
+                    <div class="favorite-movies">
+                        
+                    </div>
+                </div>
+                <div class="shelf">
+                    <h2>Watched</h2>
+                    <div class="watched-movies">
+                        
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./favorite.js"></script>
+</body>
+</html>
