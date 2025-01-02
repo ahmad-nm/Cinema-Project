@@ -192,8 +192,8 @@
             </div>
         </div>
 
-        <div id="hall" style="display: none;">
-            <div class="date-time-selection">
+        <div class="date-time-selection" style="display: none;" id="date-time">
+            <div class="dates-times">
                 <div class="date-selection">
                     <h3>Choose a Date</h3>
                     <div class="dates">
@@ -204,7 +204,7 @@
                         <span>Fri</span>
                     </div>
                 </div>
-        
+                
                 <div class="time-selection">
                     <h3>Time</h3>
                     <div class="times">
@@ -218,20 +218,25 @@
                     </div>
                 </div>
             </div>
+            <div id="set-time-btn" style="display: none;">
+                <button id="set-time">Set Time</button>
+            </div>
+        </div>
+        <div id="hall" style="display: none;">
             <div class="screen">
                 <h3>Screen</h3>
                 <div></div>
             </div>
-    
+        
             <div class="seating">
                 <div class="left-seating">
-    
+        
                 </div>
                 <div class="right-seating">
-    
+        
                 </div>
             </div>
-    
+        
             <div class="legend">
                 <div>
                     <span class="available"></span> Available
@@ -243,13 +248,20 @@
                     <span class="taken"></span> Taken
                 </div>
             </div>
-    
-            <div class="confirm-btn">
-                <button>Confirm Selection</button>
+            <div class="ticket-page" style="display: none;">
+                <div class="ticket">
+                    <p id="receipt-hall"> Hall: A</p>
+                    <p id="receipt-date">mon 10:00 - 12:00</p>
+                    <p id="receipt-seat"></p>
+                    <hr style="margin: 0;">
+                    <p id="receipt-price"></p>
+                </div>
             </div>
-        </div>
-        <div class="ticket">
-            
+
+            <div class="confirm-btn">
+                <p id="alert" style="display: none;"></p>
+                <button id="confirm">Confirm Selection</button>
+            </div>
         </div>
     </div>
 

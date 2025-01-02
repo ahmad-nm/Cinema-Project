@@ -40,6 +40,13 @@ body {
 
 .date-time-selection {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dates-times {
+    display: flex;
     justify-content: space-between;
 }
 
@@ -93,14 +100,14 @@ body {
 
 .right-seating {
     display: grid;
-    grid-template-columns: repeat(7, 30px);
+    grid-template-columns: repeat(9, 30px);
     gap: 5px;
     justify-content: center;
 }
 
 .left-seating {
     display: grid;
-    grid-template-columns: repeat(7, 30px);
+    grid-template-columns: repeat(9, 30px);
     gap: 5px;
     justify-content: center;
 }
@@ -179,7 +186,26 @@ body {
     background: #cc5200;
 }
 
+#set-time-btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
 
+#set-time {
+    padding: 10px 20px;
+    background: #ff6600;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#set-time:hover {
+    background: #cc5200;
+}
 
 
 .carousel{
@@ -484,4 +510,28 @@ body {
 
 .duration-rating img {
     width: 20px !important; 
+}
+
+.ticket-page {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.ticket {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: hsla(0, 0%, 40%, 0.5);
+    color: hsl(0, 0%, 80%);
+    width: 300px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.ticket p {
+    margin: 0;
 }

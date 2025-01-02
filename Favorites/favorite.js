@@ -1,18 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('header input');
-    const movies = document.querySelectorAll('.shelf img');
-
+    
     searchInput.addEventListener('input', (event) => {
         const searchQuery = event.target.value.toLowerCase();
+        const movieContainers = document.querySelectorAll('.image-cont');
 
-        movies.forEach((movie) => {
+        movieContainers.forEach((container) => {
+            const movie = container.querySelector('img');
+            const removeBtn = container.querySelector('.remove-btn');
             const movieTitle = movie.alt.toLowerCase();
+
             if (movieTitle.includes(searchQuery)) {
-                movie.style.display = 'block';
+                container.style.display = 'block';
+                removeBtn.style.display = 'block';
             } else {
-                movie.style.display = 'none';
+                container.style.display = 'none';
+                removeBtn.style.display = 'none';
             }
         });
+        const visibleMovies = document.querySelectorAll('.image-cont[style*="display: block"]').length;
+        document.getElementById('badge-count').textContent = visibleMovies;
+        updateBadgeCount();
     });
 });
 
@@ -141,6 +149,7 @@ function displayAddMovie() {
 displayFavoriteMovie();
 displayWatchedMovie();
 displayAddMovie();
+updateBadgeCount();
 
 function updateBadgeCount() {
 
