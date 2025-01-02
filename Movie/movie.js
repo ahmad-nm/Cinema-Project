@@ -124,7 +124,7 @@ function changechecked() {
     else {
         document.getElementById("watched-icon").src = "../Images/Icons/greencheck.png";
 
-        let current = localStorage.getItem('favoriteMovie');
+        let current = localStorage.getItem('watchedMovie');
 
         if (current) {
             try {
@@ -147,7 +147,7 @@ function changechecked() {
 
         current.push(movieData);
 
-        localStorage.setItem('favoriteMovie', JSON.stringify(current));
+        localStorage.setItem('watchedMovie', JSON.stringify(current));
     }
 }
 
@@ -163,11 +163,30 @@ function changeadd() {
     else {
         document.getElementById("add-button").src = "../Images/Icons/bookmarkorange.png";
 
+        let current = localStorage.getItem('addMovie');
+
+        if (current) {
+            try {
+                current = JSON.parse(current);
+
+                if (!Array.isArray(current)) {
+                    current = [];
+                }
+            } catch (e) {
+                current = [];
+            }
+        } else {
+            current = [];
+        }
+
         const movieData = {
             title: movieTitle,
             poster: posterPath
         };
-        localStorage.setItem('addMovie', JSON.stringify(movieData));
+
+        current.push(movieData);
+
+        localStorage.setItem('addMovie', JSON.stringify(current));
     }
 }
 
