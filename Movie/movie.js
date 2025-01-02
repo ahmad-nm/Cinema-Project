@@ -73,44 +73,44 @@ fetch(
         document.getElementById("error-message").innerHTML = "Movie not found";
     });
 
-    function changefavorite() { 
-        let fav = document.getElementById("favorite-icon").src;
-        const movieTitle = document.getElementById("h1movie").textContent;
-        const posterPath = document.getElementById("poster").src;
-        
-        if (fav.includes("red-heart")) {
-            document.getElementById("favorite-icon").src = "../Images/Icons/heart.png";
-            localStorage.removeItem('favoriteMovie');
-        }
-        else {
-            document.getElementById("favorite-icon").src = "../Images/Icons/red-heart.png";
+function changefavorite() {
+    let fav = document.getElementById("favorite-icon").src;
+    const movieTitle = document.getElementById("h1movie").textContent;
+    const posterPath = document.getElementById("poster").src;
 
-            let current = localStorage.getItem('favoriteMovie');
+    if (fav.includes("red-heart")) {
+        document.getElementById("favorite-icon").src = "../Images/Icons/heart.png";
+        localStorage.removeItem('favoriteMovie');
+    }
+    else {
+        document.getElementById("favorite-icon").src = "../Images/Icons/red-heart.png";
 
-            if (current) {
-                try {
-                    current = JSON.parse(current);
-                    
-                    if (!Array.isArray(current)) {
-                        current = []; 
-                    }
-                } catch (e) {
+        let current = localStorage.getItem('favoriteMovie');
+
+        if (current) {
+            try {
+                current = JSON.parse(current);
+
+                if (!Array.isArray(current)) {
                     current = [];
                 }
-            } else {
-                current = [];  
+            } catch (e) {
+                current = [];
             }
-
-            const movieData = {
-                title: movieTitle,
-                poster: posterPath
-            };
-
-            current.push(movieData);
-
-            localStorage.setItem('favoriteMovie', JSON.stringify(current));
+        } else {
+            current = [];
         }
+
+        const movieData = {
+            title: movieTitle,
+            poster: posterPath
+        };
+
+        current.push(movieData);
+
+        localStorage.setItem('favoriteMovie', JSON.stringify(current));
     }
+}
 
 function changechecked() {
     let checked = document.getElementById("watched-icon").src;
@@ -123,12 +123,31 @@ function changechecked() {
     }
     else {
         document.getElementById("watched-icon").src = "../Images/Icons/greencheck.png";
-        
+
+        let current = localStorage.getItem('favoriteMovie');
+
+        if (current) {
+            try {
+                current = JSON.parse(current);
+
+                if (!Array.isArray(current)) {
+                    current = [];
+                }
+            } catch (e) {
+                current = [];
+            }
+        } else {
+            current = [];
+        }
+
         const movieData = {
             title: movieTitle,
             poster: posterPath
         };
-        localStorage.setItem('watchedMovie', JSON.stringify(movieData));
+
+        current.push(movieData);
+
+        localStorage.setItem('favoriteMovie', JSON.stringify(current));
     }
 }
 
@@ -141,7 +160,7 @@ function changeadd() {
         document.getElementById("add-button").src = "../Images/Icons/bookmark.png";
         localStorage.removeItem('addMovie');
     }
-    else{
+    else {
         document.getElementById("add-button").src = "../Images/Icons/bookmarkorange.png";
 
         const movieData = {
@@ -214,15 +233,15 @@ function fetchMovieVideos(movieId) {
     fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, options)
         .then(res => res.json())
         .then(res => {
-    
+
             if (res.results && res.results.length > 0) {
-                
+
                 const trailer = res.results.find(video => video.type === "Trailer");
-                
+
                 if (trailer && trailer.key) {
                     const videoLink = `https://www.youtube.com/watch?v=${trailer.key}`;
                     console.log('Found trailer link:', videoLink);
-                    
+
                     const trailerButton = document.getElementById("watch-trailer");
                     if (trailerButton) {
                         trailerButton.href = videoLink;
@@ -266,18 +285,18 @@ document.getElementById("watch-trailer").addEventListener("click", function () {
                     const videoId = trailerButton.href.split('v=')[1];
                     const iframeContainer = document.getElementById("trailer-container-id");
                     const iframe = document.getElementById("trailer");
-                    
+
                     if (videoId) {
                         iframeContainer.style.display = "flex";
                         iframe.style.display = "block";
                         iframe.src = `https://www.youtube.com/embed/${videoId}`;
-                        console.log('Setting iframe src:', iframe.src); 
+                        console.log('Setting iframe src:', iframe.src);
                     } else {
                         console.error('Invalid video ID');
                     }
                 });
             }
-            
+
             document.getElementById("close-trailer-btn").addEventListener("click", function () {
                 const iframeContainer = document.getElementById("trailer-container-id");
                 const iframe = document.getElementById("trailer");

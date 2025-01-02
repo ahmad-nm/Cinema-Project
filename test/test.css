@@ -2,6 +2,14 @@
     font-family: "Poppins", sans-serif;
 }
 
+body {
+    background-color: #999da0;
+}
+
+label {
+    color: hsl(0, 0%, 20%);
+}
+
 .login-container {
     width: 100%;
     height: 100vh;
@@ -22,6 +30,7 @@
 
 .login-header h1 {
     text-align: center;
+    color: hsl(0, 0%, 20%);
 }
 
 .input-container {
@@ -63,22 +72,71 @@
     align-items: center;
     gap: 4px;
     margin: 0 !important;
-    color: #292cdc;
+    color: hsl(202, 46%, 45%);
     cursor: pointer;    
+}
+
+#forgot-password {
+    font-size: 12px;
+    margin-left: 10px;
+    color: hsl(202, 46%, 45%);
+    cursor: pointer;
 }
 
 #login-button {
     width: 300px;
-    background-color: #292cdc;
-    color: #fff;
-    border-radius: 20px;
-    border: 1.5px solid #292cdc;
-    padding: 10px 20px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, hsl(205, 60%, 40%), hsl(207, 57%, 36%));
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+#login-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
 }
 
 #login-button:hover {
-    background-color: #fff;
-    color: #292cdc;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+}
+
+#login-button:hover::before {
+    left: 100%;
+}
+
+#login-button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+#login-button:focus {
+    outline: none;
+}
+
+#password-alert {
+    color: hsl(0, 0%, 20%);
+    display: none;
+}
+
+#username-alert {
+    color: hsl(0, 0%, 20%);
+    display: none;
+    margin: 0;
 }

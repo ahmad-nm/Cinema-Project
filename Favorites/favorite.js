@@ -69,21 +69,67 @@ function displayFavoriteMovie() {
 
 function displayWatchedMovie() {
     const watchedMovie = localStorage.getItem('watchedMovie');
-    const parsedWatchedMovie = watchedMovie ? JSON.parse(watchedMovie) : null;
+    // Specifically target the watched-movies container
+    const watchedContainer = document.querySelector('.shelf .watched-movies');
+    console.log(watchedContainer);
 
-    if (parsedWatchedMovie) {
-        const movieContainer = document.querySelector('.watched-movies');
-        const movieImage = document.createElement('img');
-        movieImage.src = parsedWatchedMovie.poster;
-        movieImage.alt = parsedWatchedMovie.title;
-        movieImage.style.cursor = 'pointer';
-
-        movieContainer.appendChild(movieImage);
-
-        movieImage.addEventListener('click', () => {
-            window.location.href = `../Movie/movie.html?name=${parsedWatchedMovie.title.split(' ').join('%20')}`;
-        });
+    if (!watchedContainer) {
+        console.error('Watched movies container not found');
+        return;
     }
+
+    let parsedWatchedMovie = [];
+
+    if (watchedMovie) {
+        try {
+            parsedWatchedMovie = JSON.parse(watchedMovie);
+            if (!Array.isArray(parsedWatchedMovie)) {
+                parsedWatchedMovie = [parsedWatchedMovie];
+            }
+        } catch (error) {
+            console.error('Error parsing watched movies:', error);
+            return;
+        }
+    }
+
+    parsedWatchedMovie.forEach((movie) => {
+        const WatchedmovieContainer = document.querySelector('.watched-movies');
+        console.log(WatchedmovieContainer);
+        const watchedimagecont = document.createElement('div');
+        watchedimagecont.classList.add('image-cont');
+        const watchedmovieImage = document.createElement('img');
+        watchedmovieImage.src = movie.poster;
+        watchedmovieImage.alt = movie.title;
+        watchedmovieImage.style.cursor = 'pointer';
+
+        let removeButton = document.createElement('button');
+        removeButton.innerHTML = '<img src="../Images/Icons/close.png" alt="Remove">';
+        removeButton.classList.add('remove-btn');
+        removeButton.style.position = 'absolute';
+        removeButton.style.top = '-10px';
+        removeButton.style.right = '-10px';
+        
+        removeButton.addEventListener('click', () => {
+            let WatchedMovies = JSON.parse(localStorage.getItem('watchedMovie'));
+
+            WatchedMovies = WatchedMovies.filter((watchMovie) => watchMovie.title !== movie.title);
+
+            localStorage.setItem('watchedMovie', JSON.stringify(WatchedMovies));
+
+            WatchedmovieContainer.removeChild(watchedimagecont);
+
+            updateBadgeCount();
+        });
+
+        watchedimagecont.appendChild(watchedmovieImage);
+        watchedimagecont.appendChild(removeButton);
+
+        WatchedmovieContainer.appendChild(watchedimagecont);
+
+        watchedmovieImage.addEventListener('click', () => {
+            window.location.href = `../Movie/movie.html?name=${movie.title.split(' ').join('%20')}`;
+        });
+    });
 }
 
 function displayAddMovie() {
