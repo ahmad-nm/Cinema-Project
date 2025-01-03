@@ -1,0 +1,159 @@
+body{
+    font-family: "Outfit", sans-serif;
+    background-color: hsl(0, 0%, 20%);
+}
+a{
+    color: rgb(199, 90, 0);
+}
+h1 { 
+    margin: 0;
+    font-size: 50px;
+    color: white;
+}
+label{
+    color: white;
+    font-size: 20px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    gap: 130px;
+    padding: 0px 20px;
+}
+.Slider{
+    width: 45%;
+    height: 100vh;
+    margin-top: 20px;
+    background-image: url(../Images/cinemateyetna.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 20px;
+}
+.back-to-website {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.back-to-website:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.5);
+}
+.back-to-website:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.Login-Form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.username-input, .password-input{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.show{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.inputbox{
+    padding: 15px;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    background-color: hsla(0, 0%, 80%, 0.299);
+    outline: none;
+    width: 400px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.inputbox:hover {
+    background-color: rgba(204, 204, 204, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.inputbox:focus {
+    background-color: rgba(204, 204, 204, 0.4);
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+.inputbox::placeholder {
+    color: rgba(255,255,255,0.7);
+    transition: opacity 0.3s ease;
+}
+.inputbox:focus::placeholder {
+    opacity: 0.5;
+}
+.additional-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
+}
+.additional-options p{
+    margin: 0;
+}
+
+.Login-button {
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    background: linear-gradient(135deg, hsl(22, 94%, 32%), hsl(22, 94%, 40%));
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 430px;
+    padding: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+.Login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, hsl(22, 94%, 35%), hsl(22, 94%, 45%));
+}
+.Login-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.Login-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+.Login-button:hover::before {
+    left: 100%;
+}

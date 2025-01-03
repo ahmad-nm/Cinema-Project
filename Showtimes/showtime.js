@@ -50,8 +50,19 @@ let isAutoSliding = true;
 
 document.querySelectorAll('.buttons button').forEach((button) => {
     button.addEventListener('click', () => {
+        let Step = document.querySelectorAll('.header nav span');
+        Step.forEach((step) => {
+            step.classList.remove('active');
+        });
+        Step[1].classList.add('active');
+
         let timeSelectionDiv = document.getElementById('date-time');
         timeSelectionDiv.style.display = 'flex';
+        timeSelectionDiv.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+
         isAutoSliding = false;
         clearTimeout(runNextAuto);
     });
@@ -65,6 +76,10 @@ document.querySelectorAll('.dates span').forEach((span) => {
         let day = document.querySelector('.dates span.active').textContent;
         let timings = movieTimings[day];
         let timeDiv = document.querySelectorAll('.times span');
+        let setTime = document.getElementById('set-time-btn');
+
+        setTime.style.visibility = 'visible';
+        document.getElementById('hall').style.display = 'none';
 
         if (activeDate) {
             activeDate.classList.remove('active');
@@ -72,13 +87,13 @@ document.querySelectorAll('.dates span').forEach((span) => {
                 time.classList.remove('active');
             });
         }
+
         for (let i = 0; i < timings.length; i++) {
             if (movieTitle.textContent.toUpperCase() === timings[i].movie.toUpperCase()) {
                 let movieTime = movieTimings[day][i].time;
                 timeDiv.forEach((time) => {
                     if (time.textContent === movieTime) {
                         time.classList.add('active');
-                        document.getElementById('set-time-btn').style.display = 'flex';
                     }
                 });
             }
@@ -87,10 +102,20 @@ document.querySelectorAll('.dates span').forEach((span) => {
 });
 
 document.getElementById('set-time').addEventListener('click', () => {
-    let timeSelectionBtn = document.getElementById('set-time');
-    timeSelectionBtn.style.display = 'none';
+    let timeSelectionBtn = document.getElementById('set-time-btn');
+    timeSelectionBtn.style.visibility = 'hidden';
     let SeatsDiv = document.getElementById('hall');
     SeatsDiv.style.display = 'block';
+    SeatsDiv.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+
+    let Step = document.querySelectorAll('.header nav span');
+    Step.forEach((step) => {
+        step.classList.remove('active');
+    });
+    Step[2].classList.add('active');
 });
 
 const leftseatingArea = document.querySelector('.left-seating');
@@ -123,7 +148,6 @@ for (let row = 0; row < leftrows; row++) {
         seat.addEventListener('click', () => {
             if (seat.classList.contains('available')) {
                 seat.classList.toggle('selected');
-
             }
         });
     }
@@ -243,13 +267,6 @@ document.getElementById('confirm').addEventListener('click', () => {
     let selectedSeats = document.querySelectorAll('.selected');
     let seatNames = [];
 
-    if (selectedSeats.length === 0) {
-        const alertElement = document.getElementById('alert');
-        alertElement.style.display = 'block';
-        alertElement.innerHTML = 'Please select a seat';
-        return;
-    }
-
     selectedSeats.forEach((seat) => {
         seatNames.push(seat.dataset.seatName);
     });
@@ -258,17 +275,56 @@ document.getElementById('confirm').addEventListener('click', () => {
         document.getElementById('receipt-seat').textContent = 'Seat/s:' + ' ' + seatNames.join(' ');
     }
 
-    TotalPrice();
-    document.querySelector('.ticket-page').style.display = 'flex';
+    const totalPrice = TotalPrice();
+
+    if (totalPrice <= 0) {
+        const alertElement = document.getElementById('alert');
+        alertElement.style.display = 'block';
+        alertElement.textContent = 'Please select a seat';
+        return;
+    }
+    else {
+        document.getElementById('alert').style.display = 'none';
+        document.getElementById('confirm').textContent = 'Book Your Ticket';
+    }
+
+    let Ticket = document.querySelector('.ticket-page');
+    Ticket.style.display = 'flex';
+    Ticket.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+
+    let Step = document.querySelectorAll('.header nav span');
+    Step.forEach((step) => {
+        step.classList.remove('active');
+    });
+    Step[3].classList.add('active');
+
+    if (Ticket.style.display === 'flex' && totalPrice > 0) {
+        const selectedSeats = document.querySelectorAll('.selected');
+        if (selectedSeats.length > 0) {
+            document.getElementById('confirm').onclick = function() {
+                window.location.href = '../Receipt/receipt.html';
+            }
+        }
+    }
 });
 
 function TotalPrice() {
-    let price = -8;
-    let selectedSeats = document.querySelectorAll('.selected');
-    selectedSeats.forEach(() => {
-        price += 8;
-    });
+    const selectedSeats = document.querySelectorAll('.selected');
+    const price = (selectedSeats.length - 1) * 8;
     document.getElementById('receipt-price').innerHTML = 'Total Price: $' + price;
+    return price;
 }
 
-
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    const headerPosition = header.offsetTop;
+    
+    if (window.scrollY > headerPosition) {
+        header.classList.add('fixed-header');
+    } else {
+        header.classList.remove('fixed-header');
+    }
+});

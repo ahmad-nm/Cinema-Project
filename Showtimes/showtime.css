@@ -38,6 +38,19 @@ body {
     opacity: 1;
 }
 
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    padding: 20px;
+    margin-left: 40px;
+    background-color: rgba(27, 27, 27, 0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
 .date-time-selection {
     display: flex;
     flex-direction: column;
@@ -168,7 +181,10 @@ body {
 
 .confirm-btn {
     margin-top: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .confirm-btn button {
@@ -534,4 +550,19 @@ body {
 
 .ticket p {
     margin: 0;
+}
+
+#alert {
+    color: #ff3333;
+    background-color: rgba(255, 0, 0, 0.1);
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ff3333;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    width: fit-content;
+    display: none;
+    transition: all 0.3s ease;
 }

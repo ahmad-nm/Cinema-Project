@@ -1,83 +1,119 @@
-function showPassword() {
-    var x = document.getElementById("Password");
-    if (x.type === "password") {
-        x.type = "text";
+function togglePassword() {
+    let passwordInput = document.getElementById("password-input");
+    let toggleLink = document.getElementById("pass-toggle");
+
+    if (passwordInput.type === "password") {
+        toggleLink.innerHTML = "Hide <i class='bx bx-hide'></i>";
+        passwordInput.type = "text";
     } else {
-        x.type = "password";
+        toggleLink.innerHTML = "Show <i class='bx bx-show-alt'></i>";
+        passwordInput.type = "password";
     }
 }
 
-function showConfirmationPassword() {
-    var x = document.getElementById("Confirm-Password");
-    if (x.type === "password") {
-        x.type = "text";
+function confirmPasswordToggle() {
+    let confirmPasswordInput = document.getElementById("confirm-password-input");
+    let confirmtogglelink = document.getElementById("confirm-pass-toggle");
+
+    if (confirmPasswordInput.type === "password") {
+        confirmtogglelink.innerHTML = "Hide <i class='bx bx-hide'></i>";
+        confirmPasswordInput.type = "text";
     } else {
-        x.type = "password";
+        confirmtogglelink.innerHTML = "Show <i class='bx bx-show-alt'></i>";
+        confirmPasswordInput.type = "password";
     }
 }
 
-document.getElementById("SignUp").addEventListener('click', (e) => {
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("pass-toggle").addEventListener("click", togglePassword);
+    document.getElementById("confirm-pass-toggle").addEventListener("click", confirmPasswordToggle);
+});
+
+document.getElementById("signup-button").addEventListener('click', (e) => {
     e.preventDefault();
 
-    let password = document.getElementById("Password").value;
-    let confirmPassword = document.getElementById("Confirm-Password").value;
-    let email = document.getElementById("Email").value;
-    let Username = document.getElementById("Username").value;
+    let password = document.getElementById("password-input").value;
+    let username = document.getElementById("signup-input").value;
+    let email = document.getElementById("email-input").value;
+    let confirmPassword = document.getElementById("confirm-password-input").value;
+    let Useralert = document.getElementById("username-alert");
     let alertDiv = document.getElementById("password-alert");
     let alertEmailDiv = document.getElementById("email-alert");
-    let alertUsernameDiv = document.getElementById("username-alert");
-    let alertConfirmPasswordDiv = document.getElementById("confirm-alert");
+    let alertConfirmPasswordDiv = document.getElementById("confirm-password-alert");
 
-    document.getElementById("Password").style.border = "";
-    document.getElementById("Username").style.border = "";
+    document.getElementById("password-input").style.border = "";
+    document.getElementById("signup-input").style.border = "";
+    document.getElementById("email-input").style.border = "";
+    document.getElementById("confirm-password-input").style.border = "";
     alertDiv.innerHTML = "";
 
-    if (!Username){
-        document.getElementById("Username").style.border = "2px solid red";
-        alertUsernameDiv.style.display = "block";
-        alertUsernameDiv.innerHTML = "Username is required";
+    if(username === "") {
+        document.getElementById("signup-input").style.border = "2px solid red";
+        Useralert.style.display = "block";
+        Useralert.innerHTML = "⚠️ Username cannot be empty";
         return false;
     }
+    else {
+        Useralert.style.display = "none";
+    }
 
-    if (!email) {
-        document.getElementById("Username").style.border = "2px solid red";
+    if(email === "") {
+        document.getElementById("email-input").style.border = "2px solid red";
         alertEmailDiv.style.display = "block";
-        alertEmailDiv.innerHTML = "Email is required";
+        alertEmailDiv.innerHTML = "⚠️ Email cannot be empty";
         return false;
     }
-
-    if (!password) {
-        document.getElementById("Password").style.border = "2px solid red";
-        alertDiv.style.display = "block";
-        alertDiv.innerHTML = "Password is required";
+    else if(email.includes("@") === false || email.includes(".") === false) {
+        document.getElementById("email-input").style.border = "2px solid red";
+        alertEmailDiv.style.display = "block";
+        alertEmailDiv.innerHTML = "⚠️ Email is invalid";
         return false;
+    }
+    else {
+        alertEmailDiv.style.display = "none";
+    }
+
+    if(password === "") {
+        document.getElementById("password-input").style.border = "2px solid red";
+        alertDiv.style.display = "block";
+        alertDiv.innerHTML = "⚠️ Password cannot be empty";
+        return false;
+    }
+    else {
+        alertDiv.style.display = "none";
     }
 
     if(password.length < 8 || password.length > 16){
-        document.getElementById("Password").style.border = "2px solid red";
+        document.getElementById("password-input").style.border = "2px solid red";
         alertDiv.style.display = "block";
         alertDiv.innerHTML = "Password must be 8 - 16 characters long";
         return false;
     }
     else if(!password.match(/[A-Z]/)){
-        document.getElementById("Password").style.border = "2px solid red";
+        document.getElementById("password-input").style.border = "2px solid red";
         alertDiv.style.display = "block";
-        alertDiv.innerHTML = "Password must contain at least one uppercase letter";
+        alertDiv.innerHTML = "Password must contain at least one uppercase";
         return false;
     }
     else if(!password.match(/[0-9]/)){
-        document.getElementById("Password").style.border = "2px solid red";
+        document.getElementById("password-input").style.border = "2px solid red";
         alertDiv.style.display = "block";
         alertDiv.innerHTML = "Password must contain at least one number";
         return false;
     }
+    else {
+        alertDiv.style.display = "none";
+    }
 
     if (password !== confirmPassword) {
-        document.getElementById("Password").style.border = "2px solid red";
-        document.getElementById("Confirm-Password").style.border = "2px solid red";
+        document.getElementById("password-input").style.border = "2px solid red";
+        document.getElementById("confirm-password-input").style.border = "2px solid red";
         alertConfirmPasswordDiv.style.display = "block";
-        alertConfirmPasswordDiv.innerHTML = "Passwords does not match";
+        alertConfirmPasswordDiv.innerHTML = "⚠️ Passwords do not match";
         return false;
+    }
+    else {
+        alertConfirmPasswordDiv.style.display = "none";
     }
 
     window.location.href = "../Project.html";

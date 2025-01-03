@@ -1,181 +1,143 @@
-/* signup.css */
+* {
+    font-family: "Poppins", sans-serif;
+}
 
 body {
-    font-family: "Outfit", sans-serif;
-    background-color: hsl(0, 0%, 20%);
+    background-color: #999da0;
 }
 
-label{
-    color: white;
-    font-size: 18px;
+label {
+    color: hsl(0, 0%, 20%);
 }
 
-a{
-    color: rgb(199, 90, 0);
-}
-
-h1 {
-    margin-bottom: 0;
-    color: white;
-}
-
-p {
-    margin: 0;
-}
-
-.container {
-    padding: 0px 20px;
-    background-color: hsl(0, 0%, 20%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 130px;
-}
-
-.SignUp-Form {
+.signup-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signup-header {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.signup-header h1 {
+    text-align: center;
+    color: hsl(0, 0%, 20%);
+}
+
+.input-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
-.Slider{
-    width: 45%;
-    height: 100vh;
-    margin-top: 20px;
-    background-image: url(../Images/cinemateyetna.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    border-radius: 20px;
-}
-
-.back-to-website {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.back-to-website:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.5);
-}
-
-.back-to-website:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    text-align: center;
-    color: #333;
-}
-
-form {
+.input-group {
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
 }
 
-.inputbox{
-    padding: 15px;
-    border: none;
-    font-size: 20px;
-    border-radius: 10px;
-    color: white;
-    background-color: hsla(0, 0%, 80%, 0.299);
-    outline: none;
-    width: 400px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.input-container input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px !important;
 }
 
-.inputbox:hover {
-    background-color: rgba(204, 204, 204, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.inputbox:focus {
-    background-color: rgba(204, 204, 204, 0.4);
-    transform: scale(1.02);
-    box-shadow: 0 0 15px rgba(255,255,255,0.3);
-}
-
-.inputbox::placeholder {
-    color: rgba(255,255,255,0.7);
-    transition: opacity 0.3s ease;
-}
-
-.inputbox:focus::placeholder {
-    opacity: 0.5;
-}
-
-.show{
+.password-row {
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 }
 
-.email-input, .username-input, .password-input, .confirm-password-input {
+.password-row p {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin: 0 !important;
+    color: hsl(202, 46%, 45%);
+    cursor: pointer;    
 }
 
-.SignUp-button {
-    font-size: 20px;
-    border-radius: 10px;
-    color: white;
-    background: linear-gradient(135deg, hsl(22, 94%, 32%), hsl(22, 94%, 40%));
-    border: none;
-    outline: none;
+#forgot-password {
+    font-size: 12px;
+    margin-left: 10px;
+    color: hsl(202, 46%, 45%);
     cursor: pointer;
-    width: 430px;
-    padding: 15px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#signup-button {
+    width: 300px;
+    display: block;
+    padding: 12px 24px;
+    margin: 20px 0;
+    background: linear-gradient(135deg, hsl(205, 60%, 40%), hsl(207, 57%, 36%));
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
-.SignUp-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, hsl(22, 94%, 35%), hsl(22, 94%, 45%));
-}
-.SignUp-button:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.SignUp-button::before {
+
+#signup-button::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-    );
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
     transition: 0.5s;
 }
-.SignUp-button:hover::before {
+
+#signup-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+}
+
+#signup-button:hover::before {
     left: 100%;
+}
+
+#signup-button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+#signup-button:focus {
+    outline: none;
+}
+
+#username-alert , #email-alert , #password-alert , #confirm-password-alert {
+    display: none;
+    background-color: hsl(0, 100%, 80%);
+    border-left: 5px solid #ff3333;
+    padding: 10px 5px;
+    color: hsl(0, 0%, 20%);
+    display: none;
+    margin: 0;
 }
