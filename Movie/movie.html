@@ -55,14 +55,19 @@
         <p id="genre"></p>
         <p id="release-date"></p>
         <div class="movie-buttons">
+          <button onclick="changeadd()" class="btn" id="add-to-list"><img src="../Images/Icons/bookmark.png" alt="bookmark" id="add-button" class="button-icon"></button>
           <button onclick="changefavorite()" class="btn" id="add-favorite"><img src="../Images/Icons/heart.png" id="favorite-icon" alt="favorite" class="button-icon"></button>
           <a href="#"><button class="btn" id="watch-trailer"><img src="../Images/Icons/film.png" id="trailer-icon" alt="watch-trailer" class="button-icon"></button></a>
           <button onclick="changechecked()" class="btn" id="mark-watched"><img src="../Images/Icons/checked.png" id="watched-icon" alt="mark-watched" class="button-icon"></button>
-          <button onclick="changeadd()" class="btn" id="add-to-list"><img src="../Images/Icons/bookmark.png" alt="bookmark" id="add-button" class="button-icon"></button>
         </div>
         <div class="movie-overview">
           <p id="overview"></p>
           <p id="adult"></p>
+        </div>
+        <div class="rent">
+          <p class="price">Rent (30 days): <span id="rent-price">6$</span></p>
+          <button class="rent-btn">Rent Movie</button>
+        </div>
         </div>
       </div>
     </div>

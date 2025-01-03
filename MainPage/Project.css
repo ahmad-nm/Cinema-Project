@@ -162,24 +162,6 @@ nav.open~.overlay {
     gap: 5px;
     width: 20%;
 }
-/*.Login-button{
-    border: none;
-    background-color: hsl(188, 83%, 57%);
-    color: white;
-    border-radius: 20px;
-    padding: 5px 20px;
-    height: 40px;
-    cursor: pointer;
-}
-.Signup-button{
-    border: none;
-    background-color: hsl(26, 83%, 60%);
-    color: white;
-    border-radius: 20px;
-    padding: 5px 20px;
-    height: 40px;
-    cursor: pointer;
-}*/
 
 .Login-button {
     border: none;

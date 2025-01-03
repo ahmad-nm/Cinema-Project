@@ -14,7 +14,7 @@ overlay.addEventListener("click", () => {
 
 const flavorPrices = {
     1: { name: 'Salted', small: 5.00, medium: 7.50, large: 10.00 },
-    2: { name: 'Caramel', small: 6.00, medium: 8.50, large: 11.00 },
+    2: { name: 'Caramel', small: 4.00, medium: 6.50, large: 9.00 },
     3: { name: 'Cheese', small: 6.50, medium: 9.00, large: 11.50 },
     4: { name: 'Cheetos', small: 5.50, medium: 8.00, large: 10.50 },
     5: { name: 'Salt-Free', small: 5.00, medium: 7.50, large: 10.00 },

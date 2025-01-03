@@ -4,13 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../Images/logo-2.png" type="image/png">
-    <title>Movie Seat Selection</title>
+    <title>Movie ShowTimes</title>
     <link rel="stylesheet" href="./showtime.css">
+    <script src="https://kit.fontawesome.com/b161b33566.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
+        <div class="overlay"></div>
         <div class="header">
-            <div class="title">Cinemacity</div>
+            <div class="menu" style="display: flex; gap: 20px;">
+                <img src="./Images/menu.png" alt="menu" id="menu-icon" style="height: 30px;">
+                <div class="title">Cinemacity</div>
+            </div>
+            <div class="sidebar">
+                <div class="menu" style="display: flex; gap: 10px; align-items: center;">
+                    <img src="../Images/logo-2.png" alt="Logo" style="height: 50px;"></button>
+                    <div class="sidebar-title">Cinemacity</div>
+                </div>
+                <div class="sidebar-content">
+                    <ul class="lists">
+                        <li class="list">
+                            <a href="../Project.html" class="nav-link">
+                                <i class="fa-solid fa-house" style="color: #cccccc;"></i>
+                                <span class="link">Home</span>
+                            </a>
+                        </li>
+
+                        <li class="list">
+                            <a href="../Discover/Discover.html" class="nav-link">
+                                <i class="fa-solid fa-compass" style="color: #cccccc;"></i>
+                                <span class="link">Discover</span>
+                            </a>
+                        </li>
+                        
+                        <li class="list">
+                            <a href="../Favorites/favorite.html" class="nav-link">
+                                <i class="fa-solid fa-bookmark" style="color: #cccccc;"></i>
+                                <span class="link">WatchList</span>
+                            </a>
+                        </li>
+    
+                        <li class="list">
+                            <a href="../Menu/menu.html" class="nav-link">
+                                <i class="fa-solid fa-mug-hot" style="color: #cccccc;"></i>
+                                <span class="link">Menu</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+                </div>
+            </div>
             <nav>
                 <span class="active">01 Choose a Movie</span>
                 <span>02 Choose A Date</span>

@@ -258,3 +258,34 @@ nav .logo2 {
     cursor: pointer;
     z-index: 1001;
 }
+
+.rent {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, hsl(272, 76%, 33%), hsl(260, 100%, 24%));
+    padding: 15px;
+    width: fit-content;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+}
+
+.rent p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.rent-btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+}

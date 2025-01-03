@@ -48,6 +48,27 @@ const movieTimings = {
 
 let isAutoSliding = true;
 
+const navBar = document.querySelector(".sidebar");
+const overlay = document.querySelector('.overlay');
+let menuBtn = document.getElementById("menu-icon");
+
+menuBtn.style.cursor = "pointer";
+menuBtn.onclick = function() {
+    navBar.classList.toggle("open");
+    overlay.classList.toggle("active");
+    isAutoSliding = false;
+    clearTimeout(runNextAuto);
+};
+
+overlay.onclick = function() {
+    navBar.classList.remove("open");
+    overlay.classList.remove("active");
+    isAutoSliding = true;
+    runNextAuto = setTimeout(() => {
+        next.click();
+    }, timeAutoNext);
+};
+
 document.querySelectorAll('.buttons button').forEach((button) => {
     button.addEventListener('click', () => {
         let Step = document.querySelectorAll('.header nav span');
@@ -213,8 +234,8 @@ let runNextAuto = setTimeout(() => {
     next.click();
 }, timeAutoNext)
 function showSlider(type) {
-    let SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
-    let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
+    let SliderItemsDom = SliderDom.querySelectorAll('.Movies .list .item');
+    let thumbnailItemsDom = document.querySelectorAll('.Movies .thumbnail .item');
 
     if (type === 'next') {
         SliderDom.appendChild(SliderItemsDom[0]);
