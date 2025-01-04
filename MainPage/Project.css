@@ -286,10 +286,9 @@ nav.open~.overlay {
     position: relative;
     display: grid;
     grid-template-columns: repeat(4, 20%) 17%;
-    grid-template-rows: repeat(48, 50px);
-    padding-right: 10px;
+    grid-template-rows: repeat(49, 50px);
+    padding-right: 24px;
     gap: 15px;
-    margin: 10px;
 }
 .search-result-overlay {
     width: 98vw;
@@ -358,146 +357,6 @@ nav.open~.overlay {
 ul {
     padding-left: 0 !important;
 }
-.newreleases{
-    grid-column: 1 / 5;
-    grid-row: 1 / 9;
-    border-radius: 20px;
-    background-image: url('./Images/Moviesbg/venombg.jpg'); 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-    transition: all 1s ease-in-out;
-}
-.tickets{
-    grid-column: 5 / 6;
-    grid-row: 1 / 5;
-    border-radius: 20px;
-    margin-right: 10px;
-    z-index: 100;
-    position: relative;
-    /*background-color: hsl(186, 100%, 67%);*/
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-.tickets:hover {
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
-    transform: translateY(-5px);
-}
-.ticket-link{
-    text-align: center;
-}
-.ticket-link a{
-    color: black;
-    font-size: 24px;
-    font-weight: 700;
-    text-decoration: none;
-}
-.ticket-link p{
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.ticket-content{
-    display: flex;
-    flex-direction: column;
-}
-.tickets img{
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-}
-.ticket-special-offer{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-.ticket-special-offer-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-}
-.ticket-special-offer-content span{
-    font-size: 20px;
-    font-weight: 700;
-    color: #0125ef;
-    font-style: italic;
-}
-.ticket-special-offer-content s{
-    font-size: 14px;
-    font-weight: 400;
-}
-.order{
-    display: flex;
-    flex-direction: row;
-}
-.order p{
-    margin-top: 10px;
-    margin-left: 10px;
-    text-align: center;
-}
-.order button{
-    border: none;
-    margin-top: 10px;
-    margin-left: 20px;
-    border-radius: 40px;
-    padding: 5px 20px;
-    height: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-.order button:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
-}
-.popcorn{
-    grid-column: 5 / 6;
-    grid-row: 5 / 9;
-    border-radius: 20px;
-    margin-right: 10px;
-    z-index: 100;
-    position: relative;
-    /*background-color: hsl(26, 83%, 60%);*/
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-.popcorn:hover {
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
-    transform: translateY(-5px);
-}
-.menu-link{
-    text-align: center;
-}
-.menu-link a{
-    color: black;
-    font-size: 24px;
-    font-weight: 700;
-    text-decoration: none;
-}
-.menu-link p{
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.popcorn-content{
-    display: flex;
-    flex-direction: column;
-}
-.popcorn img{
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-}
-.menu-special-offer{
-    display: flex;
-    flex-direction: row;
-}
-.menu-special-offer-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-}
 .movie1, .movie2, .movie3, .movie4, .movie5, .movie6{
     border-radius: 20px;
     background-repeat: no-repeat;
@@ -515,43 +374,45 @@ ul {
 }
 .movie1{
     grid-column: 1 / 2;
-    grid-row: 9 / 14;
+    grid-row: 10 / 15;
     background-image: url('../Images/Moviesbg/avatar_3.jpg');
     background-size: 100% 100%;
+    margin-left: 10px;
 }
 .movie2{
     grid-column: 2 / 3;
-    grid-row: 9 / 14;
+    grid-row: 10 / 15;
     background-image: url('../Images/Moviesbg/snowwhite.jpg');
     background-size: 100% 100%;
 }
 .movie3{
     grid-column: 3 / 4;
-    grid-row: 9 / 14;
+    grid-row: 10 / 15;
     background-image: url('../Images/Moviesbg/doomsday.jpg');
     background-size: 100% 100%;
 }
 .movie4{
     grid-column: 1 / 2;
-    grid-row: 14 / 19;
+    grid-row: 15 / 20;
     background-image: url('../Images/Moviesbg/mission-impossible8.jpg');
     background-size: 100% 100%;
+    margin-left: 10px;
 }
 .movie5{
     grid-column: 2 / 3;
-    grid-row: 14 / 19;
+    grid-row: 15 / 20;
     background-image: url('../Images/Moviesbg/mortalcombat.jpg');
     background-size: 100% 100%;
 }
 .movie6{
     grid-column: 3 / 4;
-    grid-row: 14 / 19;
+    grid-row: 15 / 20;
     background-image: url('../Images/Moviesbg/zootopia_2.png');
     background-size: 100% 100%;
 }
 .seats{
     grid-column: 4 / 6;
-    grid-row: 9 / 19;
+    grid-row: 10 / 20;
     border: 1px solid black;
     border-radius: 20px;
     margin-right: 10px;
@@ -713,6 +574,7 @@ ul {
     display: flex;
     flex-direction: column;
     width: 99%;
+    margin-left: 10px;
 }
 .action , .thriller, .horror, .comedy, .dramaromance, .sci-fi, .animation{
     display: flex;
@@ -752,27 +614,27 @@ ul {
 }
 .action-div{
     grid-column: 1 / 6;
-    grid-row: 19 / 24;
+    grid-row: 20 / 25;
 }
 .thriller-div{
     grid-column: 1 / 6;
-    grid-row: 24 / 29;
+    grid-row: 25 / 30;
 }
 .comedy-div{
     grid-column: 1 / 6;
-    grid-row: 29 / 34;
+    grid-row: 30 / 35;
 }
 .dramaromance-div{
     grid-column: 1 / 6;
-    grid-row: 34 / 39;
+    grid-row: 35 / 40;
 }
 .sci-fi-div{
     grid-column: 1 / 6;
-    grid-row: 39 / 44;
+    grid-row: 40 / 45;
 }
 .animation-div{
     grid-column: 1 / 6;
-    grid-row: 44 / 49;
+    grid-row: 45 / 50;
 }
 .movie_notes p{
     margin: 2px;
@@ -938,8 +800,8 @@ ul {
 
 .New-releases{
     position: relative;
-    grid-column: 1 / 5;
-    grid-row: 1 / 9;
+    grid-column: 1 / 6;
+    grid-row: 1 / 10;
     background: #f5f5f5;
     box-shadow: 0 30px 50px #dbdbdb;
     overflow: hidden;
@@ -948,7 +810,7 @@ ul {
     width: 200px;
     height: 300px;
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translate(0, -50%);
     border-radius: 20px;
     box-shadow: 0 10px 50px #505050;
@@ -967,13 +829,13 @@ ul {
     height: 100%;
 }
 .slide .item:nth-child(3){
-    left: calc(50% + 90px);
+    left: calc(50% + 50px);
 }
 .slide .item:nth-child(4){
-    left: calc(50% + 310px);
+    left: calc(50% + 270px);
 }
 .slide .item:nth-child(5){
-    left: calc(50% + 880px);
+    left: calc(50% + 490px);
 }
 .slide .item:nth-child(n + 6){
     left: calc(50% + 660px);
