@@ -3,79 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Discover.css">
-    <link rel="icon" href="../Images/logo-2.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <title>Discover Movies</title>
+    <link rel="icon" href="../Images/logo-2.png">
+    <link rel="stylesheet" href="./Discover.css">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="title">Flix.id</div>
-            <div class="user-profile">
-                <img src="https://via.placeholder.com/40" alt="Profile">
-                <span>Sarah J</span>
+        <aside class="sidebar">
+            <h2 style="margin-top: 0;">Filters</h2>
+            <div class="filter-group">
+                <h3>Genre</h3>
+                <ul class="genre-list">
+                    <li><label for="action" class="checkbox-container"><p>Action</p> <input type="checkbox" id="action"><span class="checkmark"></span></label></li>
+                    <li><label for="animated" class="checkbox-container"><p>Animated</p><input type="checkbox" id="animated"><span class="checkmark"></span></label></li>
+                    <li><label for="drama" class="checkbox-container"><p>Drama</p><input type="checkbox" id="drama"><span class="checkmark"></span></label></li>
+                    <li><label for="family" class="checkbox-container"><p>Family</p><input type="checkbox" id="family"><span class="checkmark"></span></label></li>
+                    <li><label for="fantasy" class="checkbox-container"><p>Fantasy</p><input type="checkbox" id="fantasy"><span class="checkmark"></span></label></li>
+                    <li><label for="history" class="checkbox-container"><p>History</p><input type="checkbox" id="history"><span class="checkmark"></span></label></li>
+                    <li><label for="comedy" class="checkbox-container"><p>Comedy</p><input type="checkbox" id="comedy"><span class="checkmark"></span></label></li>
+                    <li><label for="crime" class="checkbox-container"><p>Crime</p><input type="checkbox" id="crime"><span class="checkmark"></span></label></li>
+                    <li><label for="music" class="checkbox-container"><p>Music</p><input type="checkbox" id="music"><span class="checkmark"></span></label></li>
+                    <li><label for="mystery" class="checkbox-container"><p>Mystery</p><input type="checkbox" id="mystery"><span class="checkmark"></span></label></li>
+                    <li><label for="romance" class="checkbox-container"><p>Romance</p><input type="checkbox" id="romance"><span class="checkmark"></span></label></li>
+                    <li><label for="sci-fi" class="checkbox-container"><p>Sci-Fi</p><input type="checkbox" id="sci-fi"><span class="checkmark"></span></label></li>
+                    <li><label for="horror" class="checkbox-container"><p>Horror</p><input type="checkbox" id="horror"><span class="checkmark"></span></label></li>
+                    <li><label for="thriller" class="checkbox-container"><p>Thriller</p><input type="checkbox" id="thriller"><span class="checkmark"></span></label></li>
+                    <li><label for="adventure" class="checkbox-container"><p>Adventure</p><input type="checkbox" id="adventure"><span class="checkmark"></span></label></li>
+                </ul>
             </div>
-        </div>
+        </aside>
 
-        <div class="navigation">
-            <button>Trending</button>
-            <button>Action</button>
-            <button>Romance</button>
-            <button>Animation</button>
-            <button>Horror</button>
-            <button>Special</button>
-            <button>Drakor</button>
-        </div>
+        <main class="main-content">
+            <header>
+                <div class="random">
+                    <button id="generate-random">Popular Movies</button>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." id="search-input">
+                </div>
+            </header>
+            <section class="movie-cards">
+                <div class="movie-card">
+                    <img src="../Images/Moviesbg/action/bad_boys_ride_or_die.jpg" alt="Days Gone">
+                    <h3>BadBoys Ride or Die</h3>
+                    <p>Action-adventure</p>
+                    <p>Rent(30 days): 6$</p>
+                </div>
+                <div class="movie-card">
+                    <img src="../Images/Moviesbg/action/extraction2.jpg" alt="Hellblade">
+                    <h3>Extraction 2</h3>
+                    <p>Action-adventure</p>
+                    <p>Rent(30 days): 6$</p>
+                </div>
 
-        <div class="featured">
-            <div class="card">
-                <h3>The Adventure of Blue Sword</h3>
-                <p>Let Play Movie</p>
-            </div>
-            <div class="card">
-                <h3>Recalling the Journey of Dol</h3>
-                <p>Let Play Movie</p>
-            </div>
-        </div>
-
-        <div>
-            <div class="section-title">Trending in Animation</div>
-            <div class="movies-grid">
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/150" alt="Movie 1">
-                    <p>Loetoeng Kasarung</p>
-                    <p class="rating">⭐ 7.8</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/150" alt="Movie 2">
-                    <p>Gajah Langka</p>
-                    <p class="rating">⭐ 6.0</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/150" alt="Movie 3">
-                    <p>Si Kang Satay</p>
-                    <p class="rating">⭐ 7.1</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/150" alt="Movie 4">
-                    <p>Mommy Cat</p>
-                    <p class="rating">⭐ 7.8</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/150" alt="Movie 5">
-                    <p>Hijaber Cantik</p>
-                    <p class="rating">⭐ 6.1</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/150" alt="Movie 6">
-                    <p>Xatra-X</p>
-                    <p class="rating">⭐ 6.5</p>
-                </div>
-            </div>
-        </div>
+                <button id="load-more" class="load-more-btn">
+                    <span class="loader"></span>
+                    <span class="btn-text">Load More</span>
+                </button>
+            </section>
+        </main>
     </div>
+
+    <script src="./Discover.js"></script>
 </body>
 </html>

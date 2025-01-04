@@ -1,10 +1,7 @@
 function fetchName() {
     let queryString = window.location.search;
-
     let urlParams = new URLSearchParams(queryString);
-
     let name = urlParams.get("name");
-
     return name;
 }
 
@@ -25,6 +22,7 @@ fetch(
 )
     .then((res) => res.json())
     .then((res) => {
+        console.log(res);
         let movie = res.results[0];
         document.getElementById("h1movie").innerHTML = movie.title;
         document.getElementById("language").innerHTML = movie.original_language + " &nbsp | &nbsp";

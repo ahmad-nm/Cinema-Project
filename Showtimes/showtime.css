@@ -373,7 +373,7 @@ body {
     border: 1px solid #fff;
     color: #eee;
 }
-/* thumbail */
+
 .thumbnail{
     position: absolute;
     bottom: 50px;
@@ -433,12 +433,9 @@ body {
     color: #000;
 }
 
-/* animation */
 .carousel .list .item:nth-child(1){
     z-index: 1;
 }
-
-/* animation text in first item */
 
 .carousel .list .item:nth-child(1) .content .author,
 .carousel .list .item:nth-child(1) .content .movie-title,
@@ -474,7 +471,7 @@ body {
 .carousel .list .item:nth-child(1) .content .buttons{
     animation-delay: 2.0s!important;
 }
-/* create animation when next click */
+
 .carousel.next .list .item:nth-child(1) img{
     width: 150px;
     height: 220px;
@@ -517,8 +514,6 @@ body {
     }
 }
 
-/* running time */
-
 .carousel .time{
     position: absolute;
     z-index: 1000;
@@ -537,9 +532,6 @@ body {
     from{ width: 100%}
     to{width: 0}
 }
-
-
-/* prev click */
 
 .carousel.prev .list .item:nth-child(2){
     z-index: 2;
