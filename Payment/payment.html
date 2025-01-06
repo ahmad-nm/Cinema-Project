@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
+    <title>Payment</title>
+    <link rel="stylesheet" href="./payment.css">
+    <link rel="icon" href="../Images/logo-2.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-container">
+            <h1>Payment Method</h1>
+            <div class="info-input">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" name="first-name" id="first-name" placeholder="ahmad" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" name="last-name" id="last-name" placeholder="naim" required>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" name="phone" id="phone" placeholder= "XX/XXX XXX" required>
+                    </div>
+                </div>
+                <div class="radio-buttons">
+                    <input type="radio" name="payment-method" id="credit-card" value="credit-card" required>
+                    <label for="credit-card">Credit Card</label>
+                    <input type="radio" name="payment-method" id="paypal" value="paypal" required>
+                    <label for="paypal">Paypal</label>
+                    <input type="radio" name="payment-method" id="visa" value="visa" required>
+                    <label for="visa">Visa</label>
+                </div>
+                <hr style="margin: 0; margin-bottom: 20px;">
+                <div class="credit-card" style="display: none;">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" name="card-number" id="card-number" placeholder="1234 1234 1234 1234" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="expiry-date">Expiry Date</label>
+                            <input type="text" name="expiry-date" id="expiry-date" placeholder="MM/YY" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="name-on-card">Name on Card</label>
+                            <input type="text" name="name-on-card" id="name-on-card" placeholder="Enter the name on the card" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" name="cvv" id="cvv" placeholder="CVV Code" required>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button class="pay-button" type="submit">Pay</button>
+                    </div>
+                </div>
+                <div class="paypal" style="display: none;">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="paypal-email">Paypal Email</label>
+                            <input type="email" name="paypal-email" id="paypal-email" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="paypal-password">Paypal Password</label>
+                            <input type="password" name="paypal-password" id="paypal-password" placeholder="Enter your password" required>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button class="pay-button" type="submit">Pay</button>
+                    </div>
+                </div>
+                <div class="visa" style="display: none;">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="visa-number">Visa Number</label>
+                            <input type="text" name="visa-number" id="visa-number" placeholder="1234 1234 1234 1234" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="visa-expiry-date">Visa Expiry Date</label>
+                            <input type="text" name="visa-expiry-date" id="visa-expiry-date" placeholder="MM/YY" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="name-on-visa">Name on Visa</label>
+                            <input type="text" name="name-on-visa" id="name-on-visa" placeholder="Enter the name on the visa" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="visa-cvv">Visa CVV</label>
+                            <input type="text" name="visa-cvv" id="visa-cvv" placeholder="CVV Code" required>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button class="pay-button" type="submit">Pay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="image-container">
+            <div class="total-price">
+                <p id="seat-price"></p>
+                <p id="menu-price"></p>
+                <p id="rent-price"></p>
+                <hr style="margin: 0;">
+                <p id="total"></p>
+            </div>
+            <div class="image">
+                <img src="./payment-methods.png" alt="payment" style="height: 100px;">
+            </div>
+        </div>
+    </div>
+
+    <script src="./payment.js"></script>
+</body>
+
+</html>

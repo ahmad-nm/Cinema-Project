@@ -326,7 +326,7 @@ document.getElementById('confirm').addEventListener('click', () => {
         const selectedSeats = document.querySelectorAll('.selected');
         if (selectedSeats.length > 0) {
             document.getElementById('confirm').onclick = function() {
-                window.location.href = '../Receipt/receipt.html';
+                window.location.href = '../Payment/payment.html';
             }
         }
     }
@@ -336,6 +336,7 @@ function TotalPrice() {
     const selectedSeats = document.querySelectorAll('.selected');
     const price = (selectedSeats.length - 1) * 8;
     document.getElementById('receipt-price').innerHTML = 'Total Price: $' + price;
+    localStorage.setItem('SeatPrice', price);
     return price;
 }
 

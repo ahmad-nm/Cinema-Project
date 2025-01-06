@@ -1,0 +1,202 @@
+* {
+    font-family: "Outfit";
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url(./background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: -10;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 70px;
+    font-size: 3rem;
+    align-self: self-start;
+    font-family: "Playwrite AU SA";
+    color: #fff;
+}
+
+label {
+    padding: 0 5px;
+    font-size: 14px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 40px;   
+    z-index: 1;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 100px;
+}
+
+.info-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    gap: 10px;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.input-group input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: #ccc;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.radio-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.radio-buttons input[type="radio"] {
+    cursor: pointer;
+}
+
+.radio-buttons label {
+    margin-right: 15px;
+}
+
+.credit-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 10px;
+}
+
+.total-price {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 30px;
+    width: 70%;
+    gap: 20px;
+}
+
+.total-price p {
+    font-size: 18px;
+    color: white;
+    margin: 0px;
+}
+
+.image {
+    width: fit-content;
+    background-color: #fff;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.pay-button {
+    width: 50%;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(135deg, 
+        hsla(197, 100%, 37%, 0.7),
+        hsla(210, 98%, 40%, 0.7)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(2, 126, 251, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.pay-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.pay-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, 
+        hsla(197, 100%, 37%, 0.8),
+        hsla(210, 98%, 40%, 0.8)
+    );
+    box-shadow: 0 15px 35px rgba(2, 126, 251, 0.2);
+}
+
+.pay-button:hover::before {
+    left: 100%;
+}
+
+.pay-button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(31, 38, 135, 0.2);
+}

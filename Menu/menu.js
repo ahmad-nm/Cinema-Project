@@ -117,7 +117,6 @@ function initializeItem(itemId) {
     price(itemId);
 }
 
-// Initialize all items when document loads
 document.addEventListener('DOMContentLoaded', () => {
     initializeItem(1);
     initializeItem(2);
@@ -234,4 +233,10 @@ function TotalPrice() {
     }
 
     document.getElementById('total-price-value').innerHTML = '$' + total.toFixed(2);
+    
+    localStorage.setItem('MenuPrice', total);
 }
+
+document.getElementById('order').addEventListener('click', () => {
+    window.location.href = '../Payment/payment.html';
+});
