@@ -76,9 +76,8 @@ label {
     cursor: pointer;    
 }
 
-#forgot-password {
+.login-link {
     font-size: 12px;
-    margin-left: 10px;
     color: hsl(202, 46%, 45%);
     cursor: pointer;
 }

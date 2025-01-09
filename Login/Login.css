@@ -76,7 +76,23 @@ label {
     cursor: pointer;    
 }
 
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
 #forgot-password {
+    font-size: 12px;
+    margin-left: 10px;
+    color: hsl(202, 46%, 45%);
+    cursor: pointer;
+}
+
+#create-account {
     font-size: 12px;
     margin-left: 10px;
     color: hsl(202, 46%, 45%);

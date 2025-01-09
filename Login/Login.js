@@ -20,45 +20,40 @@ document.getElementById("login-button").addEventListener('click', (e) => {
 
     let password = document.getElementById("password-input").value;
     let username = document.getElementById("login-input").value;
-    let Useralert = document.getElementById("username-alert");
     let alertDiv = document.getElementById("password-alert");
 
     document.getElementById("password-input").style.border = "";
     document.getElementById("login-input").style.border = "";
     alertDiv.innerHTML = "";
 
-    if(username === "") {
-        document.getElementById("login-input").style.border = "2px solid red";
-        Useralert.style.display = "block";
-        Useralert.innerHTML = "Username cannot be empty";
-        return false;
-    }
+    let userInfo = localStorage.getItem("user");
 
-    if(password === "") {
-        document.getElementById("password-input").style.border = "2px solid red";
+    if(userInfo === null){
         alertDiv.style.display = "block";
-        alertDiv.innerHTML = "Password cannot be empty";
+        alertDiv.innerHTML = "User not found";
         return false;
     }
+    else{
+        userInfo = JSON.parse(userInfo);
+        if(userInfo.password !== password){
+            alertDiv.style.display = "block";
+            alertDiv.innerHTML = "Incorrect password";
+            return false;
+        }
+        if(userInfo.username !== username){
+            alertDiv.style.display = "block";
+            alertDiv.innerHTML = "Incorrect username";
+            return false;
+        }
 
-    if(password.length < 8 || password.length > 16){
-        document.getElementById("password-input").style.border = "2px solid red";
-        alertDiv.style.display = "block";
-        alertDiv.innerHTML = "Password must be 8 - 16 characters long";
-        return false;
+        const sessionData = {
+            username: username,
+            loggedIn: true,
+            loginTime: new Date().getTime(),
+            expiresAt: new Date().getTime() + (365 * 24 * 60 * 60 * 1000)
+        };
+        console.log(sessionData);
+        localStorage.setItem('sessionData', JSON.stringify(sessionData));
+        window.location.href = "../Project.html";
     }
-    else if(!password.match(/[A-Z]/)){
-        document.getElementById("password-input").style.border = "2px solid red";
-        alertDiv.style.display = "block";
-        alertDiv.innerHTML = "Password must contain at least one uppercase letter";
-        return false;
-    }
-    else if(!password.match(/[0-9]/)){
-        document.getElementById("password-input").style.border = "2px solid red";
-        alertDiv.style.display = "block";
-        alertDiv.innerHTML = "Password must contain at least one number";
-        return false;
-    }
-
-    window.location.href = "../Project.html";
 });

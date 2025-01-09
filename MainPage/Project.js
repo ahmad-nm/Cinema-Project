@@ -12,6 +12,50 @@ overlay.addEventListener("click", () => {
     navBar.classList.remove("open");
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const userSession = localStorage.getItem('sessionData');
+    const userData = JSON.parse(userSession);
+
+    if (userSession) {
+
+        try {
+            const currentTime = new Date().getTime();
+            if (userData.expiresAt && currentTime > userData.expiresAt) {
+                localStorage.removeItem('userSession');
+                window.location.href = '../Login/Login.html';
+                return;
+            }
+        } catch (error) {
+            console.error('Invalid session data:', error);
+            localStorage.removeItem('userSession');
+            window.location.href = '../Login/Login.html';
+            return;
+        }
+    }
+
+    if (userData && userData.loggedIn) {
+        document.querySelector('.Signup-button').style.display = 'none';
+        document.querySelector('.Login-button').style.display = 'none';
+        document.getElementById('logout').style.display = 'block';
+        document.querySelector('.navigational-links').style.justifyContent = 'flex-end';
+        document.querySelector('.signup-login').style.width = '0%';
+        document.querySelector('.navigational-links').style.width = '60%';
+        document.getElementById('welcomeMessage').textContent = `Welcome, ${userData.username}`;
+    }
+});
+
+document.getElementById('logout').addEventListener('click', () => {
+    localStorage.removeItem('sessionData');
+    window.location.href = './Project.html';
+    document.querySelector('.Signup-button').style.display = 'block';
+    document.querySelector('.Login-button').style.display = 'block';
+    document.getElementById('logout').style.display = 'none';
+    document.querySelector('.signup-login').style.width = '20%';
+    document.querySelector('.navigational-links').style.width = 'fit-content';
+    document.getElementById('welcomeMessage').textContent = '';
+});
+
 function changeImage() {
     let seats = document.querySelectorAll('.seat');
 
@@ -216,3 +260,64 @@ document.querySelectorAll('.book-timing-button').forEach((button , index) => {
         document.getElementById('seats-times').textContent = StreamDetails[index].time;
     });
 });
+
+
+const leftseatingArea = document.querySelector('.left-seating');
+const leftrows = 7;
+const leftcolumns = 9;
+
+for (let row = 0; row < leftrows; row++) {
+    for (let col = 0; col < leftcolumns; col++) {
+        const seat = document.createElement('span');
+        seat.classList.add('available');
+
+        const rowLetter = String.fromCharCode(65 + row);
+        const seatNumber = col + 1;
+        let seatName = `${rowLetter}${seatNumber}`;
+        seat.style.color = '#ccc';
+        seat.style.fontSize = '12px';
+        seat.style.textAlign = 'center';
+
+        seat.dataset.seatName = seatName;
+        seat.title = seatName;
+        seat.textContent = seatName;
+
+        if (Math.random() > 0.8) {
+            seat.classList.remove('available');
+            seat.classList.add('taken');
+        }
+
+        leftseatingArea.appendChild(seat);
+
+    }
+}
+
+const rightseatingArea = document.querySelector('.right-seating');
+const rightrows = 7;
+const rightcolumns = 9;
+
+for (let row = 0; row < rightrows; row++) {
+    for (let col = 0; col < rightcolumns; col++) {
+        const seat = document.createElement('span');
+        seat.classList.add('available');
+
+        const rowLetter = String.fromCharCode(65 + row);
+        const seatNumber = col + 10;
+        let seatName = `${rowLetter}${seatNumber}`;
+        seat.style.color = '#ccc';
+        seat.style.fontSize = '12px';
+        seat.style.textAlign = 'center';
+
+        seat.dataset.seatName = seatName;
+        seat.title = seatName;
+        seat.textContent = seatName;
+
+        if (Math.random() > 0.8) {
+            seat.classList.remove('available');
+            seat.classList.add('taken');
+        }
+
+        rightseatingArea.appendChild(seat);
+
+    }
+}

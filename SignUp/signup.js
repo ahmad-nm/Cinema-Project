@@ -116,5 +116,12 @@ document.getElementById("signup-button").addEventListener('click', (e) => {
         alertConfirmPasswordDiv.style.display = "none";
     }
 
-    window.location.href = "../Project.html";
+    const user = {
+        username: username,
+        email: email,
+        password: password
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+    window.location.href = "../Login/Login.html";
 });

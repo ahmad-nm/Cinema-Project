@@ -4,9 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     background-color: #eaeaea;
 }
+
 body::before {
     content: "";
     position: fixed;
@@ -16,10 +18,12 @@ body::before {
     bottom: 0;
     z-index: -1;
 }
+
 a{
     text-decoration: none;
     color: black;
 }
+
 .container{
     display: flex;
     flex-direction: column;
@@ -27,13 +31,16 @@ a{
     padding-top: 0;
     padding: 0;
 }
+
 .container-fluid{
     padding: 0 !important;
 }
+
 .navigation_bar{
     height: 70px;
     width: 100%;
 }
+
 nav {
     top: 0;
     left: 0;
@@ -45,6 +52,7 @@ nav {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
+
 nav .logo {
     width: 100%;
     display: flex;
@@ -52,25 +60,30 @@ nav .logo {
     align-items: center;
     margin: 0 24px;
 }
+
 nav .logo2 {
     justify-content: start !important;
     align-items: center;
 }
+
 .logo .menu-icon {
     color: #333;
     font-size: 24px;
     margin-right: 1px;
     cursor: pointer;
 }
+
 .logo-icon{
     width: 70px;
     border-radius: 40%;
 }
+
 .logo .logo-name {
     color: #333;
     font-size: 22px;
     font-weight: 500;
 }
+
 nav .sidebar {
     position: fixed;
     top: 0;
@@ -84,9 +97,11 @@ nav .sidebar {
     display: overlay;
     z-index: 10000;
 }
+
 nav.open .sidebar {
     left: 0;
 }
+
 .sidebar .sidebar-content {
     display: flex;
     height: 100%;
@@ -94,9 +109,11 @@ nav.open .sidebar {
     justify-content: space-between;
     padding: 30px 16px;
 }
+
 .sidebar-content .list {
     list-style: none;
 }
+
 .list .nav-link {
     display: flex;
     align-items: center;
@@ -105,23 +122,28 @@ nav.open .sidebar {
     border-radius: 8px;
     text-decoration: none;
 }
+
 .lists .nav-link:hover {
     background-color: #002366;
 }
+
 .nav-link .icon {
     margin-right: 14px;
     font-size: 20px;
     color: #707070;
 }
+
 .nav-link .link {
     font-size: 16px;
     color: #707070;
     font-weight: 400;
 }
+
 .lists .nav-link:hover .icon,
 .lists .nav-link:hover .link {
     color: #fff;
 }
+
 .overlay {
     position: fixed;
     top: 0;
@@ -134,28 +156,36 @@ nav.open .sidebar {
     background: rgba(0, 0, 0, 0.5);
     z-index: 100000;
 }
+
 nav.open~.overlay {
     opacity: 1;
     left: 260px;
     pointer-events: auto;
 }
+
 #logout {
     cursor: pointer;
+    display: none;
 }
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
+
 ::-webkit-scrollbar-track {
     background: #E5F3FE;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #002366;
     border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #004080;
 }
+
 .signup-login{
     display: flex;
     flex-direction: row;
@@ -222,6 +252,7 @@ nav.open~.overlay {
     gap: 10px;
     width: 40%;
 }
+
 .preloader {
     position: fixed;
     top: 0;
@@ -235,6 +266,7 @@ nav.open~.overlay {
     z-index: 9999999999999999999;
     transition: all 1s ease;
 }
+
 .search-input{
     background-color: transparent;
     font-size: 18px;
@@ -251,10 +283,12 @@ nav.open~.overlay {
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .search-input:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
 }
+
 .search-input:focus {
     outline: none;
     border-color: #002366;
@@ -265,23 +299,28 @@ nav.open~.overlay {
     width: 350px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .navigational-links a{
     color: black;
     font-size: 20px;
     text-decoration: none;
     padding-right: 27px;
 }
+
 .navigational-links a:hover{
     text-decoration: underline;
 }
+
 .navigational-links a:not(:last-child) {
     border-right: 1px solid #ccc;
 }
+
 .navigational-links{
     display: flex;
     flex-direction: row;
     gap: 30px;
 }
+
 .main{
     position: relative;
     display: grid;
@@ -290,6 +329,7 @@ nav.open~.overlay {
     padding-right: 24px;
     gap: 15px;
 }
+
 .search-result-overlay {
     width: 98vw;
     min-height: 100vh;
@@ -306,6 +346,7 @@ nav.open~.overlay {
     z-index: 10000000000;
     overflow-y: auto;
 }
+
 .search-result-overlay button {
     position: absolute;
     top: 5px;
@@ -316,6 +357,7 @@ nav.open~.overlay {
     cursor: pointer;
     z-index: 100000000000;
 }
+
 .movie-card {
     display: flex;
     gap: 20px;
@@ -324,25 +366,30 @@ nav.open~.overlay {
     animation: slideIn 0.5s ease-out forwards;
     opacity: 0;
 }
+
 .movie-card img {
     width: 200px;
     height: 250px;
     object-fit: cover;
 }
+
 .movie-card-no-results{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+
 .movie-info-no-results h2{
     font-size: 30px;
     font-weight: 700;
 }
+
 .movie-info-no-results p{
     font-size: 20px;
     font-weight: 500;
 }
+
 .movie-info-no-results{
     display: flex;
     flex-direction: column;
@@ -350,13 +397,16 @@ nav.open~.overlay {
     align-items: center;
     gap: 10px;
 }
+
 .icon{
     width: 20px;
     height: 20px;
 }
+
 ul {
     padding-left: 0 !important;
 }
+
 .upcoming{
     grid-column: 1 / 3;
     grid-row: 10 / 11;
@@ -366,7 +416,8 @@ ul {
     font-family: "Playwrite AU SA";
     word-spacing: 10px;
 }
-.movie1, .movie2, .movie3, .movie4, .movie5, .movie6{
+
+.movie1, .movie2, .movie4, .movie5{
     border-radius: 20px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -376,11 +427,13 @@ ul {
     transition: all 0.3s ease-in-out;
     margin-right: 15px;
 }
-.movie1:hover, .movie2:hover, .movie3:hover, .movie4:hover, .movie5:hover, .movie6:hover {
+
+.movie1:hover, .movie2:hover, .movie4:hover, .movie5:hover{
     transform: translateY(-5px);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
                 rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
+
 .movie1{
     grid-column: 1 / 2;
     grid-row: 11 / 16;
@@ -388,12 +441,14 @@ ul {
     background-size: 100% 100%;
     margin-left: 10px;
 }
+
 .movie2{
     grid-column: 2 / 3;
     grid-row: 11 / 16;
     background-image: url('../Images/Moviesbg/snowwhite.jpg');
     background-size: 100% 100%;
 }
+
 .movie4{
     grid-column: 1 / 2;
     grid-row: 16 / 21;
@@ -401,12 +456,14 @@ ul {
     background-size: 100% 100%;
     margin-left: 10px;
 }
+
 .movie5{
     grid-column: 2 / 3;
     grid-row: 16 / 21;
     background-image: url('../Images/Moviesbg/mortalcombat.jpg');
     background-size: 100% 100%;
 }
+
 .seats{
     grid-column: 3 / 6;
     grid-row: 10 / 21;
@@ -420,150 +477,197 @@ ul {
     transition: all 0.3s ease;
     z-index: 100;
 }
+
 .seats:hover {
     transform: translateY(-5px);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
                 rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
-.seats-content{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-.seat-link{
-    text-align: center;
-}
-.seat-link a{
-    color: black;
-    font-size: 24px;
-    font-weight: 700;
-    text-decoration: none;
-}
-.seat-link p{
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.screen-image{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-.seat-groups{
+
+.seat-header {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
+    justify-content: space-between;
+    padding: 20px;
+    background: #333;
 }
-.seat-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-}
-.seat-row1{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-}
-.seat{
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-}
-.legend{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
-}
-.legend-title{
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    align-items: center;
-}
-.legend-seat{
-    width: 20px;
-    height: 20px;
-}
-.legend p{
-    margin: 0;
-}
-.book-timing-head{
-    font-weight: 700;
-    font-size: 18px;
-    text-align: center;
-}
-.book-timing-head p{
-    margin-bottom: 10px;
-}
-.book-timing{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-}
-.book-timing-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
-}
-.book-timing-button{
-    border: none;
-    background-color: #cccccc;
+
+.movie-names select,
+.movie-time select {
+    appearance: none;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px 35px 10px 15px;
+    font-size: 16px;
     color: white;
-    border-radius: 20px;
-    padding: 5px 10px;
-    height: 35px;
     cursor: pointer;
-    font-size: 18px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px top 50%;
+    background-size: 12px auto;
 }
-.book-timing-content{
+
+.movie-names select:hover,
+.movie-time select:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.movie-names select:focus,
+.movie-time select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.movie-names select option,
+.movie-time select option {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.movie-names select option:hover,
+.movie-time select option:checked {
+    background-color: #333333;
+}
+
+.seat-header .movie-time {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    border-top: 1px solid #ccc;
 }
-.book-timing-content-details{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
+
+.screen {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
-.book-timing-content-time{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+
+.screen div {
+    display: inline-block;
+    background: #444;
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    margin: 20px 0;
 }
-.book-timing-content p{
-    margin: 0;
-}
-.book-timing-content-details-button{
-    display: flex;
-    align-items: center;
-}
-.book-timing-content-details-button button{
-    border: none;
-    background-color: #cccccc;
-    color: white;
-    border-radius: 20px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-.book-timing-content-details-image{
+
+.seating {
     display: flex;
     justify-content: center;
+    gap: 70px;
+}
+
+.right-seating {
+    display: grid;
+    grid-template-columns: repeat(9, 30px);
+    gap: 5px;
+    justify-content: center;
+}
+
+.left-seating {
+    display: grid;
+    grid-template-columns: repeat(9, 30px);
+    gap: 5px;
+    justify-content: center;
+}
+
+.seating span {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.seating span.available {
+    background: #666;
+}
+
+.seating span.selected {
+    background: #28a745;
+}
+
+.seating span.taken {
+    background: #ff4d4d;
+    cursor: not-allowed;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.legend div {
+    display: flex;
     align-items: center;
-    height: 120px;
+    gap: 5px;
 }
-.book-timing-content-details-image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+.legend span {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    display: inline-block;
 }
+
+.legend .available {
+    background: #666;
+}
+
+.legend .selected {
+    background: #28a745;
+}
+
+.legend .taken {
+    background: #ff4d4d;
+}
+
+.book-button {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.book-button button {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(135deg, 
+        rgba(51, 51, 51, 0.8),
+        rgba(68, 68, 68, 0.8)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.book-button button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, 
+        rgba(68, 68, 68, 0.9),
+        rgba(85, 85, 85, 0.9)
+    );
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
 .action-div, .thriller-div, .horror-div, .comedy-div, .dramaromance-div, .sci-fi-div, .animation-div{
     border-radius: 20px;
     position: relative;
@@ -573,11 +677,13 @@ ul {
     width: 99%;
     margin-left: 10px;
 }
+
 .action , .thriller, .horror, .comedy, .dramaromance, .sci-fi, .animation{
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
+
 .movies-div{
     height: 256px;
     width: 200px;
@@ -590,11 +696,13 @@ ul {
     align-items: center;
     transition: all 0.3s ease-in-out;
 }
+
 .movies-div:hover {
     transform: translateY(-5px);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
                 rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
+
 .movies-div img{
     width: 100%;
     height: 100%;
@@ -603,51 +711,62 @@ ul {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
                 rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
+
 .movie-genre{
     color: rgb(0, 0, 0);
     font-size: 24px;
     font-weight: 700;
     padding-left: 20px;
 }
+
 .action-div{
     grid-column: 1 / 6;
     grid-row: 21 / 26;
 }
+
 .thriller-div{
     grid-column: 1 / 6;
     grid-row: 26 / 31;
 }
+
 .comedy-div{
     grid-column: 1 / 6;
     grid-row: 31 / 36;
 }
+
 .dramaromance-div{
     grid-column: 1 / 6;
     grid-row: 36 / 41;
 }
+
 .sci-fi-div{
     grid-column: 1 / 6;
     grid-row: 41 / 46;
 }
+
 .animation-div{
     grid-column: 1 / 6;
     grid-row: 46 / 51;
 }
+
 .movie_notes p{
     margin: 2px;
 }
+
 .duration{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5px;
 }
+
 .movie_details{
     display: flex;
     flex-direction: column;
     align-self: flex-start;
     gap: 10px;
 }
+
 .movie_notes {
     visibility: hidden;
     position: absolute;
@@ -667,23 +786,28 @@ ul {
     transition: opacity 0.7s ease;
     padding: 10px;
 }
+
 .newreleases:hover .movie_notes {
     visibility: visible;
     opacity: 1;
 }
+
 .full-description.expanded {
     max-height: 200px;
 }
+
 .see-more {
     color: white; 
     cursor: pointer;
     text-decoration: underline;
     font-weight: 700;
 }
+
 .description{
     display: flex;
     flex-direction: row;
 }
+
 .nav-button {
     position: absolute;
     top: 60%;
@@ -695,43 +819,54 @@ ul {
     z-index: 2;
     border-radius: 10px;
 }
+
 #prevButton {
     left: 0px;
 }
+
 #nextButton {
     right: 0px;
 }
+
 .movie_title{
     font-size: 24px;
 }
+
 .nbutton{
     height: 40px;
     width: 40px;
 }
+
 .pbutton{
     height: 40px;
     width: 40px;
 }
+
 .about{
     height: 480px;
     background-color: hsl(0, 0%, 10%);
 }
+
 .about p{
     color: white;
 }
+
 .about a{
     color: white;
     text-decoration: none;
     margin-bottom: 1rem;
 }
+
 .about-us{
     display: flex;
     flex-direction: column;
 }
+
 .about-titles{
     font-weight: 700;
     font-size: 18px;
 }
+
 .instagram-gradient i {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
     -webkit-background-clip: text;
@@ -741,15 +876,18 @@ ul {
     transition: all 0.4s ease;
     cursor: pointer;
 }
+
 .social-media-links i:hover {
     transform: scale(1.2);
 }
+
 .social-media-links i {
     font-size: 22px;
     cursor: pointer;
     transition: all 0.4s ease;
     margin-right: 2px;
 }
+
 .facebook-icon {
     display: flex;
     flex-direction: row;
@@ -760,6 +898,7 @@ ul {
     background-color: white;
     border-radius: 50%;
 }
+
 .social-media-links{
     display: flex;
     flex-direction: row;
@@ -767,6 +906,7 @@ ul {
     align-items: center;
     gap: 3px;
 }
+
 .about-row1{
     display: flex;
     flex-direction: row;
@@ -775,11 +915,13 @@ ul {
     padding: 20px;
     padding-top: 40px;
 }
+
 .about-hr{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .about-row2{
     display: flex;
     flex-direction: row;
@@ -787,10 +929,12 @@ ul {
     gap: 20px;
     padding: 20px;
 }
+
 .about-terms{
     display: flex;
     flex-direction: column;
 }
+
 .about-terms a{
     margin-bottom: 1rem;
 }
@@ -803,6 +947,7 @@ ul {
     box-shadow: 0 30px 50px #dbdbdb;
     overflow: hidden;
 }
+
 .New-releases .slide .item{
     width: 200px;
     height: 300px;
@@ -816,6 +961,7 @@ ul {
     display: inline-block;
     transition: 0.5s;
 }
+
 .slide .item:nth-child(1),
 .slide .item:nth-child(2){
     top: 0;
@@ -825,19 +971,24 @@ ul {
     width: 100%;
     height: 100%;
 }
+
 .slide .item:nth-child(3){
     left: calc(50% + 50px);
 }
+
 .slide .item:nth-child(4){
     left: calc(50% + 270px);
 }
+
 .slide .item:nth-child(5){
     left: calc(50% + 490px);
 }
+
 .slide .item:nth-child(n + 6){
     left: calc(50% + 660px);
     opacity: 0;
 }
+
 .item .content{
     position: absolute;
     top: 50%;
@@ -849,9 +1000,11 @@ ul {
     font-family: system-ui;
     display: none;
 }
+
 .slide .item:nth-child(2) .content{
     display: block;
 }
+
 .content .Movie-Name{
     font-size: 40px;
     text-transform: uppercase;
@@ -859,12 +1012,14 @@ ul {
     opacity: 0;
     animation: animate 1s ease-in-out 1 forwards;
 }
+
 .content .Movie-Desc{
     margin-top: 10px;
     margin-bottom: 20px;
     opacity: 0;
     animation: animate 1s ease-in-out 0.3s 1 forwards;
 }
+
 .content button{
     padding: 10px 20px;
     border: none;
@@ -872,6 +1027,7 @@ ul {
     opacity: 0;
     animation: animate 1s ease-in-out 0.6s 1 forwards;
 }
+
 @keyframes animate {
     from{
         opacity: 0;
@@ -885,12 +1041,14 @@ ul {
         filter: blur(0);
     }
 }
+
 .button{
     width: 100%;
     text-align: center;
     position: absolute;
     bottom: 20px;
 }
+
 .button button{
     width: 40px;
     height: 35px;
@@ -901,11 +1059,11 @@ ul {
     border: 1px solid #000;
     transition: 0.3s;
 }
+
 .button button:hover{
     background: #ababab;
     color: #fff;
 }
-
 
 @keyframes slideIn {
     from {
