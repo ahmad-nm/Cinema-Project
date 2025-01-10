@@ -40,7 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('logout').style.display = 'block';
         document.querySelector('.navigational-links').style.justifyContent = 'flex-end';
         document.querySelector('.signup-login').style.width = '0%';
-        document.querySelector('.navigational-links').style.width = '60%';
+        document.querySelector('.navigational-links').style.width = '40%';
+        document.querySelector('.searchbar').style.width = '40%';
+        document.querySelector('.searchbar').style.justifyContent = 'flex-end';
         document.getElementById('welcomeMessage').textContent = `Welcome, ${userData.username}`;
     }
 });
@@ -321,3 +323,37 @@ for (let row = 0; row < rightrows; row++) {
 
     }
 }
+
+const sliderContainer = document.querySelector('.slider-container');
+const upBtn = document.querySelector('.up-btn');
+const downBtn = document.querySelector('.down-btn');
+const slides = document.querySelectorAll('.slide');
+const slidesCount = slides.length;
+let activeSlideIndex = 0;
+
+upBtn.addEventListener('click', () => changeSlide('up'));
+downBtn.addEventListener('click', () => changeSlide('down'));
+
+function changeSlide(direction) {
+    const slideHeight = slides[0].clientHeight;
+    
+    if (direction === 'up') {
+        activeSlideIndex--;
+        if (activeSlideIndex < 0) {
+            activeSlideIndex = slidesCount - 1;
+        }
+    } else if (direction === 'down') {
+        activeSlideIndex++;
+        if (activeSlideIndex > slidesCount - 1) {
+            activeSlideIndex = 0;
+        }
+    }
+    
+    sliderContainer.style.transform = `translateY(-${activeSlideIndex * slideHeight}px)`;
+}
+
+window.addEventListener('load', () => {
+    slides.forEach(slide => {
+        slide.style.height = '500px';
+    });
+});
