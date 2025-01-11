@@ -328,3 +328,104 @@ document.getElementById("watch-trailer").addEventListener("click", function () {
         });
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cartButton = document.querySelector('.cart-button');
+    const cartSidebar = document.querySelector('.cart-sidebar');
+    const closeCart = document.querySelector('.close-cart');
+    const body = document.getElementById('body');
+
+    cartButton.addEventListener('click', () => {
+        cartSidebar.classList.add('open');
+        body.style.overflow = 'hidden';
+        const overlay = document.createElement('div');
+        overlay.classList.add('cart-overlay');
+        body.appendChild(overlay);
+    });
+
+    closeCart.addEventListener('click', () => {
+        cartSidebar.classList.remove('open');
+        body.style.overflow = 'auto';
+        const overlay = document.querySelector('.cart-overlay');
+        if (overlay) overlay.remove();
+    });
+
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('cart-overlay')) {
+            cartSidebar.classList.remove('open');
+            body.style.overflow = 'auto';
+            e.target.remove();
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedCart = JSON.parse(localStorage.getItem('cartItems') || '[]');
+    if (savedCart.length > 0) {
+        displayCartItems(savedCart);
+        attachRemoveListeners();
+    }
+});
+
+document.querySelector('.rent-btn').addEventListener('click', () => {
+    const MovieTitle = document.getElementById('h1movie').textContent;
+    const MoviePoster = document.getElementById('poster').src;
+    
+    const newItem = {
+        title: MovieTitle,
+        poster: MoviePoster,
+        price: 6
+    };
+    
+    const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+    cartItems.push(newItem);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    
+    displayCartItems(cartItems);
+    attachRemoveListeners();
+    TotalPrice();
+});
+
+function displayCartItems(items) {
+    const CartContent = document.querySelector('.cart-content');
+    CartContent.innerHTML = items.map((item, index) => `
+        <div class="cart-item" data-index="${index}">
+            <img src="${item.poster}" alt="${item.title}" class="cart-item-img">
+            <div class="cart-item-info">
+                <h4>${item.title}</h4>
+                <p>Price: $${item.price}</p>
+            </div>
+            <button class="remove-item"><i class='bx bx-x'></i></button>
+        </div>
+    `).join('');
+}
+
+function attachRemoveListeners() {
+    document.querySelectorAll('.remove-item').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const cartItem = e.target.closest('.cart-item');
+            const index = cartItem.dataset.index;
+            
+            const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+            cartItems.splice(index, 1);
+
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            displayCartItems(cartItems);
+            attachRemoveListeners();
+            TotalPrice();
+        });
+    });
+}
+
+function TotalPrice() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+    const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+    document.getElementById('total-price').textContent = `Total Price: $${totalPrice}`;
+    localStorage.setItem('totalRentPrice', totalPrice);
+    return totalPrice;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const totalPrice = TotalPrice();
+    document.getElementById('total-price').textContent = `Total Price: $${totalPrice}`;
+});

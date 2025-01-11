@@ -58,39 +58,6 @@ document.getElementById('logout').addEventListener('click', () => {
     document.getElementById('welcomeMessage').textContent = '';
 });
 
-function changeImage() {
-    let seats = document.querySelectorAll('.seat');
-
-    seats.forEach((seat) => {
-        seat.addEventListener('click', () => {
-            if (seat.src.includes('seat.png')) {
-                seat.src = './Images/Icons/selected.png';
-            } else if (seat.src.includes('selected.png')) {
-                seat.src = './Images/Icons/seat.png';
-            }
-        });
-    });
-}
-changeImage();
-
-function changebuttoncolor() {
-    const buttons = document.querySelectorAll('.book-timing-button');
-
-    buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-            buttons.forEach((btn) => {
-                btn.style.backgroundColor = '';
-                btn.style.color = '';
-            });
-
-            button.style.backgroundColor = '#002466';
-            button.style.color = 'rgb(255, 255, 255)';
-        });
-    });
-}
-changebuttoncolor();
-
-
 document.querySelectorAll(".movies-div").forEach((div) => {
     div.addEventListener("click", function () {
         window.location.href = "./Movie/movie.html?name=" + div.querySelector("img").alt;
@@ -340,11 +307,11 @@ function changeSlide(direction) {
     if (direction === 'up') {
         activeSlideIndex--;
         if (activeSlideIndex < 0) {
-            activeSlideIndex = slidesCount - 1;
+            activeSlideIndex = slidesCount - 2;
         }
     } else if (direction === 'down') {
         activeSlideIndex++;
-        if (activeSlideIndex > slidesCount - 1) {
+        if (activeSlideIndex > slidesCount - 2) {
             activeSlideIndex = 0;
         }
     }
@@ -356,4 +323,21 @@ window.addEventListener('load', () => {
     slides.forEach(slide => {
         slide.style.height = '500px';
     });
+});
+
+document.getElementById('showtime-button').addEventListener('click', () => {
+    const MovieName = document.querySelector('.movie-names select').value;
+    const MovieDay = document.querySelector('.movie-time select').value;
+
+    console.log(MovieName, MovieDay);
+
+    localStorage.setItem('MovieName', MovieName);
+    localStorage.setItem('MovieDay', MovieDay);
+
+    window.location.href = './Showtimes/showtime.html';
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    localStorage.removeItem('MovieName');
+    localStorage.removeItem('MovieDay');
 });

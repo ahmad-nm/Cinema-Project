@@ -13,6 +13,22 @@
     <title>Movie</title>
   </head>
   <body id="body">
+    <div class="Cart">
+      <button class="cart-button"><i class='bx bx-cart' style='color:#ffffff'></i></button>
+      <div class="cart-sidebar">
+        <div class="cart-header">
+          <h3>Cart</h3>
+          <button class="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="cart-content">
+          
+        </div>
+        <div class="cart-footer">
+          <h3 id="total-price"></h3>
+          <a href="../Payment/payment.html"><button class="checkout">Buy Cart</button></a>
+        </div>
+      </div>
+    </div>
     <nav>
       <div class="logo">
         <div style="display: flex; align-items: center; gap: 10px;">
@@ -25,7 +41,7 @@
         </div>
         <div class="navigational-links">
           <a href="../Project.html">Home</a>
-          <a href="#">Movies</a>
+          <a href="../Discover/Discover.html">Movies</a>
           <a href="../Favorites/favorite.html">WatchList</a>
           <a href="../Menu/menu.html">Food</a>
         </div>
@@ -64,9 +80,8 @@
           <p id="overview"></p>
           <p id="adult"></p>
         </div>
-        <div class="rent">
-          <p class="price">Rent (30 days): <span id="rent-price">6$</span></p>
-          <button class="rent-btn">Rent Movie</button>
+        <div>
+          <button class="rent-btn"><i class='bx bx-cart' style='color:#ffffff;'></i>  Add to Cart: 6$</button>
         </div>
         </div>
       </div>

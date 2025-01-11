@@ -44,7 +44,20 @@ const movieTimings = {
         { time: '20:00', movie: 'Joker: Folie À Deux' },
         { time: '22:00', movie: 'Venom: The Last Dance' }
     ],
+    Sat: [
+        { time: '10:00', movie: 'Sonic The Hedgehog 3' },
+        { time: '12:00', movie: 'Moana 2' },
+        { time: '14:00', movie: 'Mufasa: The Lion King' },
+        { time: '16:00', movie: 'Deadpool & Wolverine' },
+        { time: '18:00', movie: 'Joker: Folie À Deux' },
+        { time: '20:00', movie: 'Venom: The Last Dance' },
+        { time: '22:00', movie: 'The Beekeeper' }
+    ],
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    localStorage.removeItem('SeatPrice');
+});
 
 let isAutoSliding = true;
 
@@ -348,5 +361,41 @@ window.addEventListener('scroll', () => {
         header.classList.add('fixed-header');
     } else {
         header.classList.remove('fixed-header');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const GetMovie = localStorage.getItem('MovieName');
+    const GetDay = localStorage.getItem('MovieDay');
+
+    if(GetMovie && GetDay) {
+        setTimeout(() => {
+            const items = document.querySelectorAll('.item');
+            
+            items.forEach((item, index) => {
+                const movieTitle = item.querySelector('.movie-title').textContent;
+                
+                if (movieTitle.trim().toUpperCase() === GetMovie.trim().toUpperCase()) {
+                    const moves = index;
+                    
+                    for (let i = 0; i < moves; i++) {
+                        setTimeout(() => {
+                            document.getElementById('next').click();
+                        }, i * 100);
+                    }
+                    
+                    item.querySelector('.buttons button').click();
+
+                    setTimeout(() => {
+                        document.querySelectorAll('.dates span').forEach((date) => {
+                            if (date.textContent.trim() === GetDay.trim()) {
+                                date.click();
+                                document.getElementById('set-time').click();
+                            }
+                        });
+                    }, moves * 100 + 100);
+                }
+            });
+        }, 500);
     }
 });

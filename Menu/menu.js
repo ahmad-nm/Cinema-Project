@@ -226,6 +226,10 @@ SnacksMenuBtn.addEventListener('click', () => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    localStorage.removeItem('MenuPrice');
+});
+
 function TotalPrice() {
     let total = 0;
     for (let i = 1; i <= 36; i++) {
