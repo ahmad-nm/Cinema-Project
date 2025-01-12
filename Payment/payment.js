@@ -61,6 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         document.getElementById('total').innerHTML = 'Total Price: $' + totalPrice;
     }
+
+    document.getElementById('apply-button').addEventListener('click', () => {
+        const userInput = document.getElementById('promo-code').value;
+        const promoCode = 'S1';
+    
+        if(userInput == promoCode){
+            totalPrice = (totalPrice - (totalPrice * 0.25)).toFixed(2);
+            document.getElementById('total').innerHTML = 'Total Price: $' + totalPrice;
+        }
+    });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -73,3 +83,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sessionStorage.removeItem('pageLoaded');
 });
+

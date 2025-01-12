@@ -116,8 +116,87 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     gap: 10px;
+}
+
+.promo-code {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.promo-code input {
+    padding: 5px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.promo-code input:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.promo-code button {
+    width: fit-content;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(135deg, 
+        hsla(197, 100%, 37%, 0.7),
+        hsla(210, 98%, 40%, 0.7)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(2, 126, 251, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-code button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.promo-code button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, 
+        hsla(197, 100%, 37%, 0.8),
+        hsla(210, 98%, 40%, 0.8)
+    );
+    box-shadow: 0 15px 35px rgba(2, 126, 251, 0.2);
+}
+
+.promo-code button:hover::before {
+    left: 100%;
+}
+
+.promo-code button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(31, 38, 135, 0.2);
 }
 
 .total-price {
