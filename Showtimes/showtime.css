@@ -647,3 +647,22 @@ body {
     display: none;
     transition: all 0.3s ease;
 }
+
+@media screen and (max-width: 768px) {
+    .dates-times {
+        flex-direction: column;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .carousel .list .item .content {
+        top: 10%;
+        padding-right: 0;
+    }
+
+    .thumbnail {
+        left: 70%;
+    }
+}

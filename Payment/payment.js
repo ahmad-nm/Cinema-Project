@@ -6,18 +6,27 @@ creditCardBtn.addEventListener('change', () => {
     document.querySelector('.credit-card').style.display = 'block';
     document.querySelector('.paypal').style.display = 'none';
     document.querySelector('.visa').style.display = 'none';
+    const image = document.querySelector('.image');
+    image.classList.remove('image');
+    image.classList.add('image-open');
 });
 
 paypalBtn.addEventListener('change', () => {
     document.querySelector('.credit-card').style.display = 'none';
     document.querySelector('.paypal').style.display = 'block';
     document.querySelector('.visa').style.display = 'none';
+    const image = document.querySelector('.image');
+    image.classList.remove('image');
+    image.classList.add('image-open-paypal');
 });
 
 visaBtn.addEventListener('change', () => {
     document.querySelector('.credit-card').style.display = 'none';
     document.querySelector('.paypal').style.display = 'none';
     document.querySelector('.visa').style.display = 'block';
+    const image = document.querySelector('.image');
+    image.classList.remove('image');
+    image.classList.add('image-open');
 });
 
 document.addEventListener('DOMContentLoaded', () => {

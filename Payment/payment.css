@@ -35,6 +35,12 @@ h1 {
     color: #fff;
 }
 
+.title {
+    text-align: center;
+    align-self: flex-start;
+    margin-left: 100px;
+}
+
 label {
     padding: 0 5px;
     font-size: 14px;
@@ -44,8 +50,8 @@ label {
 
 .container {
     display: flex;
-    flex-direction: row;
-    padding: 40px;   
+    flex-direction: column;
+    padding-top: 40px;   
     z-index: 1;
 }
 
@@ -109,6 +115,16 @@ label {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.total-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    right: 100px;
 }
 
 .image-container {
@@ -205,7 +221,7 @@ label {
     background-color: rgba(255, 255, 255, 0.2);
     padding: 20px;
     border-radius: 30px;
-    width: 70%;
+    width: 100%;
     gap: 20px;
 }
 
@@ -216,8 +232,37 @@ label {
 }
 
 .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 0px;
+    right: 0px;
+    top: 100%;
+    height: fit-content;
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+.image-open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 0px;
+    right: 0px;
+    top: 100%;
+    height: fit-content;
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+.image-open-paypal {
     width: fit-content;
     background-color: #fff;
+    position: absolute;
+    right: 80px;
+    bottom: 10%;
 }
 
 .button {
@@ -278,4 +323,118 @@ label {
 .pay-button:active {
     transform: translateY(0);
     box-shadow: 0 5px 15px rgba(31, 38, 135, 0.2);
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        padding: 0px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .input-container {
+        width: 100%;
+        order: 3;
+        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 150px;
+    }
+
+    .info-input {
+        width: fit-content;
+    }
+
+    .input-group {
+        margin-bottom: 10px;
+    }
+
+    .total-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        order: 2;
+        width: 100%;
+        position: relative;
+        right: 0px;
+    }
+
+    .promo-code {
+        width: fit-content;
+    }
+
+    .image-container {
+        height: fit-content;
+        width: 100%;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    .total-price {
+        width: 40%;
+    }
+
+    .title {
+        align-self: center;
+        order: 1;
+        margin-left: 0px;
+    }
+
+    .title h1 {
+        margin-bottom: 0px;
+    }
+
+    .image {
+        order: 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 40px;
+        right: 0px;
+    }
+
+    .image-open {
+        order: 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        right: 0px;
+        bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    
+    .image-container {
+        height: 40vh;
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        bottom: 0px;
+        right: 0px;
+        top: 100%;
+        height: fit-content;
+    }
+
+    .image-open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        bottom: 0px;
+        right: 0px;
+        top: 100%;
+        height: fit-content;
+    }
 }

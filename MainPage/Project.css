@@ -9,16 +9,6 @@ body{
     background-color: #eaeaea;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
 a{
     text-decoration: none;
     color: black;
@@ -161,6 +151,26 @@ nav.open~.overlay {
     opacity: 1;
     left: 260px;
     pointer-events: auto;
+}
+
+#sidebar-discover {
+    display: none;
+}
+
+#sidebar-showtimes {
+    display: none;
+}
+
+#sidebar-food {
+    display: none;
+}
+
+.bottom-cotent li {
+    cursor: pointer;
+}
+
+.login-signup-sidebar{
+    display: none;
 }
 
 #logout {
@@ -820,14 +830,6 @@ ul {
     border-radius: 10px;
 }
 
-#prevButton {
-    left: 0px;
-}
-
-#nextButton {
-    right: 0px;
-}
-
 .movie_title{
     font-size: 24px;
 }
@@ -843,7 +845,6 @@ ul {
 }
 
 .about{
-    height: 480px;
     background-color: hsl(0, 0%, 10%);
 }
 
@@ -1073,5 +1074,79 @@ ul {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1230px){
+    .login-signup-sidebar{
+        display: block;
+    }
+
+    .signup-login{
+        display: none;
+    }
+
+    .seats{
+        display: none;
+    }
+
+    .upcoming{
+        grid-column: 1 / 6;
+    }
+
+    .vertical-slider{
+        grid-column: 1 / 6;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    #sidebar-discover {
+        display: block;
+    }
+    
+    #sidebar-showtimes {
+        display: block;
+    }
+    
+    #sidebar-food {
+        display: block;
+    }
+
+    .navigational-links{
+        display: none;
+    }
+
+    .action > :nth-child(6), .thriller > :nth-child(6), .horror > :nth-child(6), .comedy > :nth-child(6), .dramaromance > :nth-child(6), .sci-fi > :nth-child(6), .animation > :nth-child(6){
+        display: none;
+    }
+
+    .action > :nth-child(7), .thriller > :nth-child(7), .horror > :nth-child(7), .comedy > :nth-child(7), .dramaromance > :nth-child(7), .sci-fi > :nth-child(7), .animation > :nth-child(7){
+        display: none;
+    }
+
+    .slide .item:nth-child(5){
+        left: calc(50% + 550px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .action > :nth-child(5), .thriller > :nth-child(5), .horror > :nth-child(5), .comedy > :nth-child(5), .dramaromance > :nth-child(5), .sci-fi > :nth-child(5), .animation > :nth-child(5){
+        display: none;
+    }
+
+    .slide .item:nth-child(3){
+        left: calc(50% + 130px);
+    }
+    
+    .slide .item:nth-child(4){
+        left: calc(50% + 490px);
+    }
+
+}
+
+@media screen and (max-width: 425px){
+    .action > :nth-child(4), .thriller > :nth-child(4), .horror > :nth-child(4), .comedy > :nth-child(4), .dramaromance > :nth-child(4), .sci-fi > :nth-child(4), .animation > :nth-child(4){
+        display: none;
     }
 }
