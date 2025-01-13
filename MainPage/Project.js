@@ -163,74 +163,6 @@ document.querySelectorAll('.See-More-Btn').forEach((button) => {
     });
 });
 
-
-const StreamDetails = [
-    {
-        src: './Images/Moviesbg/venom3.jpg',
-        title: 'Venom: The Last Dance',
-        hall: 'Hall A',
-        time: '5:30 PM - 7:30 PM'
-    },
-    {
-        src: './Images/Moviesbg/joker_2.jpg',
-        title: 'Joker: Folie à Deux',
-        hall: 'Hall A',
-        time: '8:00 PM - 10:00 PM'
-    },
-    {
-        src: './Images/Moviesbg/bee_keeper.jpg',
-        title: 'The Beekeeper',
-        hall: 'Hall A',
-        time: '10:30 PM - 12:30 AM'
-    },
-    {
-        src: './Images/Moviesbg/moana_2.jpg',
-        title: 'Moana 2',
-        hall: 'Hall A',
-        time: '10:00 AM - 12:00 PM',
-    },
-    {
-        src: './Images/Moviesbg/Mufasa_1.jpg',
-        title: 'Mufasa: The Lion King',
-        hall: 'Hall A',
-        time: '12:30 PM - 2:30 PM',
-    },
-    {
-        src: './Images/Moviesbg/Sonic_3.jpg',
-        title: 'Sonic the Hedgehog 3',
-        hall: 'Hall A',
-        time: '3:00 PM - 5:00 PM',
-    },
-    {
-        src: './Images/Moviesbg/deadpool_wolverine.jpg',
-        title: 'Deadpool & Wolverine',
-        hall: 'Hall A',
-        time: '1:00 AM - 3:00 AM',
-    }
-];
-
-document.querySelectorAll('.book-timing-button').forEach((button , index) => {
-    button.addEventListener('click', () => {
-        
-        const Content = document.getElementById('book-timing-content-id'); 
-
-        document.querySelectorAll('.book-timing-button').forEach((btn) => {
-            Content.style.display = 'none';
-            btn.style.backgroundColor = '';
-            btn.style.color = '';
-        });
-
-        Content.style.display = 'flex';
-        button.style.backgroundColor = '#002466';
-        button.style.color = 'rgb(255, 255, 255)';
-        document.getElementById('seats-image').src = StreamDetails[index].src;
-        document.getElementById('seats-movie-title').textContent = StreamDetails[index].title;
-        document.getElementById('seats-movie-hall').innerHTML = StreamDetails[index].hall;
-        document.getElementById('seats-times').textContent = StreamDetails[index].time;
-    });
-});
-
-
 const leftseatingArea = document.querySelector('.left-seating');
 const leftrows = 7;
 const leftcolumns = 9;
@@ -324,6 +256,83 @@ window.addEventListener('load', () => {
         slide.style.height = '500px';
     });
 });
+
+const movieTimings = {
+    Mon: [
+        { time: '10:00', movie: 'Venom: The Last Dance' },
+        { time: '12:00', movie: 'Moana 2' },
+        { time: '14:00', movie: 'Joker: Folie À Deux' },
+        { time: '16:00', movie: 'Deadpool & Wolverine' },
+        { time: '18:00', movie: 'Mufasa: The Lion King' },
+        { time: '20:00', movie: 'The Beekeeper' },
+        { time: '22:00', movie: 'Sonic The Hedgehog 3' }
+    ],
+    Tue: [
+        { time: '10:00', movie: 'Moana 2' },
+        { time: '12:00', movie: 'Mufasa: The Lion King' },
+        { time: '14:00', movie: 'Venom: The Last Dance' },
+        { time: '16:00', movie: 'The Beekeeper' },
+        { time: '18:00', movie: 'Sonic The Hedgehog 3' },
+        { time: '20:00', movie: 'Joker: Folie À Deux' },
+        { time: '22:00', movie: 'Deadpool & Wolverine' }
+    ],
+    Wed: [
+        { time: '10:00', movie: 'Sonic The Hedgehog 3' },
+        { time: '12:00', movie: 'Deadpool & Wolverine' },
+        { time: '14:00', movie: 'Mufasa: The Lion King' },
+        { time: '16:00', movie: 'Joker: Folie À Deux' },
+        { time: '18:00', movie: 'The Beekeeper' },
+        { time: '20:00', movie: 'Moana 2' },
+        { time: '22:00', movie: 'Venom: The Last Dance' }
+    ],
+    Thu: [
+        { time: '10:00', movie: 'Moana 2' },
+        { time: '12:00', movie: 'Joker: Folie À Deux' },
+        { time: '14:00', movie: 'Venom: The Last Dance' },
+        { time: '16:00', movie: 'Deadpool & Wolverine' },
+        { time: '18:00', movie: 'Mufasa: The Lion King' },
+        { time: '20:00', movie: 'Sonic The Hedgehog 3' },
+        { time: '22:00', movie: 'The Beekeeper' }
+    ],
+    Fri: [
+        { time: '10:00', movie: 'Mufasa: The Lion King' },
+        { time: '12:00', movie: 'Sonic The Hedgehog 3' },
+        { time: '14:00', movie: 'Moana 2' },
+        { time: '16:00', movie: 'The Beekeeper' },
+        { time: '18:00', movie: 'Deadpool & Wolverine' },
+        { time: '20:00', movie: 'Joker: Folie À Deux' },
+        { time: '22:00', movie: 'Venom: The Last Dance' }
+    ],
+    Sat: [
+        { time: '10:00', movie: 'Sonic The Hedgehog 3' },
+        { time: '12:00', movie: 'Moana 2' },
+        { time: '14:00', movie: 'Mufasa: The Lion King' },
+        { time: '16:00', movie: 'Deadpool & Wolverine' },
+        { time: '18:00', movie: 'Joker: Folie À Deux' },
+        { time: '20:00', movie: 'Venom: The Last Dance' },
+        { time: '22:00', movie: 'The Beekeeper' }
+    ],
+};
+
+document.querySelector('.movie-names select').addEventListener('change', updateTime);
+document.querySelector('.movie-time select').addEventListener('change', updateTime);
+
+function updateTime() {
+    const MovieDay = document.querySelector('.movie-time select').value;
+    const selectedMovie = document.querySelector('.movie-names select').value;
+    const dayTimings = movieTimings[MovieDay];
+    
+    if (dayTimings) {
+        const movieSlot = dayTimings.find(slot => slot.movie.toLowerCase() === selectedMovie.toLowerCase());
+        
+        if (movieSlot) {
+            const startTime = movieSlot.time;
+            const endHour = parseInt(startTime.split(':')[0]) + 2;
+            const timeText = `${startTime} - ${endHour}:00`;
+            document.getElementById('time').textContent = timeText;
+        }
+    }
+}
 
 document.getElementById('showtime-button').addEventListener('click', () => {
     const MovieName = document.querySelector('.movie-names select').value;
