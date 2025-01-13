@@ -4,11 +4,7 @@ html {
 }
 body{
     font-family: monospace,"Outfit", sans-serif;
-    background-image: url(../Images/Other/menubg.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
+    background-color: #1b1b1b;
     margin: 0;
     padding-bottom: 50px;
     min-height: 101%;
@@ -67,7 +63,7 @@ nav .logo2 {
     border-radius: 40%;
 }
 .logo .logo-name {
-    color: hsl(0, 0%, 31%);
+    color: hsl(0, 0%, 75%);
     font-size: 22px;
     font-weight: 500;
 }
@@ -83,7 +79,7 @@ nav .sidebar {
     height: 100%;
     width: 260px;
     padding: 20px 0;
-    background-color: rgb(245, 201, 143);
+    background-color: #1b1b1b;
     box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
     display: overlay;
@@ -111,7 +107,7 @@ nav.open .sidebar {
     text-decoration: none;
 }
 .lists .nav-link:hover {
-    background-color: hsl(0, 95%, 31%);
+    background-color: #ff6600;
 }
 .nav-link .icon {
     margin-right: 14px;
@@ -159,12 +155,12 @@ nav.open~.overlay {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: hsl(0, 95%, 31%);
+    background: hsl(24, 100%, 50%);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: hsl(0, 95%, 25%);
+    background: hsl(24, 100%, 44%);
 }
 .navigational-links{
     display: flex;
@@ -172,7 +168,7 @@ nav.open~.overlay {
     gap: 20px;
 }
 .navigational-links button{
-    background-color: hsl(0, 95%, 31%);
+    background-color: hsl(24, 100%, 50%);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -180,20 +176,23 @@ nav.open~.overlay {
     cursor: pointer;
 }
 .navigational-links button:hover{
-    background-color: hsl(0, 98%, 47%);
+    background-color: hsl(24, 100%, 55%);
 }
-.Total-Price{
+.Total-Price {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     display: flex;
     flex-direction: row;
     gap: 20px;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: rgb(245, 201, 143);
+    padding: 15px 25px;
+    background-color: #252525;
     border-radius: 20px;
     width: fit-content;
-    margin-left: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 .total-price{
     display: flex;
@@ -205,7 +204,7 @@ nav.open~.overlay {
     margin: 0;
     font-weight: 500;
     font-size: 18px;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 #Popcorn-Menu , #Cold-drinks-menu, #Hot-drinks-menu, #Snacks-menu{
     display: none;
@@ -233,12 +232,12 @@ table{
     border-collapse: separate;
     border-spacing: 0;
     border-radius: 20px;
-    background-color: rgb(245, 201, 143);
+    background-color: hsl(0, 0%, 20%);
     overflow: hidden;
     box-shadow: 5px 5px 5px black;
 }
 thead{
-    background-color: rgb(152, 4, 4);
+    background-color: hsl(24, 100%, 50%);
     color: white;
     text-align: center;
     border-radius: 20px;
@@ -255,11 +254,11 @@ td{
 }
 td p{
     margin: 0;
-    color: rgb(0, 0, 0);
+    color: white;
     font-weight: 500;
 }
 .orderbtn{
-    background-color: #bc0202;
+    background-color: hsl(24, 100%, 50%);
     color: white;
     border: none;
     padding: 5px 10px;
@@ -267,15 +266,16 @@ td p{
     cursor: pointer;
 }
 .orderbtn:hover{
-    background-color: hsl(0, 98%, 47%);
+    background-color: hsl(24, 100%, 55%);
 }
 .orderbtn:active{
-    background-color: hsl(0, 98%, 27%);
+    background-color: hsl(24, 100%, 45%);
 }
 .quantity-td{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 10px;
 }
 .quantity{
     display: flex;
@@ -295,6 +295,7 @@ td p{
     margin: 0;
     font-weight: 500;
     font-size: 18px;
+    color: black;
 }
 .quantity-button-left{
     background-color: hsl(0, 0%, 30%);

@@ -171,13 +171,13 @@ PopcornMenuBtn.addEventListener('click', () => {
 
     if (PopcornMenu.style.display === 'flex') {
         PopcornMenu.style.display = 'none';
-        PopcornMenuBtn.style.backgroundColor = 'hsl(0, 95%, 31%)';
+        PopcornMenuBtn.style.backgroundColor = 'hsl(24, 100%, 50%)';
         return;
     }
     else {
         PopcornMenu.style.display = 'flex';
         PopcornMenu.classList.add('active')
-        PopcornMenuBtn.style.backgroundColor = 'hsl(0, 95%, 21%)';
+        PopcornMenuBtn.style.backgroundColor = 'hsl(24, 100%, 35%)';
     }
 });
 
@@ -186,13 +186,13 @@ ColdDrinksMenuBtn.addEventListener('click', () => {
 
     if (ColdDrinksMenu.style.display === 'flex') {
         ColdDrinksMenu.style.display = 'none';
-        ColdDrinksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 31%)';
+        ColdDrinksMenuBtn.style.backgroundColor = 'hsl(24, 100%, 50%)';
         return;
     }
     else {
         ColdDrinksMenu.style.display = 'flex';
         ColdDrinksMenu.classList.add('active')
-        ColdDrinksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 21%)';
+        ColdDrinksMenuBtn.style.backgroundColor = 'hsl(24, 100%, 35%)';
     }
 });
 
@@ -201,13 +201,13 @@ HotDrinksMenuBtn.addEventListener('click', () => {
 
     if (HotDrinksMenu.style.display === 'flex') {
         HotDrinksMenu.style.display = 'none';
-        HotDrinksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 31%)';
+        HotDrinksMenuBtn.style.backgroundColor = 'hsl(24, 100%, 50%)';
         return;
     }
     else {
         HotDrinksMenu.style.display = 'flex';
         HotDrinksMenu.classList.add('active')
-        HotDrinksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 21%)';
+        HotDrinksMenuBtn.style.backgroundColor = 'hsl(24, 100%, 35%)';
     }
 });
 
@@ -216,13 +216,13 @@ SnacksMenuBtn.addEventListener('click', () => {
 
     if (SnacksMenu.style.display === 'flex') {
         SnacksMenu.style.display = 'none';
-        SnacksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 31%)';
+        SnacksMenuBtn.style.backgroundColor = 'hsl(24, 100%, 50%)';
         return;
     }
     else {
         SnacksMenu.style.display = 'flex';
         SnacksMenu.classList.add('active')
-        SnacksMenuBtn.style.backgroundColor = 'hsl(0, 95%, 21%)';
+        SnacksMenuBtn.style.backgroundColor = 'hsl(24, 100%, 35%)';
     }
 });
 
