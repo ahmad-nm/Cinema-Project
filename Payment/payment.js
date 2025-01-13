@@ -73,11 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('apply-button').addEventListener('click', () => {
         const userInput = document.getElementById('promo-code').value;
-        const promoCode = 'S1';
+        const promoCode = 'M1';
     
         if(userInput == promoCode){
             totalPrice = (totalPrice - (totalPrice * 0.25)).toFixed(2);
             document.getElementById('total').innerHTML = 'Total Price: $' + totalPrice;
+            document.getElementById('apply-button').disabled = true;
         }
     });
 });
