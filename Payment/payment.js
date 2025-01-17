@@ -73,9 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('apply-button').addEventListener('click', () => {
         const userInput = document.getElementById('promo-code').value;
-        const promoCode = 'M1';
+        const promoCode1 = 'M1';
+        const promoCode2 = 'S1';
+        const promoCode3 = 'C1';
+        const promoCode4 = 'A1';
     
-        if(userInput == promoCode){
+        if(userInput == promoCode1 || userInput == promoCode2 || userInput == promoCode3 || userInput == promoCode4){
             totalPrice = (totalPrice - (totalPrice * 0.25)).toFixed(2);
             document.getElementById('total').innerHTML = 'Total Price: $' + totalPrice;
             document.getElementById('apply-button').disabled = true;
